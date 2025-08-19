@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755628439.75844 "I_1.tex" "I_1.pdf" "I_1" 1755628441.04099 2
+["pdflatex"] 1755630036.82643 "Apuntes_i1.tex" "Apuntes_i1.pdf" "Apuntes_i1" 1755630038.20432 2
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -27,6 +27,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1248133631 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb" 1248133631 32378 2b20eba6bb36c716382b6d96240eaa69 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
@@ -125,15 +126,15 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1755571328 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "I_1.aux" 1755628440.90838 2345 08b1e83171c80e75e985ebf078af8b2a "pdflatex"
-  "I_1.out" 1755628440.91207 1837 44fcdb2b241f521611e1c89beea79766 "pdflatex"
-  "I_1.tex" 1755628435.2794 16702 985e35c2313053b4f5311aff11f6a6d9 ""
-  "I_1.toc" 1755628440.91261 858 bc7570f90a77fb8e89ec615f2134f492 "pdflatex"
+  "Apuntes_i1.aux" 1755630038.04151 2345 08b1e83171c80e75e985ebf078af8b2a "pdflatex"
+  "Apuntes_i1.out" 1755630038.04786 1837 44fcdb2b241f521611e1c89beea79766 "pdflatex"
+  "Apuntes_i1.tex" 1755630031.97357 16691 3d73f9261e75f1e10554aa790b21261b ""
+  "Apuntes_i1.toc" 1755630038.0518 858 bc7570f90a77fb8e89ec615f2134f492 "pdflatex"
   "Image/UC COLOR-01.png" 1755624842.2779 245758 459ba184d8fdf62e0a8127debec29bf0 ""
   (generated)
-  "I_1.aux"
-  "I_1.log"
-  "I_1.out"
-  "I_1.pdf"
-  "I_1.toc"
+  "Apuntes_i1.aux"
+  "Apuntes_i1.log"
+  "Apuntes_i1.out"
+  "Apuntes_i1.pdf"
+  "Apuntes_i1.toc"
   (rewritten before read)
