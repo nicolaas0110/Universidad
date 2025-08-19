@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 AUG 2025 15:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  19 AUG 2025 15:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,7 +406,10 @@ File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count313
 \l__pdf_internal_box=\box57
-) (./Apuntes_i1.aux)
+) (./Apuntes_i1.aux
+LaTeX Info: Redefining \. on input line 11.
+LaTeX Info: Redefining \% on input line 11.
+)
 \openout1 = `Apuntes_i1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
@@ -486,6 +489,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 150.
+(./Apuntes_i1.out) (./Apuntes_i1.out)
 \@outlinefile=\write3
 \openout3 = `Apuntes_i1.out'.
 
@@ -521,10 +525,10 @@ Package hyperref Info: Link coloring ON on input line 150.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Image/UC COLOR-01.png, id=4, 512.1534pt x 295.1025pt>
+<Image/UC COLOR-01.png, id=40, 512.1534pt x 295.1025pt>
 File: Image/UC COLOR-01.png Graphic file (type png)
 <use Image/UC COLOR-01.png>
-Package pdftex.def Info: Image/UC COLOR-01.png  used on input line 158.
+Package pdftex.def Info: Image/UC COLOR-01.png  used on input line 159.
 (pdftex.def)             Requested size: 85.9996pt x 49.54985pt.
 
 
@@ -564,41 +568,40 @@ Package pdftex.def Info: Image/UC COLOR-01.png  used on input line 158.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-No file Apuntes_i1.toc.
+ (./Apuntes_i1.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
 \tf@toc=\write4
 \openout4 = `Apuntes_i1.toc'.
 
 
 
-LaTeX Info: Redefining \. on input line 199.
-LaTeX Info: Redefining \% on input line 199.
-
-LaTeX Warning: Reference `LastPage' on page 1 undefined on input line 199.
-
+LaTeX Info: Redefining \. on input line 200.
+LaTeX Info: Redefining \% on input line 200.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.199 \cleardoublepage
+l.200 \cleardoublepage
                        [1
 
 ]
 
-./Apuntes_i1.tex:206: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:207: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.206 \begin{definition}
+l.207 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:207: Undefined control sequence.
-l.207 ... de un intervalo $[a,b] \subseteq \mathbb
+./Apuntes_i1.tex:208: Undefined control sequence.
+l.208 ... de un intervalo $[a,b] \subseteq \mathbb
                                                   {R}$ es un subconjunto fin...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -607,85 +610,85 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:208: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:209: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.208 \end{definition}
+l.209 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:210: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:211: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.210 \begin{definition}
+l.211 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:213: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:214: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.213 \end{definition}
+l.214 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:215: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:216: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.215 \begin{definition}
+l.216 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:217: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:218: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.217 \end{definition}
+l.218 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:219: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:220: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.219 \begin{definition}
+l.220 \begin{definition}
                         [Suma de Riemann]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:220: Undefined control sequence.
-l.220 Sea $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:221: Undefined control sequence.
+l.221 Sea $f:[a,b] \rightarrow \mathbb
                                       {R}$ acotada y $\pi^* = (\pi, \epsilon...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -694,33 +697,33 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:222: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:223: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.222 \end{definition}
+l.223 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:224: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:225: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.224 \begin{definition}
+l.225 \begin{definition}
                         [Integrabilidad de Riemann]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:225: Undefined control sequence.
-l.225 Dada $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:226: Undefined control sequence.
+l.226 Dada $f:[a,b] \rightarrow \mathbb
                                        {R}$ acotada, decimos que es Riemann ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -728,8 +731,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:227: Undefined control sequence.
-l.227 Esto significa que $\exists L \in \mathbb
+./Apuntes_i1.tex:228: Undefined control sequence.
+l.228 Esto significa que $\exists L \in \mathbb
                                                {R}$ tal que para cualquier $...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -738,33 +741,33 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:228: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:229: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.228 \end{definition}
+l.229 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:233: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:234: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.233 \begin{definition}
+l.234 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:234: Undefined control sequence.
-l.234 Dadas $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:235: Undefined control sequence.
+l.235 Dadas $f:[a,b] \rightarrow \mathbb
                                         {R}$ acotada y $\pi = (I_i)_{i=1,\do...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -773,85 +776,85 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:241: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:242: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.241 \end{definition}
+l.242 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:243: LaTeX Error: Environment remark undefined.
+./Apuntes_i1.tex:244: LaTeX Error: Environment remark undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.243 \begin{remark}
+l.244 \begin{remark}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:246: LaTeX Error: \begin{document} ended by \end{remark}.
+./Apuntes_i1.tex:247: LaTeX Error: \begin{document} ended by \end{remark}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.246 \end{remark}
+l.247 \end{remark}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:248: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:249: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.248 \begin{definition}
+l.249 \begin{definition}
                         [Refinamiento]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:250: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:251: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.250 \end{definition}
+l.251 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:252: LaTeX Error: Environment proposition undefined.
+./Apuntes_i1.tex:253: LaTeX Error: Environment proposition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.252 \begin{proposition}
+l.253 \begin{proposition}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:253: Undefined control sequence.
-l.253 Sea $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:254: Undefined control sequence.
+l.254 Sea $f:[a,b] \rightarrow \mathbb
                                       {R}$ acotada. Entonces:
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -860,33 +863,33 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:258: LaTeX Error: \begin{document} ended by \end{proposition}.
+./Apuntes_i1.tex:259: LaTeX Error: \begin{document} ended by \end{proposition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.258 \end{proposition}
+l.259 \end{proposition}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:263: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:264: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.263 \begin{definition}
+l.264 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:264: Undefined control sequence.
-l.264 Sea $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:265: Undefined control sequence.
+l.265 Sea $f:[a,b] \rightarrow \mathbb
                                       {R}$ acotada. Definimos:
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -896,42 +899,39 @@ and I'll forget about whatever was undefined.
 
 
 
-LaTeX Info: Redefining \. on input line 266.
-LaTeX Info: Redefining \% on input line 266.
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 266.
-
+LaTeX Info: Redefining \. on input line 267.
+LaTeX Info: Redefining \% on input line 267.
 [2
 
 ]
 
-./Apuntes_i1.tex:271: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:272: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.271 \end{definition}
+l.272 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:273: LaTeX Error: Environment theorem undefined.
+./Apuntes_i1.tex:274: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.273 \begin{theorem}
+l.274 \begin{theorem}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:274: Undefined control sequence.
-l.274 Sea $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:275: Undefined control sequence.
+l.275 Sea $f:[a,b] \rightarrow \mathbb
                                       {R}$ acotada. Entonces:
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -939,8 +939,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:276: Undefined control sequence.
-l.276 ...alquier sucesión $(\pi_n)_{n \in \mathbb
+./Apuntes_i1.tex:277: Undefined control sequence.
+l.277 ...alquier sucesión $(\pi_n)_{n \in \mathbb
                                                   {N}}$ de particiones de $[...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -949,33 +949,33 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:278: LaTeX Error: \begin{document} ended by \end{theorem}.
+./Apuntes_i1.tex:279: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.278 \end{theorem}
+l.279 \end{theorem}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:280: LaTeX Error: Environment theorem undefined.
+./Apuntes_i1.tex:281: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.280 \begin{theorem}
+l.281 \begin{theorem}
                      [Criterios de Integrabilidad]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:281: Undefined control sequence.
-l.281 Dada $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:282: Undefined control sequence.
+l.282 Dada $f:[a,b] \rightarrow \mathbb
                                        {R}$ acotada, las siguientes afirmaci...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -983,17 +983,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:286: Undefined control sequence.
-l.286 ...alquier sucesión $(\pi_n)_{n \in \mathbb
-                                                  {N}}$ de particiones de $[...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ./Apuntes_i1.tex:287: Undefined control sequence.
-l.287 ...ste una sucesión $(\pi_n)_{n \in \mathbb
+l.287 ...alquier sucesión $(\pi_n)_{n \in \mathbb
+                                                  {N}}$ de particiones de $[...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Apuntes_i1.tex:288: Undefined control sequence.
+l.288 ...ste una sucesión $(\pi_n)_{n \in \mathbb
                                                   {N}}$ de particiones de $[...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1002,59 +1002,59 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:289: LaTeX Error: \begin{document} ended by \end{theorem}.
+./Apuntes_i1.tex:290: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.289 \end{theorem}
+l.290 \end{theorem}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:291: LaTeX Error: Environment remark undefined.
+./Apuntes_i1.tex:292: LaTeX Error: Environment remark undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.291 \begin{remark}
+l.292 \begin{remark}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:293: LaTeX Error: \begin{document} ended by \end{remark}.
+./Apuntes_i1.tex:294: LaTeX Error: \begin{document} ended by \end{remark}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.293 \end{remark}
+l.294 \end{remark}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:295: LaTeX Error: Environment proposition undefined.
+./Apuntes_i1.tex:296: LaTeX Error: Environment proposition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.295 \begin{proposition}
+l.296 \begin{proposition}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:297: Undefined control sequence.
-l.297     \item Si $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:298: Undefined control sequence.
+l.298     \item Si $f:[a,b] \rightarrow \mathbb
                                                {R}$ es monótona, entonces e...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1062,8 +1062,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:298: Undefined control sequence.
-l.298     \item Si $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:299: Undefined control sequence.
+l.299     \item Si $f:[a,b] \rightarrow \mathbb
                                                {R}$ es continua, entonces es...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1072,35 +1072,35 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:300: LaTeX Error: \begin{document} ended by \end{proposition}.
+./Apuntes_i1.tex:301: LaTeX Error: \begin{document} ended by \end{proposition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.300 \end{proposition}
+l.301 \end{proposition}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:305: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:306: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.305 \begin{definition}
+l.306 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:306: Undefined control sequence.
+./Apuntes_i1.tex:307: Undefined control sequence.
 <argument> \mathbb 
                    {R}
-l.306 ...njunto $I \subseteq \overline{\mathbb{R}}
+l.307 ...njunto $I \subseteq \overline{\mathbb{R}}
                                                    := \mathbb{R} \cup \{-\in...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1108,8 +1108,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:306: Undefined control sequence.
-l.306 ...subseteq \overline{\mathbb{R}} := \mathbb
+./Apuntes_i1.tex:307: Undefined control sequence.
+l.307 ...subseteq \overline{\mathbb{R}} := \mathbb
                                                   {R} \cup \{-\infty, \infty...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1118,35 +1118,35 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:307: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:308: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.307 \end{definition}
+l.308 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:309: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:310: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.309 \begin{definition}
+l.310 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:310: Undefined control sequence.
+./Apuntes_i1.tex:311: Undefined control sequence.
 <argument> \mathbb 
                    {R}
-l.310 ...ervalo $I \subseteq \overline{\mathbb{R}}
+l.311 ...ervalo $I \subseteq \overline{\mathbb{R}}
                                                   $ se define como $|I| := \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1155,59 +1155,59 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:311: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:312: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.311 \end{definition}
+l.312 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:313: LaTeX Error: Environment property undefined.
+./Apuntes_i1.tex:314: LaTeX Error: Environment property undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.313 \begin{property}
+l.314 \begin{property}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:315: LaTeX Error: \begin{document} ended by \end{property}.
+./Apuntes_i1.tex:316: LaTeX Error: \begin{document} ended by \end{property}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.315 \end{property}
+l.316 \end{property}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:317: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:318: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.317 \begin{definition}
+l.318 \begin{definition}
                         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:318: Undefined control sequence.
-l.318 Un conjunto $E \subseteq \mathbb
+./Apuntes_i1.tex:319: Undefined control sequence.
+l.319 Un conjunto $E \subseteq \mathbb
                                       {R}^d$ se dice de medida nula si, dado...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1215,8 +1215,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:318: Undefined control sequence.
-l.318 ...sión de intervalos $(I_n)_{n \in \mathbb
+./Apuntes_i1.tex:319: Undefined control sequence.
+l.319 ...sión de intervalos $(I_n)_{n \in \mathbb
                                                   {N}}$ de $\mathbb{R}^d$ ta...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1224,10 +1224,10 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:318: Undefined control sequence.
+./Apuntes_i1.tex:319: Undefined control sequence.
 <recently read> \mathbb 
                         
-l.318 ...os $(I_n)_{n \in \mathbb{N}}$ de $\mathbb
+l.319 ...os $(I_n)_{n \in \mathbb{N}}$ de $\mathbb
                                                   {R}^d$ tal que $E \subsete...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1235,8 +1235,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:318: Undefined control sequence.
-l.318 ...l que $E \subseteq \bigcup_{n \in \mathbb
+./Apuntes_i1.tex:319: Undefined control sequence.
+l.319 ...l que $E \subseteq \bigcup_{n \in \mathbb
                                                   {N}} I_n$ y $\sum_{n \in \...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1244,8 +1244,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:318: Undefined control sequence.
-l.318 ...n \mathbb{N}} I_n$ y $\sum_{n \in \mathbb
+./Apuntes_i1.tex:319: Undefined control sequence.
+l.319 ...n \mathbb{N}} I_n$ y $\sum_{n \in \mathbb
                                                   {N}} |I_n| < \epsilon$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1254,33 +1254,33 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:319: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:320: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.319 \end{definition}
+l.320 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:321: LaTeX Error: Environment theorem undefined.
+./Apuntes_i1.tex:322: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.321 \begin{theorem}
+l.322 \begin{theorem}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:322: Undefined control sequence.
-l.322 Sea $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:323: Undefined control sequence.
+l.323 Sea $f:[a,b] \rightarrow \mathbb
                                       {R}$ acotada. Entonces, $f$ es Riemann...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1289,13 +1289,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:323: LaTeX Error: \begin{document} ended by \end{theorem}.
+./Apuntes_i1.tex:324: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.323 \end{theorem}
+l.324 \end{theorem}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1303,27 +1303,24 @@ or  <return>  to continue without it.
 
 
 
-LaTeX Info: Redefining \. on input line 324.
-LaTeX Info: Redefining \% on input line 324.
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 324.
-
+LaTeX Info: Redefining \. on input line 325.
+LaTeX Info: Redefining \% on input line 325.
 [3]
 
-./Apuntes_i1.tex:333: LaTeX Error: Environment theorem undefined.
+./Apuntes_i1.tex:334: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.333 \begin{theorem}
+l.334 \begin{theorem}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:334: Undefined control sequence.
-l.334 Si $(f_n)_{n \in \mathbb
+./Apuntes_i1.tex:335: Undefined control sequence.
+l.335 Si $(f_n)_{n \in \mathbb
                               {N}} \subseteq R([a,b])$ y $f_n \rightarrow f$...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1332,59 +1329,59 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:335: LaTeX Error: \begin{document} ended by \end{theorem}.
+./Apuntes_i1.tex:336: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.335 \end{theorem}
+l.336 \end{theorem}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:340: LaTeX Error: Environment theorem undefined.
+./Apuntes_i1.tex:341: LaTeX Error: Environment theorem undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.340 \begin{theorem}
+l.341 \begin{theorem}
                      [Teorema Fundamental del Cálculo]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:342: LaTeX Error: \begin{document} ended by \end{theorem}.
+./Apuntes_i1.tex:343: LaTeX Error: \begin{document} ended by \end{theorem}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.342 \end{theorem}
+l.343 \end{theorem}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:344: LaTeX Error: Environment note undefined.
+./Apuntes_i1.tex:345: LaTeX Error: Environment note undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.344 \begin{note}
+l.345 \begin{note}
                   
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:348: Undefined control sequence.
-l.348 ...una función $f:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:349: Undefined control sequence.
+l.349 ...una función $f:[a,b] \rightarrow \mathbb
                                                   {R}$ que es derivable en $...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1393,33 +1390,33 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:350: LaTeX Error: \begin{document} ended by \end{note}.
+./Apuntes_i1.tex:351: LaTeX Error: \begin{document} ended by \end{note}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.350 \end{note}
+l.351 \end{note}
                 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./Apuntes_i1.tex:357: LaTeX Error: Environment definition undefined.
+./Apuntes_i1.tex:358: LaTeX Error: Environment definition undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.357 \begin{definition}
+l.358 \begin{definition}
                         [Función Escalonada]
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:358: Undefined control sequence.
-l.358 Una función $\phi:[a,b] \rightarrow \mathbb
+./Apuntes_i1.tex:359: Undefined control sequence.
+l.359 Una función $\phi:[a,b] \rightarrow \mathbb
                                                   {R}$ se dice escalonada si...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1427,8 +1424,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:358: Undefined control sequence.
-l.358 ...y constantes $c_1, \dots, c_n \in \mathbb
+./Apuntes_i1.tex:359: Undefined control sequence.
+l.359 ...y constantes $c_1, \dots, c_n \in \mathbb
                                                   {R}$ tales que $\phi|_{(x_...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1437,22 +1434,22 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:359: LaTeX Error: \begin{document} ended by \end{definition}.
+./Apuntes_i1.tex:360: LaTeX Error: \begin{document} ended by \end{definition}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.359 \end{definition}
+l.360 \end{definition}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-./Apuntes_i1.tex:367: Undefined control sequence.
+./Apuntes_i1.tex:368: Undefined control sequence.
 <recently read> \mathbb 
                         
-l.367 ...ción de todos los intervalos en $\mathbb
+l.368 ...ción de todos los intervalos en $\mathbb
                                                   {R}$. La función longitud...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1461,13 +1458,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:369: LaTeX Error: Environment property undefined.
+./Apuntes_i1.tex:370: LaTeX Error: Environment property undefined.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.369 \begin{property}
+l.370 \begin{property}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1475,14 +1472,11 @@ or  <return>  to continue without it.
 
 
 
-LaTeX Info: Redefining \. on input line 370.
-LaTeX Info: Redefining \% on input line 370.
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 370.
-
+LaTeX Info: Redefining \. on input line 371.
+LaTeX Info: Redefining \% on input line 371.
 [4]
-./Apuntes_i1.tex:375: Undefined control sequence.
-l.375 ...}^{\infty} I_i$ con $(I_i)_{i \in \mathbb
+./Apuntes_i1.tex:376: Undefined control sequence.
+l.376 ...}^{\infty} I_i$ con $(I_i)_{i \in \mathbb
                                                   {N}} \subseteq \mathcal{I}...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1490,8 +1484,8 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:376: Undefined control sequence.
-l.376 ...\infty} I_i$, donde $(I_i)_{i \in \mathbb
+./Apuntes_i1.tex:377: Undefined control sequence.
+l.377 ...\infty} I_i$, donde $(I_i)_{i \in \mathbb
                                                   {N}}$ son intervalos (no n...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1499,17 +1493,17 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./Apuntes_i1.tex:377: Undefined control sequence.
-l.377 ...x) = \lambda(I)$ para todo $x \in \mathbb
-                                                  {R}$.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ./Apuntes_i1.tex:378: Undefined control sequence.
-l.378 ...mbda(\{x\}) = 0$ para todo $x \in \mathbb
+l.378 ...x) = \lambda(I)$ para todo $x \in \mathbb
+                                                  {R}$.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Apuntes_i1.tex:379: Undefined control sequence.
+l.379 ...mbda(\{x\}) = 0$ para todo $x \in \mathbb
                                                   {R}$.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1518,13 +1512,13 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-./Apuntes_i1.tex:380: LaTeX Error: \begin{document} ended by \end{property}.
+./Apuntes_i1.tex:381: LaTeX Error: \begin{document} ended by \end{property}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.380 \end{property}
+l.381 \end{property}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1532,11 +1526,8 @@ or  <return>  to continue without it.
 
 
 
-LaTeX Info: Redefining \. on input line 382.
-LaTeX Info: Redefining \% on input line 382.
-
-LaTeX Warning: Reference `LastPage' on page 5 undefined on input line 382.
-
+LaTeX Info: Redefining \. on input line 383.
+LaTeX Info: Redefining \% on input line 383.
 [5] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
 (./Apuntes_i1.aux
@@ -1547,38 +1538,22 @@ LaTeX Info: Redefining \% on input line 11.
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `Apuntes_i1.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Apuntes_i1.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  44FCDB2B241F521611E1C89BEEA79766;1837.
-
-Package lastpage Warning: Rerun to get the references right on input line 382.
-
+Package rerunfilecheck Info: File `Apuntes_i1.out' has not changed.
+(rerunfilecheck)             Checksum: 44FCDB2B241F521611E1C89BEEA79766;1837.
  ) 
 Here is how much of TeX's memory you used:
- 15200 strings out of 473190
- 245747 string characters out of 5715801
- 690508 words of memory out of 5000000
- 38221 multiletter control sequences out of 15000+600000
+ 15218 strings out of 473190
+ 246027 string characters out of 5715801
+ 690998 words of memory out of 5000000
+ 38233 multiletter control sequences out of 15000+600000
  567135 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,13n,80p,475b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Apuntes_i1.pdf (6 pages, 346282 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Apuntes_i1.pdf (6 pages, 341838 bytes).
 PDF statistics:
- 131 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 169 PDF objects out of 1000 (max. 8388607)
+ 129 compressed objects within 2 object streams
  23 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
