@@ -10,7 +10,7 @@
 \def\LANGUAGE{ES} %EN, ES		%Language in which the document is going to be written.
 
 \def\reportTile{Apuntes}			%Document's title
-\def\subject{Ecuaciones Diferenciales Ordinarias}			%Subject
+\def\subject{EDO}			%Subject
 
 \def\writter{Nicolas Muñoz}		%Author(s)
 
@@ -198,9 +198,86 @@
 \tableofcontents
 \cleardoublepage
 
-\section{Ecuaciones Diferenciales}
-\label{sec:Ecuaciones Diferenciales}
+\section{Introducción a las EDO´s}
+\label{sec:intro-edo}
 
-Ecuaciones Diferenciales
+\subsection{Generalidades y Definiciones}
+\begin{definition}
+Una **ecuación diferencial ordinaria (EDO)** de orden $k \in \mathbb{N}$ es una relación funcional entre la variable real $t \in I$ (donde $I \subset \mathbb{R}$ es un intervalo abierto), una función $y: I \rightarrow \mathbb{R}^m$, y sus derivadas $y', y'', \dots, y^{(k)}$. Esta relación se expresa a través de la fórmula:
+$$F(t, y(t), y'(t), \dots, y^{(k)}(t)) = 0, \quad \forall t \in I \quad (*)$$
+donde $F: J \times \mathbb{R}^m \times \dots \times \mathbb{R}^m \rightarrow \mathbb{R}^n$ es una función dada.
+\end{definition}
+
+\begin{definition}
+Una **solución** de la EDO $(*)$ es una función $\phi \in C^k(I; \mathbb{R}^m)$ tal que $F(t, \phi(t), \phi'(t), \dots, \phi^{(k)}(t)) = 0$ para todo $t \in I$.
+\end{definition}
+
+Se asume que la EDO se puede "resolver" con respecto a la derivada de mayor orden $y^{(k)}$, resultando en la forma canónica:
+$$y^{(k)}(t) = f(t, y(t), y'(t), \dots, y^{(k-1)}(t)), \quad \forall t \in I$$
+donde $f \in C(I \times \mathbb{R}^m \times \dots \times \mathbb{R}^m; \mathbb{R}^m)$. Esto es una hipótesis razonable por el Teorema de la Función Implícita, asumiendo que $\frac{\partial F}{\partial y^{(k)}} \ne 0$.
+
+\begin{definition}
+Una EDO en su forma canónica se dice **lineal** cuando tiene la forma:
+$$y^{(k)}(t) = \sum_{j=0}^{k-1} a_j(t) y^{(j)}(t) + g(t), \quad \forall t \in I$$
+donde $a_j \in C(I, M_{m \times m}(\mathbb{R}))$ y $g \in C(I; \mathbb{R}^m)$ son funciones dadas.
+\end{definition}
+
+\begin{remark}
+Un sistema lineal es:
+\begin{itemize}
+    \item **Homogéneo** si $g(t) \equiv 0$.
+    \item **Autónomo** si $f$ no depende de $t \in I$.
+\end{itemize}
+\end{remark}
+
+\subsection{Curiosidades y Reducción de Orden}
+\label{sec:curiosidades}
+
+\begin{enumerate}
+    \item Las funciones $\phi_1(t) = e^{-2t}$ y $\phi_2(t) = e^{-3t}$ son soluciones de la EDO $y''(t) + 5y'(t) + 6y(t) = 0$. Por el principio de superposición, cualquier combinación lineal $c_1\phi_1(t) + c_2\phi_2(t)$ también es una solución, lo que implica infinitas soluciones.
+    \item La única solución real de la EDO $(y(t))^2 + (y'(t))^2 = 0$ para todo $t \in \mathbb{R}$ es la función idénticamente nula.
+    \item **Invariancia por traslación:** Si $\phi$ es una solución de un sistema autónomo, entonces $\overline{\phi}(t) = \phi(t-t_0)$ también es una solución para cualquier constante $t_0$.
+    \item **Reducción a un sistema autónomo de primer orden:** Cualquier sistema de EDOs se puede reducir a un sistema autónomo del primer orden. Para un sistema de orden $k \ge 2$, se definen nuevas variables $u_0=y, u_1=y', \dots, u_{k-1}=y^{(k-1)}$. Esto lleva a un sistema de primer orden. Si se introduce una variable adicional $u_k = t$, se puede obtener un sistema de primer orden autónomo.
+\end{enumerate}
+
+\section{Problemas de Cauchy}
+\label{sec:cauchy}
+
+\begin{definition}[Problema de Cauchy (PC)]
+Un **problema de Cauchy** para un sistema de EDOs de primer orden es un problema de valor inicial que se expresa como:
+$$(PC) \begin{cases} y'(t) = f(t, y(t)) & \forall t \in I \\ y(t_0) = y_0 \end{cases}$$
+donde $t_0 \in I$ es el punto inicial y $y_0 \in \mathbb{R}^m$ es el valor inicial. Para que la solución sea única, se necesita agregar una condición inicial.
+\end{definition}
+
+Para EDOs de orden superior, el problema de Cauchy incluye condiciones iniciales para la función y sus primeras $k-1$ derivadas.
+$$\begin{cases} y^{(k)}(t) = f(t, y(t), y'(t), \dots, y^{(k-1)}(t)) & \forall t \in I \\ y(t_0) = y_0, y'(t_0) = y_1, \dots, y^{(k-1)}(t_0) = y_{k-1} \end{cases}$$
+
+\section{Resolución para EDOs de Primer Orden}
+\label{sec:resolucion-explícita}
+
+\subsection{Variables Separables}
+Una EDO de variables separables tiene la forma $y' = g(t)/h(y)$, donde $g$ y $h$ son funciones continuas y $h(y) \ne 0$. La solución se encuentra al separar las variables e integrar:
+$$h(\phi(t))\phi'(t) = g(t) \Rightarrow \int h(y)dy = \int g(t)dt + C$$
+Esto da una representación implícita de la solución.
+
+\subsection{EDOs Lineales de Primer Orden}
+Una EDO lineal de primer orden tiene la forma $y'(t) + p(t)y(t) = f(t)$. El método de resolución implica dos pasos:
+
+\begin{enumerate}
+    \item **Resolver la ecuación homogénea asociada:** $y'(t) + p(t)y(t) = 0$. La solución homogénea es $y_h(t) = Ce^{-\int p(t)dt}$.
+    \item **Encontrar una solución particular:** Una solución particular $y_p(t)$ se encuentra multiplicando la ecuación no-homogénea por el factor integrante $e^{\int p(t)dt}$ y luego integrando. La solución general es la suma de las soluciones homogénea y particular: $y(t) = y_h(t) + y_p(t)$.
+\end{enumerate}
+
+\section{Soluciones de EDOs Autónomas de Primer Orden}
+\label{sec:soluciones-autonomas}
+Para una EDO autónoma de primer orden de la forma $y'(t) = f(y(t))$ con una condición inicial $y(0) = y_0$. Si $f(y_0) \ne 0$, se puede encontrar una solución única al integrar la ecuación $\frac{y'(t)}{f(y(t))} = 1$. Esto lleva a la expresión $\int_{y_0}^{y(t)} \frac{du}{f(u)} = t$. Si $\psi(y) = \int_{y_0}^{y} \frac{du}{f(u)}$, la solución es $\phi(t) = \psi^{-1}(t)$.
+\begin{proposition}
+Si $f: I \rightarrow \mathbb{R}$ es continua y $y_0 \in I$ tal que $f(y_0) \ne 0$, la solución al problema de valor inicial es monótona en su intervalo de definición.
+\end{proposition}
+
+\subsection{Intervalo Maximal de Existencia}
+El intervalo de existencia de la solución puede ser finito. Por ejemplo, en el caso de $y' = y^2$ con $y(0) = y_0 > 0$, la solución es $\phi(t) = \frac{y_0}{1-y_0t}$, que solo existe en el intervalo $(-\infty, 1/y_0)$ y "explota" en $t = 1/y_0$. Este es un ejemplo de una **solución maximal**.
+
+Es importante notar que las soluciones pueden no ser únicas si $f(y_0)=0$ en la condición inicial.
 
 \end{document}
