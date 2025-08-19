@@ -1,0 +1,382 @@
+\documentclass[11pt]{article}
+\usepackage{indentfirst} 		 % First line paragraph indentation
+\usepackage{etoolbox} 			% Used for being able to utilise if statements in the language detection.
+%\setlength{\parskip}{\baselineskip}	% With this line, it is not needed the use of \\ at the end of each paragraph for...
+					% ...spacing purposes, but the spacing can be extrange sometimes
+
+
+% ========================= VARIABLES TO MODIFY =================================
+
+\def\LANGUAGE{ES} %EN, ES		%Language in which the document is going to be written.
+
+\def\reportTile{Apunte}			%Document's title
+\def\subject{Teoria De Integración}			%Subject
+
+\def\writter{Nicolas Muñoz}		%Author(s)
+
+
+\def\leftUpperHeader{\subject}		%\subject
+\def\rightUpperHeader{\leftmark}	%\leftmark for current section
+
+
+% Do NOT modify anything from here until the beginning of the document.
+%============================== DATA PROCESSING ============================
+\ifdefstring{\LANGUAGE}{EN}
+{
+
+\def\course{Licenciatura en Matemática}
+\def\university{Pontificia Universidad Católica - Chile}
+\def\pageCounterName{PAGE} 		% In the footer will be shown this... 
+\def\pageSeparator{OUT OF} 		% ...text in addition of the page number.
+
+}
+{
+\usepackage[utf8]{inputenc}		%Tildes en caso de no usar arch
+\usepackage[spanish, es-tabla]{babel} 	%La opción es-tabla, hace que por defecto las tablas se llamen "Tabla", en vez de "Cuadro".
+\def\course{Licenciatura en Matemática}
+\def\university{Pontificia Universidad Católica - Chile}
+\def\pageCounterName{PÁGINA}		%En el pie de página aparece este contenido más el número de página
+\def\pageSeparator{DE} 			%DE, OUT OF
+
+}
+
+
+%===================== USEFUL VARIABLES  =============================
+\def\imageSize{0.6}
+
+%===================== PACKAGES TO USE  =============================
+\usepackage{amsmath} 			% Allows me the use of matrix in math mode
+\setcounter{MaxMatrixCols}{20} 		% Increases the maximum number of columns in matrix from 10 to 20.
+\usepackage{pdfpages} 			% Attach pdfs using \includepdf[pages=initial-final]{path.pdf}
+\usepackage{lastpage}			% Used to reference the last page and include it in the footer.
+\usepackage{xcolor}			% Change color of text and so on. \textcolor{color}{text} is the one I use the most.
+\usepackage{placeins} 			% Allows the use of the command \FloatBarrier
+\usepackage{setspace}			% Allows the use of the spacing environment to change the space between lines.
+\usepackage{graphicx}			% Figures addition
+\usepackage{geometry}			% Changes the geometry of the pages
+\usepackage[small, bf]{caption}		% Decreases the size of captions and turns them bold text.
+\usepackage{subcaption}			% Include subfigures.
+\usepackage{hyperref}			% Allows clickable references.
+\hypersetup{colorlinks=true, allcolors=black} 	% Colors of links
+\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape pages
+
+\usepackage{fancyhdr}			% Modify header and footer
+\usepackage{bm}				% Allows to use bold text in math mode with \bm
+\usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
+\usepackage{titlesec}			% Change title format
+
+
+%========== CHANGE TITLE FORMAT  ======================
+%\titleformat{\section}
+%{\bfseries}	% format
+%{\thesection}	% label
+%{0.3cm}		% separation between label and body
+%{}		% code preceding title body
+%[]		% code following title body
+
+
+%========== HEADER AND FOOTER CONFIGURATION ======================
+\pagestyle{fancy}
+% HEADER[EVEN PAGES]{ODD PAGES}
+% Left header
+\lhead[
+	\scriptsize{\MakeUppercase{\leftUpperHeader}} % Even pages
+]
+{
+	\scriptsize{\MakeUppercase{\leftUpperHeader}} % Odd pages
+}
+
+% Central header
+\chead[]{}
+
+% Right header
+\rhead[
+\scriptsize{\rightUpperHeader} % Even pages
+]
+{
+\scriptsize{\rightUpperHeader} % Odd pages
+}
+
+\renewcommand{\headrulewidth}{0.8pt}	% Width of the header rule
+
+% FOOTER[EVEN PAGES]{ODD PAGES}
+% Left footer
+\lfoot[]{}
+
+% Central footer
+\cfoot[
+\tiny{\pageCounterName\space\thepage\space \pageSeparator\space\pageref{LastPage}} % Even pages
+]
+{
+\tiny{\pageCounterName\space\thepage\space \pageSeparator\space\pageref{LastPage}} % Odd pages
+}
+
+% Right footer
+\rfoot[]{}
+\renewcommand{\footrulewidth}{0.8pt} %Width of the footer rule
+
+
+%================================== USER OWN FUNCTIONS ===============================================
+\newcommand{\PDEA}[1]{\cdot 10^{#1}} % Función para escribir más rápidamente multiplicaciones por potencias de 10. PDEA = Por Diez Elevado A
+
+\usepackage{xargs}	%Permite manejar argumentos opcionales en los comandos creados por el usuario
+
+%Incluir imágenes, la sintaxis es la siguiente:
+%\IncludeImage{ruta}[escalado][pie figura][etiqueta], los corchetes son opcionales
+\newcommandx*{\IncludeImage}[4][2=1, 3=, 4=]{
+	%#1 es la ruta a la imagen
+	%#2 es el escalado
+	%#3 es el pie de figura
+	%#4 es la etiqueta
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=#2\linewidth]{#1}
+		%Si se especifica pie de figura...
+		\ifblank{#3}{}{
+			\caption{#3}	
+		}
+		%Si se especifica etiqueta...
+		\ifblank{#4}{}{
+			\label{#4}	
+		}
+	\end{figure}
+	\FloatBarrier
+}
+
+
+
+%================================ DOCUMENT BEGINNING  =============================================
+\begin{document}
+%***************** TITLE PAGE (DO NOT MODIFY) ******************************
+\begin{titlepage}
+	\newgeometry{top=2cm, bottom=3.5cm}
+
+  %Logos Escuela y universidad
+	\def\logoSize{0.2}
+	\begin{figure}
+	\includegraphics[width=\logoSize\linewidth]{Image/UC COLOR-01.png}
+	\end{figure}
+
+
+	%Espacio entre logos y título
+	\vspace*{1.75cm}
+
+	%Título con interlineado aumentado
+	\begin{spacing}{2}
+	\centering{
+	\Huge{
+		\textbf{\reportTile}
+	}
+	}
+	\end{spacing}
+	
+	%Línea horizontal de la portada
+	\hrule
+	
+	%Se baja al final de la hoja
+	\vfill
+	\begin{flushright}
+	\LARGE{\writter}
+
+	\vspace{2cm}
+	
+	\Large
+	\subject\\
+	\course\\
+	\university
+	
+	\vspace{1cm}
+	
+	\today
+	\end{flushright}
+	
+\end{titlepage}
+	
+\newgeometry{top=3cm, bottom=3cm}
+
+\tableofcontents
+\cleardoublepage
+
+\section{Introducción a la Integración de Riemann}
+\label{sec:riemann-intro}
+
+\subsection{Particiones y Sumas de Riemann}
+
+\begin{definition}
+Una partición de un intervalo $[a,b] \subseteq \mathbb{R}$ es un subconjunto finito $\pi \subseteq [a,b]$ tal que $a,b \in \pi$. Denotaremos a las particiones como $\pi = \{x_0, \dots, x_n\}$ donde los puntos están ordenados, es decir $a=x_0 < x_1 < \dots < x_n = b$. Los intervalos $I_i = [x_{i-1}, x_i]$ para $i=1,\dots,n$ son llamados los intervalos de la partición. A veces identificaremos la partición con $(I_i)_{i=1,\dots,n}.$
+\end{definition}
+
+\begin{definition}
+La norma de una partición $\pi$ se define como:
+$$ ||\pi|| := \max_{i=1,\dots,n}(x_i - x_{i-1}) = \max_{I_i \in \pi} |I_i| $$
+\end{definition}
+
+\begin{definition}
+Una partición marcada de $[a,b]$ es un par $\pi^* = (\pi, \epsilon)$, donde $\pi = \{x_0, \dots, x_n\}$ es una partición de $[a,b]$, y $\epsilon = \{x_1^*, \dots, x_n^*\}$ es una colección de puntos tal que $x_i^* \in I_i$ para cada $i=1,\dots,n$. La norma de una partición marcada se define como $||\pi^*|| = ||\pi||$.
+\end{definition}
+
+\begin{definition}[Suma de Riemann]
+Sea $f:[a,b] \rightarrow \mathbb{R}$ acotada y $\pi^* = (\pi, \epsilon)$ una partición marcada. La suma de Riemann de $f$ asociada a $\pi^*$ se define como:
+$$ S_R(f, \pi^*) = \sum_{i=1}^{n} f(x_i^*)(x_i - x_{i-1}) = \sum_{I_i \in \pi} f(x_i^*) |I_i| $$
+\end{definition}
+
+\begin{definition}[Integrabilidad de Riemann]
+Dada $f:[a,b] \rightarrow \mathbb{R}$ acotada, decimos que es Riemann integrable si existe el límite:
+$$ \lim_{||\pi^*|| \rightarrow 0} S_R(f, \pi^*) $$
+Esto significa que $\exists L \in \mathbb{R}$ tal que para cualquier $\epsilon > 0$, existe $\delta = \delta(\epsilon) > 0$ tal que si $||\pi^*|| < \delta$, entonces $||S_R(f, \pi^*) - L|| < \epsilon$. Cuando este límite existe, lo llamamos la integral de Riemann de $f$ en $[a,b]$ y lo denotamos por $\int_{a}^{b} f(x)dx$.
+\end{definition}
+
+\subsection{Sumas de Darboux}
+\label{sec:darboux}
+
+\begin{definition}
+Dadas $f:[a,b] \rightarrow \mathbb{R}$ acotada y $\pi = (I_i)_{i=1,\dots,n}$ una partición de $[a,b]$, definimos:
+\begin{itemize}
+    \item $m_{I_i} := \inf_{x \in I_i} f(x)$
+    \item $M_{I_i} := \sup_{x \in I_i} f(x)$
+    \item La suma inferior de Darboux: $\underline{S}(f; \pi) := \sum_{i=1}^{n} m_{I_i}(x_i - x_{i-1}) = \sum_{I_i \in \pi} m_{I_i} |I_i|$
+    \item La suma superior de Darboux: $\overline{S}(f; \pi) := \sum_{i=1}^{n} M_{I_i}(x_i - x_{i-1}) = \sum_{I_i \in \pi} M_{I_i} |I_i|$
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Como $m_{I_i} \le f(x) \le M_{I_i}$ para todo $x \in I_i$, para cualquier partición marcada $\pi^* = (\pi, \epsilon)$, se tiene que:
+$$ \underline{S}(f; \pi) \le S_R(f; \pi^*) \le \overline{S}(f; \pi) $$
+\end{remark}
+
+\begin{definition}[Refinamiento]
+Una partición $\pi'$ de $[a,b]$ es un refinamiento de otra partición $\pi$ si $\pi \subset \pi'$. Equivalentemente, si para todo $J_i \in \pi'$ existe $I_i \in \pi$ tal que $J_i \subseteq I_i$.
+\end{definition}
+
+\begin{proposition}
+Sea $f:[a,b] \rightarrow \mathbb{R}$ acotada. Entonces:
+\begin{itemize}
+    \item Si $\pi \subseteq \pi'$ son particiones de $[a,b]$, entonces $\underline{S}(f;\pi) \le \underline{S}(f;\pi')$ y $\overline{S}(f;\pi) \ge \overline{S}(f;\pi')$.
+    \item Si $\pi_1, \pi_2$ son particiones de $[a,b]$ cualesquiera, entonces $\underline{S}(f;\pi_1) \le \overline{S}(f;\pi_2)$.
+\end{itemize}
+\end{proposition}
+
+\subsection{Integrales de Darboux}
+\label{sec:darboux-integrals}
+
+\begin{definition}
+Sea $f:[a,b] \rightarrow \mathbb{R}$ acotada. Definimos:
+\begin{itemize}
+    \item La integral superior (de Darboux) de $f$ como:
+    $$ \overline{\int_{a}^{b}} f(x)dx := \inf_{\pi \text{ part. de } [a,b]} \overline{S}(f; \pi) $$
+    \item La integral inferior (de Darboux) de $f$ como:
+    $$ \underline{\int_{a}^{b}} f(x)dx := \sup_{\pi \text{ part. de } [a,b]} \underline{S}(f; \pi) $$
+\end{itemize}
+\end{definition}
+
+\begin{theorem}
+Sea $f:[a,b] \rightarrow \mathbb{R}$ acotada. Entonces:
+$$ \underline{\int_{a}^{b}} f(x)dx = \lim_{||\pi|| \rightarrow 0} \underline{S}(f; \pi), \quad \overline{\int_{a}^{b}} f(x)dx = \lim_{||\pi|| \rightarrow 0} \overline{S}(f; \pi) $$
+Equivalentemente, para cualquier sucesión $(\pi_n)_{n \in \mathbb{N}}$ de particiones de $[a,b]$ tal que $||\pi_n|| \rightarrow 0$ cuando $n \rightarrow \infty$, se tiene que:
+$$ \underline{\int_{a}^{b}} f(x)dx = \lim_{n \rightarrow \infty} \underline{S}(f; \pi_n) \quad \text{y} \quad \overline{\int_{a}^{b}} f(x)dx = \lim_{n \rightarrow \infty} \overline{S}(f; \pi_n) $$
+\end{theorem}
+
+\begin{theorem}[Criterios de Integrabilidad]
+Dada $f:[a,b] \rightarrow \mathbb{R}$ acotada, las siguientes afirmaciones son equivalentes:
+\begin{enumerate}
+    \item $f$ es integrable Darboux, es decir, $\underline{\int_{a}^{b}} f(x)dx = \overline{\int_{a}^{b}} f(x)dx$.
+    \item $f$ es Riemann integrable.
+    \item $\lim_{||\pi|| \rightarrow 0} (\overline{S}(f; \pi) - \underline{S}(f; \pi)) = 0$.
+    \item Para cualquier sucesión $(\pi_n)_{n \in \mathbb{N}}$ de particiones de $[a,b]$ tal que $||\pi_n|| \rightarrow 0$, se tiene que $\lim_{n \rightarrow \infty} (\overline{S}(f; \pi_n) - \underline{S}(f; \pi_n)) = 0$.
+    \item Existe una sucesión $(\pi_n)_{n \in \mathbb{N}}$ de particiones de $[a,b]$ tal que $\lim_{n \rightarrow \infty} (\overline{S}(f; \pi_n) - \underline{S}(f; \pi_n)) = 0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Las integrales en el sentido de Darboux (1) y el de Riemann (2) coinciden.
+\end{remark}
+
+\begin{proposition}
+\begin{itemize}
+    \item Si $f:[a,b] \rightarrow \mathbb{R}$ es monótona, entonces es Riemann integrable.
+    \item Si $f:[a,b] \rightarrow \mathbb{R}$ es continua, entonces es Riemann integrable.
+\end{itemize}
+\end{proposition}
+
+\subsection{Medida de un conjunto}
+\label{sec:measure}
+
+\begin{definition}
+Decimos que un conjunto $I \subseteq \overline{\mathbb{R}} := \mathbb{R} \cup \{-\infty, \infty\}$ es un intervalo si satisface que para todo $x,y \in I$, se tiene que $z \in I$ para todo $z$ tal que $\min\{x,y\} \le z \le \max\{x,y\}$.
+\end{definition}
+
+\begin{definition}
+La medida de un intervalo $I \subseteq \overline{\mathbb{R}}$ se define como $|I| := \sup I - \inf I$. Se define $|\emptyset|:=0$ y $|x|:=0$ para un punto.
+\end{definition}
+
+\begin{property}
+Si $I \subseteq J$ son intervalos, entonces $|I| \le |J|$.
+\end{property}
+
+\begin{definition}
+Un conjunto $E \subseteq \mathbb{R}^d$ se dice de medida nula si, dado $\epsilon > 0$, existe una sucesión de intervalos $(I_n)_{n \in \mathbb{N}}$ de $\mathbb{R}^d$ tal que $E \subseteq \bigcup_{n \in \mathbb{N}} I_n$ y $\sum_{n \in \mathbb{N}} |I_n| < \epsilon$.
+\end{definition}
+
+\begin{theorem}
+Sea $f:[a,b] \rightarrow \mathbb{R}$ acotada. Entonces, $f$ es Riemann integrable si y sólo si su conjunto de discontinuidades tiene medida nula.
+\end{theorem}
+
+\subsection{Limitaciones de la Integral de Riemann}
+\label{sec:limitations}
+La integral de Riemann tiene algunas limitaciones:
+\begin{enumerate}
+    \item Solo está definida para funciones acotadas y en intervalos $[a,b]$ acotados. Las integrales impropias resuelven parcialmente este problema.
+    \item La convergencia puntual no siempre garantiza la intercambiabilidad del límite y la integral. Es decir, $f_n \rightarrow f$ puntualmente no implica que $\lim \int f_n = \int \lim f_n$. Ejemplos como $f_n(x) = n\chi_{(0, 1/n]}$ en $[0,1]$ muestran esta limitación.
+\end{enumerate}
+
+\begin{theorem}
+Si $(f_n)_{n \in \mathbb{N}} \subseteq R([a,b])$ y $f_n \rightarrow f$ uniformemente en $[a,b]$, entonces $f \in R([a,b])$ y $\lim_{n \rightarrow \infty} \int_{a}^{b} f_n = \int_{a}^{b} f$.
+\end{theorem}
+
+\subsection{Teorema Fundamental del Cálculo}
+\label{sec:ftc}
+
+\begin{theorem}[Teorema Fundamental del Cálculo]
+Si $f \in R([a,b])$ es continua en $x_0 \in [a,b]$, entonces $F(x) := \int_{a}^{x} f(t)dt$ es derivable en $x_0$ y $F'(x_0) = f(x_0)$. En particular, $F$ es derivable en $x$ y $F'(x) = f(x)$ para todo $x$ salvo un conjunto de medida nula.
+\end{theorem}
+
+\begin{note}
+Este "casi" no puede removerse. Hay contraejemplos notables:
+\begin{itemize}
+    \item \textbf{Teorema de Hankel (1871):} Existe $f \in R([a,b])$ tal que $F(x) = \int_{a}^{x} f(t)dt$ no es derivable para ningún punto en un subconjunto denso de $[a,b]$.
+    \item \textbf{Teorema de Volterra (1881):} Existe una función $f:[a,b] \rightarrow \mathbb{R}$ que es derivable en $[a,b]$ y su derivada $f'$ es acotada en $[a,b]$, pero $f' \notin R([a,b])$.
+\end{itemize}
+\end{note}
+
+\section{Extendiendo la Integral de Riemann}
+\label{sec:extending-riemann}
+
+Una manera de extender el concepto de la integral es a través de funciones escalonadas.
+
+\begin{definition}[Función Escalonada]
+Una función $\phi:[a,b] \rightarrow \mathbb{R}$ se dice escalonada si existe una partición $\pi = \{x_0, \dots, x_n\}$ de $[a,b]$ y constantes $c_1, \dots, c_n \in \mathbb{R}$ tales que $\phi|_{(x_{i-1}, x_i)} \equiv c_i$ para todo $i=1,\dots,n$.
+\end{definition}
+
+Cualquier función escalonada se puede escribir como una combinación lineal de funciones características de intervalos. La integral de una función escalonada se define como:
+$$ \int_{a}^{b} \phi(x)dx = \sum_{i=1}^{n} c_i |I_i| $$
+
+\subsection{La Función Longitud}
+\label{sec:length-function}
+
+Sea $\mathcal{I}$ la colección de todos los intervalos en $\mathbb{R}$. La función longitud $\lambda:\mathcal{I} \rightarrow [0, \infty]$ se define como $\lambda(I) := |I|$.
+
+\begin{property}
+La función longitud $\lambda$ tiene las siguientes propiedades:
+\begin{itemize}
+    \item $\lambda(\emptyset) = 0$.
+    \item \textbf{Monotonía:} Si $I_1, I_2 \in \mathcal{I}$ y $I_1 \subseteq I_2$, entonces $\lambda(I_1) \le \lambda(I_2)$.
+    \item \textbf{Aditividad Finita:} Si $I \in \mathcal{I}$ tal que $I = \cup_{i=1}^{n} J_i$ con $J_i \in \mathcal{I}$ disjuntos, entonces $\lambda(I) = \sum_{i=1}^{n} \lambda(J_i)$.
+    \item \textbf{Aditividad Contable ($\sigma$-aditividad):} Si $I \in \mathcal{I}$ es tal que $I = \cup_{i=1}^{\infty} I_i$ con $(I_i)_{i \in \mathbb{N}} \subseteq \mathcal{I}$ disjuntos, entonces $\lambda(I) = \sum_{i=1}^{\infty} \lambda(I_i)$.
+    \item \textbf{$\sigma$-subaditividad:} Si $I \in \mathcal{I}$ verifica $I \subseteq \cup_{i=1}^{\infty} I_i$, donde $(I_i)_{i \in \mathbb{N}}$ son intervalos (no necesariamente disjuntos), entonces $\lambda(I) \le \sum_{i=1}^{\infty} \lambda(I_i)$.
+    \item \textbf{Invarianza por traslaciones:} $\lambda(I+x) = \lambda(I)$ para todo $x \in \mathbb{R}$.
+    \item $\lambda(\{x\}) = 0$ para todo $x \in \mathbb{R}$.
+\end{itemize}
+\end{property}
+
+\end{document}
