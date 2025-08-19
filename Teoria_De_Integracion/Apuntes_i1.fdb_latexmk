@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1755630411.78253 "Apuntes_i1.tex" "Apuntes_i1.pdf" "Apuntes_i1" 1755630413.1915 2
+["pdflatex"] 1755631793.49403 "Apuntes_i1.tex" "Apuntes_i1.pdf" "Apuntes_i1" 1755631794.84949 2
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -125,10 +125,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1755571328 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "Apuntes_i1.aux" 1755630413.04987 2345 08b1e83171c80e75e985ebf078af8b2a "pdflatex"
-  "Apuntes_i1.out" 1755630413.05357 1837 44fcdb2b241f521611e1c89beea79766 "pdflatex"
-  "Apuntes_i1.tex" 1755630410.1743 16700 94497f8cfa10a2a57f36d234e12193d7 ""
-  "Apuntes_i1.toc" 1755630413.05395 858 bc7570f90a77fb8e89ec615f2134f492 "pdflatex"
+  "Apuntes_i1.aux" 1755631794.71571 2345 08b1e83171c80e75e985ebf078af8b2a "pdflatex"
+  "Apuntes_i1.out" 1755631794.71945 1837 44fcdb2b241f521611e1c89beea79766 "pdflatex"
+  "Apuntes_i1.tex" 1755631792.43452 16701 9988cff25387c11f9e1c3484c1f5ccc8 ""
+  "Apuntes_i1.toc" 1755631794.72002 858 bc7570f90a77fb8e89ec615f2134f492 "pdflatex"
   "Image/UC COLOR-01.png" 1755624842.2779 245758 459ba184d8fdf62e0a8127debec29bf0 ""
   (generated)
   "Apuntes_i1.aux"

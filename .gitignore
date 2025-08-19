@@ -1,0 +1,14 @@
+# Archivos generados por LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.synctex.gz
+*.toc
+*.fdb_latexmk
+*.synctex.gz(busy)
