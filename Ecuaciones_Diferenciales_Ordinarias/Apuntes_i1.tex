@@ -58,12 +58,31 @@
 \usepackage{subcaption}			% Include subfigures.
 \usepackage{hyperref}			% Allows clickable references.
 \hypersetup{colorlinks=true, allcolors=black} 	% Colors of links
-\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape pages
-
+\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{fancyhdr}			% Modify header and footer
 \usepackage{bm}				% Allows to use bold text in math mode with \bm
 \usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
-\usepackage{titlesec}			% Change title format
+\usepackage{titlesec}
+
+
+
+\theoremstyle{definition} % hace que el cuerpo sea upright (no itálico)
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{note}[theorem]{Nota}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
+ % Change title format
 
 
 %========== CHANGE TITLE FORMAT  ======================
@@ -239,7 +258,6 @@ Un sistema lineal es:
     \item **Invariancia por traslación:** Si $\phi$ es una solución de un sistema autónomo, entonces $\overline{\phi}(t) = \phi(t-t_0)$ también es una solución para cualquier constante $t_0$.
     \item **Reducción a un sistema autónomo de primer orden:** Cualquier sistema de EDOs se puede reducir a un sistema autónomo del primer orden. Para un sistema de orden $k \ge 2$, se definen nuevas variables $u_0=y, u_1=y', \dots, u_{k-1}=y^{(k-1)}$. Esto lleva a un sistema de primer orden. Si se introduce una variable adicional $u_k = t$, se puede obtener un sistema de primer orden autónomo.
 \end{enumerate}
-
 \section{Problemas de Cauchy}
 \label{sec:cauchy}
 
@@ -250,14 +268,21 @@ donde $t_0 \in I$ es el punto inicial y $y_0 \in \mathbb{R}^m$ es el valor inici
 \end{definition}
 
 Para EDOs de orden superior, el problema de Cauchy incluye condiciones iniciales para la función y sus primeras $k-1$ derivadas.
-$$\begin{cases} y^{(k)}(t) = f(t, y(t), y'(t), \dots, y^{(k-1)}(t)) & \forall t \in I \\ y(t_0) = y_0, y'(t_0) = y_1, \dots, y^{(k-1)}(t_0) = y_{k-1} \end{cases}$$
+
+\[
+\begin{cases} y^{(k)}(t) = f(t, y(t), y'(t), \dots, y^{(k-1)}(t)) & \forall t \in I \\ y(t_0) = y_0, y'(t_0) = y_1, \dots, y^{(k-1)}(t_0) = y_{k-1} \end{cases}
+\]
 
 \section{Resolución para EDOs de Primer Orden}
 \label{sec:resolucion-explícita}
 
 \subsection{Variables Separables}
 Una EDO de variables separables tiene la forma $y' = g(t)/h(y)$, donde $g$ y $h$ son funciones continuas y $h(y) \ne 0$. La solución se encuentra al separar las variables e integrar:
-$$h(\phi(t))\phi'(t) = g(t) \Rightarrow \int h(y)dy = \int g(t)dt + C$$
+
+\[
+  h(\phi(t))\phi'(t) = g(t) \Rightarrow \int h(y)dy = \int g(t)dt + C
+\]
+
 Esto da una representación implícita de la solución.
 
 \subsection{EDOs Lineales de Primer Orden}
@@ -280,4 +305,282 @@ El intervalo de existencia de la solución puede ser finito. Por ejemplo, en el 
 
 Es importante notar que las soluciones pueden no ser únicas si $f(y_0)=0$ en la condición inicial.
 
+\[
+  \text{POR COMPLETAR}
+\]
+
+\section{Problema de Cauchy: existencia y unicidad}
+
+		Sea $\Omega \subset \R^{n+1}$ un conjunto abierto, que por lo general será de la forma $ \Omega = I \times \widetilde{\Omega}$, con $I \subset \R$ un intervalo abierto y $\widetilde{\Omega}\subset \R^{n}$ un conjunto abierto. Dada una función
+		\[ f \in C (\Omega;\R^n) \]
+		\noindent consideramos nuevamente el problema de Cauchy
+		\begin{align*} (PC) \ \begin{cases}
+			 y'(x) = f(x,y(x)), \quad \forall x \in I \text{ con } & x_0 \in I \text{ y} \\
+			 y(x_0) = y_0, & y \in \R^n
+		\end{cases} \end{align*}
+
+		\noindent El (PC) puede ser formulado de manera equivalente, pero "relativamente" más débil:
+
+		\begin{lemma}
+			Sea $\Omega \subset \R^{n+1}$ un conjunto abierto de la forma $\Omega = I \times \widetilde{\Omega},\ I \subset \R$ intervalo abierto y $\widetilde{\Omega} \subset \R^n$ conjunto abierto. Dados $x_0 \in I,\ y_0 \in \R^n$ y $f \in C(\Omega;\R^n)$, una función $\varphi : I \to \R^n$ es solución de (PC) si y sólo si:
+			\begin{enumerate}
+				\item $\varphi \in C(I;\R^n)$;
+
+				\item $(x,\varphi(x)) \in \Omega \quad \forall x \in I$;
+
+				\item $\varphi (x) = y_0 + \int_{x_0}^{x} f(s,\varphi(s)) ds \quad \forall x \in I$.
+			\end{enumerate}
+			(i, ii y iii es formulación integral del (PC)).
+		\end{lemma}
+
+		\begin{remark}
+			La formulación integral nos permite estudiar el (PC) desde una perspectiva más abstracta. Supongamos por ahora que
+			\[ \Omega = \R^{n+1},\ I = \R,\ \widetilde{\Omega} = \R^n \text{ y } f \in C(\R^{n+1};\R^n). \]
+		\end{remark}
+
+		\noindent Dados $y_0 \in \R^n$ y $x_0 \in \R$, consideramos la aplicación $T: C(\R;\R^n) \to C(\R;\R^n)$.
+		\[ T(\varphi)(x) = y_0 + \int_{x_0}^{x} f(s,\varphi(s)) ds \quad \forall x \in \R \]
+		
+		\noindent Por el lema precedente, es evidente que $\varphi \in C(\R;\R^n)$ es solución de (PC) si y sólo si $T(\varphi) \equiv \varphi$ (i.e., $\varphi$ es punto fijo de $T$).
+
+Sea $\Omega \subset \R^{n+1},\ \Omega = I \times \widetilde{\Omega}$ con $I \subset \R$ intervalo abierto y $\widetilde{\Omega} \subset \R^n$ conjunto abierto.
+\[ (PC) \ \begin{cases}
+	y'(x) = f(x, y(x))\quad \forall x \in I, \\
+	y(x_0) = y_0 \quad (x_0 \in I, y_0 \in \R^n)
+\end{cases} \]
+
+\begin{enumerate}
+	\item Resolver localmente el problema (PC) corresponde a encontrar un intervalo $J \subset I$ y una función $\varphi \in C^1 (J;\R^n)$ tales que:
+	\[ x_0 \in J,\ (x,\varphi(x)) \in \Omega \ \forall x \in J,\ \varphi'(x) = f(x,\varphi(x))\ \forall x \in J; \]
+
+	\item Si $J_1,\ J_2 \subset I$ son intervalos abiertos que contienen a $x_0$, y $\phi_1 \in C^1(J_1;\R^n)$ y $\phi_2 \in C^1(J_2; \R^n)$ son soluciones locales de (PC), decimos que $\phi_2$ extiende a $\phi_{1}$ es una restricción de $\phi_{2}$;
+
+	\item Una solución es \underline{maximal} cuando no admite extensiones;
+
+	\item Una solución local, definida sobre $J \subset I$, es global si $J = I$.
+\end{enumerate}
+
+\noindent \textbf{Recuerdo.} Dados $a<b$ números reales, el espaacio vectorial
+\[ C([a,b];\R^n) \]
+\noindent dotado de la norma $\| \varphi \|_{\infty} = \max_{x \in [a,b]} |\varphi(x)| \quad \forall \varphi \in C([a,b];\R^n)$, es un espacio de Banach.
+
+\begin{itemize}
+	\item Todo sub-conjunto cerradeo de $(C([a,b];\R^n);\| \cdot \|_{\infty})$ es un espacio métrico completo.
+
+	\item Todo sub-conjunto vectorial cerrado de $(C([a,b];\R^n);\| \cdot \|_{\infty})$ es un espacio de Banach.
+\end{itemize}
+
+
+\subsection{Aplicaciones contractivas: teorema del punto fijo de Baanch}
+
+\begin{definition}[aplicación contractiva]
+	Sea $(X,d)$ un espacio métrico completo. Decimos que una aplicación $T: X \to X$ es \underline{contractiva} si existe $\alpha \in [0,1)$ tal que
+	\[ d(T(x),T(y)) \leq \alpha d(x,y) \quad \forall x,y \in X \]
+\end{definition}
+
+\begin{theorem}[punto fijo de Banach]
+	Sea $(X,d)$ un espacio métrico completo y $T: X \to X$ una aplicación contractiva. Entonces, existe un único $\hat{x} \in X$ tal que $T(\hat{x}) = \hat{x}$.
+\end{theorem}
+
+
+Funciones Lipschitz: $\Omega \subset \R^{n+1},\ (x,y) \in \Omega,\ x \in \R$, y $y \in \R^n$
+
+\begin{definition}[función globalmente Lipschitz]
+	Sea $\Omega \subset \R^{n+1}$ abierto, y $f : \Omega \to \R^n$ una función. Decimos que $f$ es globalmente Lipschitz respecto a la variable $y$ en $\Omega$ si existe una constante $L>0$ tal que
+	\[ |f(x,y_1) - f(x,y_2)| \leq L | y_1 - y_2 | \quad \forall (x,y_1), (x,y_2) \in \Omega \]
+\end{definition}
+
+\begin{note}
+	Lip$(y;\Omega)$ denota el espacio vectorial de todas las funciones $f:\Omega\to\R^n$ que son globalmente Lipschitz respecto a $y$ en $\Omega$.
+\end{note}
+
+\begin{definition}[función localmente Lipschitz]
+	Sea $\Omega \subset \R^n$ abierto. Se dice que una función $f: \Omega \to \R^n$ es \underline{localmente} Lipschitz respecto a la variable $y$ en $\Omega$ si: para cualquier punto $(\overline{x}, \overline{y})\in\Omega$, existe $\varepsilon>0$ y una constante $L>0$ tales que $B((\overline{x},\overline{y}),\varepsilon) \subset \Omega$, y 
+	\[ |f(x,y_1) - f(x,y_2)| \leq L |y_1 - y_2| \quad \forall (x,y_1),(x,y_2) \in B((\overline{x},\overline{y},\varepsilon). \]
+\end{definition}
+
+\begin{note}
+	$\text{Lip}_{\textit{loc}}(y;\Omega)$.
+\end{note}
+
+\begin{prop}~
+	\begin{enumerate}
+		\item Si $f \in \text{ Lip}(y;\Omega)$, entonces $f$ es uniformemente continua respecto a $y$ en $\Omega$: $(\forall \varepsilon > 0)(\exists \delta > 0)(\forall (x,y_1),(x,y_2) \in \Omega,$
+		\[ |y_1-y_2|\leq\delta \implies |f(x,y_1)-f(x,y_2)| \leq \varepsilon \]
+
+		\item Si $f\in \text{ Lip}_{\textit{loc}}(y;\Omega)$, entonces $f$ es continua respecto a la variable $y$ en $\Omega$: para todo $(\overline{x},\overline{y})\in\Omega$:
+		\[ (\forall \varepsilon > 0)(\exists \delta > 0)\ |y-\overline{y}|\leq \delta \implies (\overline{x},\overline{y})\in\Omega \text{ y } |f(\overline{x},\overline{y}) - f(\overline{x},y)| \leq \varepsilon \]
+	\end{enumerate}
+\end{prop}
+
+\begin{remark}
+	En general, Lip$(y;\Omega) \not\subseteq C(\Omega;\R^n)$. Por ejemplo,
+	\[ f(x,y) = \begin{cases}
+		0 \text{ si } x \leq 0 \\
+		y \text{ si } x > 0
+	\end{cases} \]
+	pertenece a Lip$(y;\R^2)$, pero es discontinua en el conjunto $\{ (x,y) \in \R^2 \ | \ x = 0 \}$. Recíprocamente, la continuidad ("en pareja") de una función no implica ningún tipo de Lipschitzianidad (local o global).
+\end{remark}
+
+\begin{eg}
+	$\hat{f}(x,y) = \sqrt{|y|}\quad \forall (x,y) \in \R^2$. Vemos que no es localmente Lipszhitz: $\hat{f} \not\in \text{ Lip}_{\textit{loc}}(y;\R^2)$: por contradicción, debiese existir $\varepsilon > 0$ tal que $f \in \text{ Lip}(y; B((0,0),\varepsilon))$. Por ende, existe una constante $L>0$ tal que
+	\begin{align*}
+		\left|f(0,0)-f \left(0,\frac{\varepsilon}{n}\right)\right| & \leq L \cdot \frac{\varepsilon}{n} \quad \forall n \geq 2, \\
+		& \iff \sqrt{\frac{\varepsilon}{n}} \leq \frac{L \varepsilon}{n} \\
+		& \iff \sqrt{n} \leq L \sqrt{\varepsilon} \quad \forall n \geq 2,
+	\end{align*}
+	\noindent lo cual es absurdo!
+\end{eg}
+
+\begin{theorem}
+	Sea $\Omega\subset\R^{n+1}$ un conjunto abierto y
+	\[ f = (f_1,f_2,\dots,f_n):\ \Omega \to \R^n \]
+	\noindent una función tal que las derivadas parciales $\frac{\partial f_i}{\partial y_j}\ \forall i,j \in \{1,\dots,n\}$ existen y son continuas en $\Omega$. Entonces:
+	\begin{enumerate}
+		\item $f \in \text{Lip}_{\textit{loc}}(y;\Omega)$;
+
+		\item Si, además, $\Omega$ es convexo, $f \in \text{Lip}(y;\Omega)$ si y sólo si
+		\[ \sup_{(x,y)\in\Omega} \left| \frac{\partial f_i}{\partial y_j}(x,y) \right| < \infty \quad \forall i,j \in \{ 1,\dots, n \} \]
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+	Consideramos las funciones $f_1,f_2,f_3:\R^2 \to \R$ definidos por:
+	\[ f_1(x,y)  = \frac{1}{1+y^2},\ f_2(x,y) = \frac{x}{1+y^2},\ f_3(x,y)= \begin{cases}
+		xy \quad \text{si } x>0; \\
+		y \quad \text{ si } x\leq 0.
+	\end{cases} \]
+	Se puede demostrar que:
+	\begin{enumerate}
+		\item $f_1 \in \text{Lip}(y;\R^2)$;
+		
+		\item $f_2 \in \text{Lip}(y;\R^2)$, pero $f_2 \in \text{Lip}(y;\Omega)$ para cualquir dominio $\Omega \subset \R^2$ que sea acorada en al dirección de $x$;
+
+		\item $f_3 \in \text{Lip}(y;\R^2)$ y $f_3 \in \text{Lip}(y;\Omega)$ para cualquier dominio $\Omega \subset \R^2$ que sea acotado en la dirección de $x$. No obstante, $\frac{\partial f_3}{\partial y}$ \underline{no} es continua en $\R^2$.
+	\end{enumerate}
+\end{remark}
+
+\begin{theorem}
+	Sea $\Omega \subset \R^{n+1}$ un conjunto abierto. Si $f \in \text{Lip}_{\text{loc}}(y;\Omega)$ y $K \subset \Omega$ es un conjunto compacto tal que $\sup_{(x,y) \in K} |f(x,y)| < \infty$, entonces $f \in \text{Lip}(y;K)$.
+\end{theorem}
+
+\begin{theorem}[Picard-Lindelöf]
+	Sea $\Omega \subset \R^{n+1}$ un conjunto abierto y $f\in C(\Omega; \R^n) \cap \text{Lip}_{\text{loc}}(y;\Omega)$. Entonces, para cada $(x_0,y_0) \in \Omega$, existe un $\delta > 0$ tal que, si denotamos
+	\[ I_{\delta} = [x_0 - \delta, x_0 + \delta], \]
+	\noindent el problema de Cauchy
+	\[ (PC)\ \begin{cases}
+		y'(x) = f(x,y(x))\quad \forall x \in I_{\delta}, \\
+		y(x_0) = y_0
+	\end{cases} \]
+	\noindent admite una única solución.
+\end{theorem}
+
+\begin{proof}
+	Como $\Omega$ es abierto y $(x_0,y_0) \in \Omega$, existen $a_0>0$ y $b_{0}>0$ tal que, si ponemos
+	\[ R = [x_0-a_0,x_{0}-a_{0}] \times \overline{B(y_0,b_0)}, \]
+	entonces $R \subset \Omega$ y $f \in \text{Lip}(y;R)$.
+	\begin{itemize}
+		\item Sea $L>0$ una constante de Lipschitsz para $f$ en $R$ (respecto a $y$):
+		\[ |f(x,y_{1}) - f(x,y_{2})| \leq L |y_{1} - y_{2}|\quad \forall (x,y_{1}),(x,y_{2})\in R. \]
+
+		\item Denotemos por $M = \max_{(x,y)\in R} |f(x,y)|$.
+	\end{itemize}
+	Fijemos un número $\delta>0$ tal que 
+	\[ 0 < \delta < \min \left\{a_0, \frac{b_0}{M}, \frac{1}{L} \right\} \]
+	y consideremos el conjunto:
+	\[ X = \{ \varphi \in C(I_{\delta};\R^n) \ \big{|} \ |\varphi(x) - y_{0}| \leq b_{0} \quad \forall x \in I_{\delta} \} \]  
+	donde $(X,d)$ es un espacio métrico completo con la distancia usual en $C(I_{\delta},\R^n)$. \\
+	Definimos la aplicación $T: X \to C(I_{\delta};\R^n)$ por
+	\[ T(\varphi)(x) = y_{0} + \int_{x_{0}}^{x} f(s,\varphi(s))ds \quad \forall \varphi \in X,\ \forall x \in I_{\delta}. \]
+	Notemos que, dado $\varphi \in X, \ \varphi$ es solución de (PC) en $I_{\delta}$ si y sólo si $\varphi$ es un punto fijo de la aplicación $T$ en $X$.
+	\[ \varphi \in C(I_{\delta};\R^n)\ : \ (x,\varphi(x)) \in \Omega \quad \forall x \in I_{\delta};\ \varphi(x_{0})=y_{0} \]
+	\textbf{PDQ:} $|\varphi(x)-y_{0}| \leq b_{0}\quad \forall x \in I_{\delta}$.
+
+	\begin{proof}
+		Por contradicción, supongamos que $\exists \hat{x} \in I_{\delta}:\ |\varphi(x)-y_{0}| > b_{0}$. Por continuidad, existe $\hat{x}_0 \in I_{\delta}$ tal que 
+		\[ |\varphi(\hat{x}_{0} - y_{0}| = b_{0} \text{ y } |\varphi(x) -y_{0}\quad x \in (x_{0},\hat{x}_0). \]
+		\begin{align*}
+			b_{0} & = |\varphi(\hat{x}_0)-y_{0}| \\ 
+			& = \left| \int_{x_0}^{\hat{x}_0} f(s,\varphi(s))ds \right| \\
+			& \leq \left| \int_{x_0}^{\hat{x}_0 } |f(s,\varphi(s))| ds \right| \\
+			& \leq M |\hat{x}_0 - x_{0}| \leq M \delta < b_0 
+		.\end{align*}
+	\end{proof}
+
+	\noindent Dada $\varphi \in X$, ciertamente $T(\varphi) \in C(I_{\delta};\R^n)$. Además, $\forall x \in I_{\delta}$,
+	\begin{align*}
+		|T(\varphi)(x)-y_{0}| & = \left| \int_{x_{0}}^{x} f(s,\varphi(s))ds \right| \\ 
+		& \leq \left| \int_{x_{0}}^{x} |f(s,\varphi(s))ds| \right| \\
+		& \leq M |x-x_{0}| \leq M\delta < b_0
+	.\end{align*}
+	entonces, $T(\varphi) \in X$.
+	Demostremos ahora que $T$ es una contracción: dados $\varphi,\psi \in X$, 
+	\begin{align*}
+		|T(\varphi)(x)-T(\psi)(x)| & = \left| \int_{x_{0}}^{x} (f(s,\varphi(s))-f(s,\psi(s)))ds \right| \\
+		& \leq \left| \int_{x_{0}}^{x} |f(s,\varphi(s))-f(s,\psi(s))| ds \right| \\
+		& \leq L \left| \int_{x_{0}}^{x}|\varphi(s)-\psi(s)|ds \right| \\
+		& \leq L|x-x_{0}| \| \varphi - \psi_0 \|_{\infty} \leq L \delta \| \varphi - \psi \|_{\infty},
+	\end{align*}
+	con $L\delta<1$. Luego, $T: X \to X$ es una contracción, y entonces admite un único punto fijo $\hat{\varphi} \in X$, que constituye la única solución del (PC) en $I_{\delta}$. 
+\end{proof}
+ 
+\begin{theorem}[Picard-Lindelöf para EDOs de orden superior] 
+  Sea $\Omega \subset \R^{n+1}$ un conjunto abierto y $g \in C(\Omega;\R)\cap lip_{loc}(y,y',\cdots, y^{n-1};\R)$. dado cualquier punto $(x_0,y_0,y'_0,\cdots,y_0^{n-1})\in \Omega$, existe $\delta > 0$ tal que, si ponemos $I_{\delta}=[x_i -\delta, x_0+ \delta]$, el problema de Cauchy
+  \[
+    \begin{cases}
+      y^{m}(x)=g(x,y(x),y'(x),\ldots,y^{n-1}(x)) \quad \forall x \in I_{\delta} \\
+      y(x_0)=y_0, y'(x_o)=y'_o,\ldots, y^{n-1}(x_o)=y_0^{n-1},
+    \end{cases}
+  \]
+       
+  admite una única solución.
+
+\end{theorem}
+
+\begin{example}[Ecuaciones integrales] 
+    Sea $a<b$ números reales, $I=[a,b], f\in C(I;\R), k\in C(I\times I:\R)$ y $\lambda \in \R$ elementos dados. El problema de Volterra (de segunda especie) consiste en hallar una función $\varphi_{\lambda}\in C(I;\R)$ tal que 
+  \[
+    \varphi_{\lambda}(x)=f(x)+\lambda\int_{a}^{x}k(x,t)\varphi_{\lambda}(t)dt.\quad \forall x \in [a,b].
+  \]
+\end{example}
+
+Un poco más de análisis Funcional.
+Recordamos que en cualquier espacio métrico, un sub-conjunto es compacto si y sólo si es secuecialmente compacto.
+
+\begin{definition}
+  Sean $a<b$ números reales, $I=[a,b]$ Dada una familia de funciones $  F\subset C(I;\R)$, decimos que
+  \begin{enumerate}
+    \item $F$ es relativamente compacto si $\overline{F}$ es compacto, vale decir para cualquier sucesión $(\varphi_n)_{n\in \N} \subset F$, existen $\varphi \in C(I;\R)$ y una sub-sucesión $(\varphi_{n}_k)_{k\in \N}$ tales que $\varphi_{n}_k \xrightarrow{k\to \infty}\varphi$ es $C(I;\R)$
+    \item $F$ es equicontinua si $(\forall \epsilon >9)(\exists \delta > 0)(\forall x_1,x_2 \in I) \quad |x_1-x_2|<\delta \Rightarrow |\varphi(x_1)-\Phi(x_2)|<\epsilon \forall \varphi \in F$ 
+    \item $F$ es acotada si $\sup_{\varphi \in F}|\varphi|_{\infty} < \infty $ 
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Arzela-Ascoli] 
+  Sean $a<b$ números reales y $I=[a,b]$. Dada una familia $F\subset C(I;\R)$, se tiene que $F$ es relativamente compacto si y sólo si $F$ es equicontinua y acotada.
+\end{theorem}
+
+\begin{theorem}[Punto fijo de Brower] 
+  Sea $K\subset \R^n$ un conjunto compacto, conexo y no-vácio. Sea $T:K\rightarrow K$ una aplicación continua. Entonces existe, al menos, un punto fijo de $T$ en $K$
+\end{theorem}
+
+\begin{theorem}[Punto fijo de Schauder]
+  Sea $\mathcal{X}$ un espacio de Banach sobre $\R$, y $K\subset \mathcal{X}$ un conjunto conexo, cerrado, acotado y no vacío. Consideremos una aplicación $T:K\rightarrow K$  continua y tal que $T(K)$ es relativamente conpacto, Entonces existe, al menos, un punto fijo de $T$ en $K$.
+\end{theorem}
+
+\begin{remark}
+  $T(k)$ es relativamente compactio si y sólo si $\overline{T(K)}$ es compacto, si y sólo si cualquier sucesión $(X_n)_{n\in \N}\subset \mathcal{X}$ resulta que $(T(X_n))_{n\in \N}$ admite una sub-sucesión convergente (a un límite que no necesariamente pertenece a $T(K)$).
+\end{remark}
+\begin{theorem}[Peano] Sea $\Omega \subset \R^{n+1}$ un conjunto abierto y $f \in C(\Omega;\R^n)$. Entonces, para cualquier $(x_0,y_0)\in \Omega$, existe $\delta>0$ tal que, si ponemos $I_{\delta}=[x_o-\delta,x_o+\delta]$, el problema de Cauchy
+  \[
+    \begin{cases}
+      y´(x)=f(x,y(z)) \quad x \in I_{\delta} \\ y(x_0)=y_0
+    \end{cases}
+  \]
+  Admite (al menos) una solución
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
 \end{document}
