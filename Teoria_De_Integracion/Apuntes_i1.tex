@@ -21,7 +21,7 @@
 
 % Do NOT modify anything from here until the beginning of the document.
 %============================== DATA PROCESSING ============================
-\ifdefstring{\LANGUAGE}{EN}
+\ifdefstring{\LANGUAGE}{ES}
 {
 
 \def\course{Licenciatura en Matemática}
@@ -59,12 +59,19 @@
 \usepackage{hyperref}			% Allows clickable references.
 \hypersetup{colorlinks=true, allcolors=black} 	% Colors of links
 \usepackage{pdflscape}			% Allows the use of the environment lscape for landscape pages
-
+\usepackage{amsthm}
 \usepackage{fancyhdr}			% Modify header and footer
 \usepackage{bm}				% Allows to use bold text in math mode with \bm
 \usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
 \usepackage{titlesec}			% Change title format
 
+
+\newtheorem{theorem}{Teorema}
+\newtheorem{lemma}{Lema}
+\newtheorem{corollary}{Corolario}
+\newtheorem{definition}{Definición}
+\newtheorem{example}{Ejemplo}
+\newtheorem{remark}{Observación}
 
 %========== CHANGE TITLE FORMAT  ======================
 %\titleformat{\section}
@@ -378,6 +385,70 @@ La función longitud $\lambda$ tiene las siguientes propiedades:
     \item \textbf{Invarianza por traslaciones:} $\lambda(I+x) = \lambda(I)$ para todo $x \in \mathbb{R}$.
     \item $\lambda(\{x\}) = 0$ para todo $x \in \mathbb{R}$.
 \end{itemize}
+
+nos gustaría extender $\lambda$ a una clase más grande que $\mathcal{I}$. Más precisamente, nos gustaría definir una aplicación  $m:\mathcal{M}\rightarrow [0, \infty]$, donde $\mathcal{M}$ es una colección de subconjuntos de $\mathbb{R}$ tal que $\mathcal{I}\subseteq \mathcal{M}$, de manera tal que , dado $E\in  M$, $m(e)$ represente la "longitud de $E$". Idealmente, nos gustaría que $m$ cumpla lo siguiente:
+\begin{enumerate}
+
+  \item $\mathcal{M}=P(X)$
+
+  \item Si $I \in \mathcal{I}$, entonces $m(I)=|I|$
+
+  \item $m$ es $\sigma$-aditiva $(E,(E_n)_{n\in \mathbb{N}}) \in \mathcal{M}, E=\cup_{n=1}^{\infty}E_n \Rightarrow m(E)=\sum_{n=1}^{\infty}m(E_m)$
+
+  \item Si $E \in \mathcal{M}$, entonces $E+x \in \mathcal{M}$ y $m(e+x)=m(E) \forall x \in \mathbb{R}$
+
+  \item El problema es que, si asumimos el Axioma de Elección uno puede mostrar que no existe un tal $m$ que cumpla $(1)-(2)-(3)-(4)$ y, de hecho, no se sabe si existe $m$ que cumpla $(1)-(2)-(3)$. (Si asumimos la hipótesis del continuo, entonces no existe $m$ que cumpla $(1)-(2)-(3)$ ) 
+
+\end{enumerate}
+Luego, para construir $m$ debemos debilitar alguna de las propiedaes.
+\begin{itemize}
+
+  \item Si debilitamos $(1) \Rightarrow $Teoría de la medida
+
+  \item Si debilitamos $(3)$ pidiendo solo $\rightarrow$ aditividad finita $\Rightarrow$ "medida finitamente aditivas" y si pedimos $\sigma $-subaditividad $\®Rightarrow$ "medidas exteriores" 
+  
+\end{itemize}
 \end{property}
+Una manera de extender $\lambda$ es la siguiente:
+\begin{enumerate}
+  \item Si $E=\cup_{i=1}^{n}I_i$ entonces, definimos $\lambda(E)\coloneqq \sum_{i=1}^{n}\lambda(I_i)$
+
+  \item Si $E=\cup_{i=1}^{\infty}I_i$ entonces, definimos $\lambda(E)\coloneqq \sum_{i=1}^{\infty}\lambda(I_i)$
+
+  \item La fórmula anterior nos permite definir $\lambda(G)$ para todo $G$ abierto en $\mathbb{R}$.
+
+  \item Para conjuntos más generales, "aproximar" por abiertos.
+
+\end{enumerate}
+
+\begin{definition}
+  Sea $X$ un conjunto no vacío y $\xi$ una colección de subconjuntos de $X$ tal que $\phi \in \xi$. Diremos que una aplicación $\Tau : \xi \rightarrow [0,\infty]$ es una premedia si $\Tau(\emptyset)=0$
+  el conjunto no vacío $X$ será llamado un espacio y la colección $\xi$ será llamada una clase(de subconjunto de $X$). 
+  
+\end{definition}
+Intuitivamente, $\xi$ representa la colección de subconjuntos cuyo "tamaño" sabemos medir y $\Tau$ nos da su medida.
+Ejemplos:
+\begin{enumerate}
+  \item\textbf{Premedida de Lebesgue} $\xi \coloneqq \mathcal{I}\coloneqq {I\subseteq \mathbb{R}:I \text{  interalo}}$ 
+  \item\textbf{Premedidas de Lebesgue-Stieljes} $\lim_{x \to x_o^+}F(x)=F(x_o)$ Sea $F:\mathbb{R}\rightaroow \mathbb{R}$ monótona creciente y continua a derecha. Una función tal que se dice una función de Lebesgue-Stieljes.
+\end{enumerate}
+
+Observamos que, por monotonía, existen los límites. 
+\begin{cases}
+   $F(\infty)\coloneqq \lim_{x \to \infty}F(x)$ \\ 
+   $F(-\infty)\coloneqq \lim_{x \to -\infty}F(x)$
+  
+\end{cases} $\in \overlinei\mathbb{R}$
+
+
+Sea además la clase $\mathcal{I}$ de intevalos de $\mathbb{R}$  dada por:
+
+\begin{align*}
+  \mathcal{I}&\coloneqq [I(a,b):\infty \leq a \leq b \leq \infty], text{ donde } I(a,b)\coloneqq(a,b])\cap \mathbb{R} \\
+  {(a,b]: -infty\leq a \leq b < \infty}\cap {(a,\infty):-\infty \leq a < \infty}
+
+\end{align*}
+
+Ejemplo (Premedidas)
 
 \end{document}
