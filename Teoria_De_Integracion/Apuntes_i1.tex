@@ -386,69 +386,398 @@ La función longitud $\lambda$ tiene las siguientes propiedades:
     \item $\lambda(\{x\}) = 0$ para todo $x \in \mathbb{R}$.
 \end{itemize}
 
-nos gustaría extender $\lambda$ a una clase más grande que $\mathcal{I}$. Más precisamente, nos gustaría definir una aplicación  $m:\mathcal{M}\rightarrow [0, \infty]$, donde $\mathcal{M}$ es una colección de subconjuntos de $\mathbb{R}$ tal que $\mathcal{I}\subseteq \mathcal{M}$, de manera tal que , dado $E\in  M$, $m(e)$ represente la "longitud de $E$". Idealmente, nos gustaría que $m$ cumpla lo siguiente:
-\begin{enumerate}
+Nos gustaría extender $\lambda$ a una clase más grande que $\mathcal{I}$. Más precisamente, nos gustaría definir una aplicación $m : \mathcal{M} \to [0,\infty]$, donde $\mathcal{M}$ es una coleccción de subconjuntos de $\R$ tal que $\mathcal{I} \subseteq \mathcal{M}$, de manera tal que, dado $E \in \mathcal{M},\ m(E)$ represente la "longitud" de $E$. Idealmente, nos gustaría que $m$ cumpla lo siguiente:
 
-  \item $\mathcal{M}=P(X)$
+	\begin{enumerate}
+		\item $\mathcal{M} = \mathcal{P}(\R)$;
 
-  \item Si $I \in \mathcal{I}$, entonces $m(I)=|I|$
+		\item Si $I \in \mathcal{I}$, entonces $m(I) = |I|$;
 
-  \item $m$ es $\sigma$-aditiva $(E,(E_n)_{n\in \mathbb{N}}) \in \mathcal{M}, E=\cup_{n=1}^{\infty}E_n \Rightarrow m(E)=\sum_{n=1}^{\infty}m(E_m)$
+		\item $m$ es $\sigma$-aditiva ($E,\ (E_n)_{n\in\N}\in \mathcal{M},\ E = \displaystyle\bigcupd_{n=1}^{\infty} E_n \implies m(E) = \sum_{n=1}^{\infty} m(E_n)$);
+	\end{enumerate}
 
-  \item Si $E \in \mathcal{M}$, entonces $E+x \in \mathcal{M}$ y $m(e+x)=m(E) \forall x \in \mathbb{R}$
+	\begin{ex}
+		$(1)+(2)+(3) \implies m$ es monóton, $\sigma$-subaditiva y finitamente aditiva. 
+	\end{ex}
 
-  \item El problema es que, si asumimos el Axioma de Elección uno puede mostrar que no existe un tal $m$ que cumpla $(1)-(2)-(3)-(4)$ y, de hecho, no se sabe si existe $m$ que cumpla $(1)-(2)-(3)$. (Si asumimos la hipótesis del continuo, entonces no existe $m$ que cumpla $(1)-(2)-(3)$ ) 
+	\begin{enumerate}
+		\item[4] Si $E \in \mathcal{M}$, entonces $E + x \in \mathcal{M}$ y $m(E + x) = m(E)\ \forall x \in \R$.
+	\end{enumerate}
 
-\end{enumerate}
-Luego, para construir $m$ debemos debilitar alguna de las propiedaes.
-\begin{itemize}
+	\noindent El problema es que, si asumimos el Axioma de Elección, uno puede mostrar que no existe una tal $m$ que cumpla $(1)-(2)-(3)-(4)$ y, de hecho, no se sabe si existe $m$ que cumpla $(1)-(2)-(3)$. (Si asumimos la hipótesis del continuo, entonces no existe $m$ que cumpla $(1)-(2)-(3)$). \\
 
-  \item Si debilitamos $(1) \Rightarrow $Teoría de la medida
+	\noindent Luego, para construir $m$ debemos debilitar alguna de las propiedades:
+	\begin{itemize}
+		\item Si debilitamos $(1) \implies$ TEORÍA DE LA MEDIDA;
+		
+		\item Si debilitamos $(3)$ pidiento solo (hay dos opciones):
 
-  \item Si debilitamos $(3)$ pidiendo solo $\rightarrow$ aditividad finita $\Rightarrow$ "medida finitamente aditivas" y si pedimos $\sigma $-subaditividad $\®Rightarrow$ "medidas exteriores" 
-  
-\end{itemize}
-\end{property}
-Una manera de extender $\lambda$ es la siguiente:
-\begin{enumerate}
-  \item Si $E=\cup_{i=1}^{n}I_i$ entonces, definimos $\lambda(E)\coloneqq \sum_{i=1}^{n}\lambda(I_i)$
+		\begin{itemize}
+			\item[$\rightarrow$] aditividad finita $ \implies$ "medidas finitamente aditivas";
+		
+			\item[$\rightarrow$] $\sigma$-subaditividad $\implies$ "medidas exteriores".
+		\end{itemize}
+	\end{itemize}
 
-  \item Si $E=\cup_{i=1}^{\infty}I_i$ entonces, definimos $\lambda(E)\coloneqq \sum_{i=1}^{\infty}\lambda(I_i)$
+	\noindent Vamos a optar por debilitar $(1)$. \\\\
+	\noindent Una manera de extender $\lambda$ es la siguiente:
+	\begin{enumerate}
+		\item[i.] Si $E = \displaystyle\bigcupd_{i=1}^{n} I_i$ entonces defninimos $\lambda(E) \coloneq \sum_{i=1}^{n} \lambda (I_i)$;
 
-  \item La fórmula anterior nos permite definir $\lambda(G)$ para todo $G$ abierto en $\mathbb{R}$.
+		\item[ii.] Si $E = \displaystyle\bigcupd_{i=1}^{\infty} I_i$ entonces definimos $\lambda(E) \coloneq \sum_{i=1}^{\infty} \lambda (I_i)$;
 
-  \item Para conjuntos más generales, "aproximar" por abiertos.
+		\item[iii.] La fórmula anterior nos permite definir $\lambda (6)$ para todo $6$ abierto en $\R$;
 
-\end{enumerate}
+		\item[iv.] Para conjuntos mas generales, "aproximar" por abiertos. 
+	\end{enumerate}
 
-\begin{definition}
-  Sea $X$ un conjunto no vacío y $\xi$ una colección de subconjuntos de $X$ tal que $\phi \in \xi$. Diremos que una aplicación $\Tau : \xi \rightarrow [0,\infty]$ es una premedia si $\Tau(\emptyset)=0$
-  el conjunto no vacío $X$ será llamado un espacio y la colección $\xi$ será llamada una clase(de subconjunto de $X$). 
-  
+	\begin{definition}[premedida]
+		Sea $X$ un conjunto no vacío y $\mathscr{C}$ una colección de subconjuntos de $X$ tal que $\varnothing \in \mathscr{C}$. Diremos que una aplicación $\mathcal{T} : \mathscr{C} \to [0,\infty]$ es una premedida si $\mathcal{T} (\varnothing)=0$.
+	\end{definition}
+
+	\begin{remark}
+		El conjunto no vacío $X$ será llamado un espacio y la colección $\mathscr{C}$ será llamada una clase (de subconjuntos de $X$).
+	\end{remark}
+
+	\noindent Intuitivamente, $\mathscr{C}$ representa la colección de subconjuntos cuyo "tamaño" sabemos medir y $\mathcal{T}$ nos da su medida.
+
+	\begin{eg}~
+		\begin{enumerate}
+			\item \textbf{Premedida de Lebesgue:} $\mathscr{C} \coloneq \mathcal{I} \coloneq \{ I \subseteq \R \ : \ I \text{ intervalo}\}, \ \mathcal{T}(I) \coloneq |I|$.
+
+			\item \textbf{Premedidas de Lebesgue-Stieltjes:} Sea $F:\R \to \R$ monótona creciente y continua a derecha ($\lim_{x \to x_0}^{+} F(x) = F(x_0)$). Una función tal se dice una función de Lebesgue-Stieltjes. 
+		\end{enumerate}
+	\end{eg}
+
+	\noindent Observemos que, por monotonía, existen límites \[ \left\{ \begin{aligned}
+		F(\infty) & \coloneq \lim_{x \to \infty} F(x) \\ 
+		F(-\infty) & \coloneq \lim_{x \to -\infty} F(x) 
+	\end{aligned} \right\} \in \R \]
+
+	\noindent Sea además la clase $\widetilde{\mathcal{I}}$ de intervalos de $\R$ dada por
+	\begin{align*}
+		\widetilde{\mathcal{I}} & \coloneq \{ I(a,b) \ : \ \} \text{ donde } I(a,b) \coloneq (a,b] \cap \R \\
+		& = \{ (a,b] \ : \ -\infty \leq a \leq b \} \cup \{ (a,\infty) \ : \ -\infty \leq a < \infty \}. 
+	.\end{align*}
+
+	\noindent Definimos la premedida $\mathcal{T}_F$ de Lebesgue-Stieltjes asociada a $F$ como la aplicación $\mathcal{T}_F: \widetilde{\mathcal{I}} \to [0, \infty]$, dada por
+	\[ \mathcal{T}_F (I(a,b)) = F(b) - F(a) .\]
+
+	\begin{note}
+		Observar que si $F(x)=x$ entonces $\mathcal{T}_F$ es la premedida de Lebesgue (sobre $\widetilde{\mathcal{I}}$.
+	\end{note}
+
+	\begin{enumerate}
+		\item[3.] \textbf{Premedidas de Probabilidad:} Si $F$ es una función de L-S tal que $F(\infty) = 1$ y $F(-\infty) = 0$, decimos que $F$ es una función de distribución (acumulada). En tal caso, la premedida $\mathcal{T}_F$ se conoce como premedida de probabilidad o predistribución (en $\R$).
+	\end{enumerate}
+
+	\begin{remark}
+		$\mathcal{T}_F (\R) = \mathcal{T}_F (I(-\infty,\infty)) = F(\infty) - F(-\infty) = 1 - 0 = 1$.
+	\end{remark}
+
+	\begin{enumerate}
+		\item[4.] \textbf{Premedida...}
+	\end{enumerate}
+
+  \begin{definition}[semiálgebra]
+		Sea $X$ un espacio y $\mathscr{C}$ una clase de subconjuntos de $X$. Decimos que $\mathscr{C}$ es una semiálgebra (de subconjuntos de $X$) si cumple:
+		\begin{enumerate}
+			\item $\varnothing \in \mathscr{C}$;
+
+			\item ($\mathscr{C}$ es cerrada por intesecciones finitas) $A,B\in\mathscr{C} \implies A \cap B \in \mathscr{C}$;
+			
+			\item Si $A \in \mathscr{C}$, existen $C_1,\dots,C_n \in \mathscr{C}$ disjuntos tal que $A^c = \displaystyle\bigcupd_{i=1}^{n} C_i$.
+		\end{enumerate}
+	\end{definition}
+	
+	\begin{eg}~
+		\begin{enumerate}
+			\item La clase $\mathcal{I}_d$ de intervalos en $\R^d$ es una semiálgebra.
+
+			\item La clase $\widetilde{\mathcal{I}} \coloneq \{ (a,b] \cap \R \ : \ -\infty \leq a \leq b \leq \infty \}$ es una semiálgebra.
+
+			\item Si $X$ e $Y$ son espacios y $\mathscr{C}_X, \mathscr{C}_Y$ son semiálgebras en $X$ e $Y$ respectivamente, entonces
+			\[ \mathscr{C}_X \times \mathscr{C}_Y \coloneq \{ F \times G \ : \ F \in \mathscr{C}_X,\ G \in \mathscr{C}_Y \} \]
+			es una semiálgebra en $X \times Y$, llamada "semiálgebra producto".
+		\end{enumerate}
+	\end{eg}
+
+	\begin{definition}[álgebra]
+		Sean $X$ un espacio y $\mathscr{A}$ una clase de subconjuntos de $X$. Decimos que $\mathscr{A}$ es un álgebra (de subconjuntos de $X$) si cumple que:
+		\begin{enumerate}
+			\item[(i)] $\varnothing \in \mathscr{A}$;
+			
+			\item[(ii)] $\mathscr{A}$ es cerrado por intersecciones finitas;
+
+			\item[(iii)] ($\mathscr{A}$ es cerrada por complementos) $A \in \mathscr{A} \implies A^c \in \mathscr{A}$. 
+		\end{enumerate}	
+			\noindent Equivalentemente, en presencia de (iii), (ii) se puede reemplazar por:	
+		\begin{enumerate}
+			\item[(ii')] ($\mathscr{A}$ es cerrada por uniones finitas) $A,B\in \mathscr{A} \implies A \cup B \in \mathscr{A}$. (\textbf{Dem:} Ejercicio!)
+		\end{enumerate}
+	\end{definition}
+
+	\begin{eg}~
+		\begin{enumerate}
+			\item $X$ espacio, $\mathscr{A}_1 \coloneq \{\varnothing, X\},\ \mathscr{A}_2 \coloneq \mathcal{P}(X)$ son álgebras (donde $\mathscr{A}$ es llamada el álgebra trivial);
+
+			\item Sea $\mathscr{S}$ una semiálgebra de subconjuntos de un espacio $X$. Entonces 
+			\[ \mathscr{A} \coloneq \{ E \subseteq X \ : \ \exists S_1,\dots,S_n \in \mathscr{S} \text{ disjuntos tal que } E = \displaystyle\bigcupd_{i=1}^{n} S_i \} \] 
+			es un álgebra, llamada el álgebra generada por $\mathscr{S}$. Notemos que $\mathscr{A}(\mathscr{S}$ es el menor álgebra que contiene a $\mathscr{S}$:
+			\begin{enumerate}
+				\item[(i)] $\mathscr{A}(\mathscr{S})$ es un álgebra y $\mathscr{S} \subseteq \mathscr{A}(\mathscr{S})$;
+
+				\item[(ii)] Si $\mathscr{A}'$ es un álgebra con $\mathscr{S} \subseteq \mathscr{A}'$ entonces $\mathscr{A}(\mathscr{S} \subseteq \mathscr{A}'$.
+			\end{enumerate}
+		\end{enumerate}
+	\end{eg}
+
+	\begin{note}
+		Toda álgebr es una semiálgebra.
+	\end{note}
+
+	\begin{definition}[$\sigma$-álgebra]
+		Una clase (no vacía) $\mathscr{M}$ de subconjuntos de un espacio $X$ se dice una $\sigma$-álgebra si cumple:
+		\begin{enumerate}
+			\item $\varnothing \in \mathscr{M}$;
+
+			\item $E \in \mathscr{M} \implies E^c \in \mathscr{M}$;
+
+			\item $(E_n)_{n\in\N} \subseteq \mathscr{M} \implies \displaystyle\bigcup_{n\in\N} E_n \in \mathscr{M}$.
+		\end{enumerate}
+		\noindent Llamamos al par $(X,\mathscr{M})$ un \underline{espacio medible} y a los elementos de $\mathscr{M}$, \underline{conjuntos medibles}.
+	\end{definition}
+
+	\begin{note}~
+		\begin{enumerate}
+			\item Todo $\sigma$-álgebra es un álgebra;
+
+			\item Equivalentemente, en presencia de (1), (3) se puede reemplazar por
+			\begin{enumerate}
+				\item[(iii')] $(E_n)_{n\in\N} \subseteq \mathscr{M} \implies \displaystyle\bigcap_{n\in\N} E_n \in \mathscr{M}$.
+			\end{enumerate}
+		\end{enumerate}
+	\end{note}
+
+	\begin{eg}~
+		\begin{enumerate}
+			\item $\sigma$-álgebra $\implies$ álgebra $\implies$ semiálgebra (no valen las recíprocas);
+
+			\item $\{\varnothing,X\},\mathcal{P}(X)$ son $\sigma$-álgebras;
+
+			\item Si $(\mathscr{M}_{\gamma})_{\gamma \in \Gamma}$ son $\sigma$-álgebras, entonces
+			\[ \displaystyle\bigcap_{\gamma\in\Gamma} \mathscr{M}_{\gamma} \coloneq \{ E \subseteq X \ : \ E \in \mathscr{M}_{\gamma},\ \forall \gamma \in \Gamma \} \]
+			es una $\sigma$-álgebra.
+			
+			\item Si $\mathscr{M}$ es una clase de subconjuntos de $X$, entonces
+			\[ \sigma(\mathscr{M}) \coloneq \displaystyle\bigcap_{\begin{aligned}
+				\mathscr{M}& \ \sigma\text{-álgebra} \\
+				& \mathscr{C}\subseteq\mathscr{M}
+			\end{aligned}} \mathscr{M} \]
+			es la $\sigma$-álgebra generada por $\mathscr{C}$. De hecho, $\sigma(\mathscr{M})$ es la menor $\sigma$-álgebra que contiene a $\mathscr{C}$:
+			\begin{enumerate}
+				\item $\sigma(\mathscr{C})$ es $\sigma$-álgebra y $\mathscr{C} \subseteq \sigma(\mathscr{C})$;
+
+				\item Si $\mathscr{F}$ es $\sigma$-álgebra y $\mathscr{C} \subset \mathscr{F}$ entonces $\sigma(\mathscr{C}) \subseteq \mathscr{F}$.
+			\end{enumerate}
+
+			\item Si $(X,\mathscr{T})$ es un espacio topológico, $\sigma(\mathscr{T})$ se conoce como la \underline{$\sigma$-álgebra} \underline{de Borel}, y sus elementos se llaman \underline{Borelianos}. La notamos $\beta(X)\ (= \sigma(\mathscr{T}))$.
+		\end{enumerate}
+	\end{eg}
+	
+	\begin{eg}
+		$\beta(\R)$ contiene a tods los abiertos, cerrados, intervalos, conjuntos de tipo $G_{\delta}$ y $F_{\sigma},\dots$ De hecho, $\beta(\R)=\sigma(\text{cerrados})=\sigma(\text{compactos})=\sigma(\mathcal{I})=\sigma(\widetilde{\mathcal{I}})$.
+	\end{eg}
+
+	\begin{definition}
+		Sea $\mathscr{C}$ una clase (no vacía) de subconjuntos de $X$ y $\mu : \mathscr{C} \to [0,\infty]$ una función (la llamamos una \underline{función de conjuntos}). Diremos que:
+		\begin{enumerate}
+			\item[(i)] \textbf{$\mu$ es monótona} (en $\mathscr{M}$) si $A,B\in\mathscr{C},\ A \subseteq B \implies \mu(A)\leq\mu(B)$;
+
+			\item[(ii)] \textbf{$\mu$ es finitamente aditiva} si $(A_i)_{i=1,\dots,n} \subseteq \mathscr{C}$ disjuntos $\implies \mu(\bigcupd_{i=1}^{n} A_i) = \sum_{i=1}^{n} \mu(A_i)$;
+
+			\item[(iii)] \textbf{$\mu$ es $\sigma$-aditiva} si $(A_n)_{n\in\N} \subseteq \mathscr{C}$ disjuntos $\implies \mu (\bigcupd_{i=1}^{\infty} A_i ) = \sum_{i=1}^{\infty} \mu(A_i)$;
+
+			\item[(iv)] \textbf{$\mu$ es $\sigma$-subaditiva} si $\mu(A)\leq \sum_{i=1}^{\infty}\mu(A_n)$, para todo $A \in \mathscr{C}$ y $(A_n)_{n\in\N}\subseteq\mathscr{C}$ tal que $A \subseteq \bigcup_{n\in\N} A_n$
+		\end{enumerate}
+	\end{definition}
+
+  \begin{remark}
+	Rana da una definición más débil de (4):
+	\[ A \in \mathscr{C},\ A = \bigcup_{i=1}^{\infty} A_i,\ A_i \in \mathscr{C}\ \forall i \implies \mu(A) \leq \sum_{i=1}^{\infty}\mu(A_i) \]
+	\noindent Ambas definiciones son equivalentes si $\mathscr{C}$ es una semiálgebra y $\mu$ es monótona (siempre será el caso para nosotros).
+\end{remark}
+
+\begin{definition}[premedida finita y $\sigma$-finita]
+	Una premedida $\mathcal{T} : \mathscr{C} \to [0,\infty]$ se dice:
+	\begin{enumerate}
+		\item \textbf{finita} si $X \in \mathscr{C}$ y $\mathcal{T} < \infty$;
+
+		\item \textbf{$\sigma$-finita} si existen $(C_n)_{n\in\N} \subseteq \mathscr{C}$ \underline{disjuntos} tales que $\bigcupd_{n=1}^{\infty} C_n = X$ y $\mathcal{T} (C_n) < \infty\ \forall n \in \N$.
+	\end{enumerate}
 \end{definition}
-Intuitivamente, $\xi$ representa la colección de subconjuntos cuyo "tamaño" sabemos medir y $\Tau$ nos da su medida.
-Ejemplos:
+
+\begin{eg}~
+	\begin{enumerate}
+		\item finita $\implies \sigma$-finita;
+
+		\item La función longitud $\lambda : \mathcal{I} \to [0,\infty]$ es $\sigma$-finita pero no finita;
+
+		\item Si $F$ es una función de L-S, entonces $\mathcal{T}_F : \widetilde{\mathcal{I}} \to [0,\infty]$ es siempre $\sigma$-finita $(\mathcal{T}_F ((n,n+1]) = F(n+1) - F(n) < \infty\ \forall n \in \Z)$ y es finita si y sólo si $\mathcal{T}_F (\R) = \mathcal{T}_F ((-\infty,\infty]\cap\R) = F(\infty)-F(-\infty) < \infty$.
+	\end{enumerate}
+\end{eg}
+
+\begin{definition}[medida]
+	Sea $(X,\mathscr{M})$ es un espacio medible. Diremos que $\mu : \mathscr{M} \to [0,\infty]$ es una \underline{medida} (en $(X,\mathscr{M})$) si:
+	\begin{enumerate}
+		\item $\mu (\varnothing) = 0$;
+		
+		\item $\mu$ es $\sigma$-subaditiva en $\mathscr{M}\ \left( \mu \left(\bigcupd_{i=1}^{\infty} A_i \right) = \sum_{i=1}^{\infty} \mu(A_i) \right)$.
+	\end{enumerate}
+	\noindent Llamamos a la terna $(X,\mathscr{M},\mu)$ un \underline{epacio de medida}.
+\end{definition}
+
+\noindent \textbf{Objetivo.} Construir un espacio de medida $(\R,\mathscr{M},\mu)$ tal que $\mathcal{I} \subseteq \mathscr{M}$ y
+\[ \begin{cases}
+	\mu(I) = |I|\ \forall I \in \mathcal{I}, \\
+	\mu(E+x) = \mu(E) \ \forall E \in \mathscr{M}.
+\end{cases} \]
+
+\begin{eg}[Espacios de Probabilidad]
+	Si $(X,\mathscr{M},\mu)$ es un EdM tal que $\mu(X)=1,\ (X,\mathscr{M},\mu)$ recibe el nombre de \underline{espacios de probabilidad}.
+\end{eg}
+
+\begin{itemize}
+	\item $X$ recibe el nombre de \underline{espacio muestral}, y se lo nota $\Omega$ (en lugar de $X$);
+
+	\item $\mathscr{M}$ se suele notar como $\mathscr{F}$ (ó $\mathscr{Y}$). Sus elementos se dicen \underline{eventos};
+
+	\item $\mu$ recibe el nombre de \underline{medida de probabilidad} ó \underline{distribución} y se la nota $\mathbb{P}$.
+\end{itemize}
+
+\noindent En probabilidad, típicamente se estudian $2$ tipos de distribuciones en $\R$ (o en $\R^d$).
+
 \begin{enumerate}
-  \item\textbf{Premedida de Lebesgue} $\xi \coloneqq \mathcal{I}\coloneqq {I\subseteq \mathbb{R}:I \text{  interalo}}$ 
-  \item\textbf{Premedidas de Lebesgue-Stieljes} $\lim_{x \to x_o^+}F(x)=F(x_o)$ Sea $F:\mathbb{R}\rightaroow \mathbb{R}$ monótona creciente y continua a derecha. Una función tal que se dice una función de Lebesgue-Stieljes.
+	\item \textbf{Distribuciones discretas:} $\exists S \subseteq \R$ numerable y $(p_x)_{x \in S} \subseteq [0,1]$ tal que $\mathbb{P}(A) = \sum_{x \in A \cap S} p_x$.
+	\begin{eg}
+		Binomial, Geométrica, Poisson,...
+	\end{eg}
+
+	\item \textbf{Distribuciones (absolutamente) continuas:} $\exists f : \R \to \R_{\geq 0}$ "integrable" tal que $\mathbb{P}(A) = \int_{A} f(x) dx$.
+	\begin{eg}
+		Uniforme, Exponencial, Normal,...
+	\end{eg}
 \end{enumerate}
 
-Observamos que, por monotonía, existen los límites. 
-\begin{cases}
-   $F(\infty)\coloneqq \lim_{x \to \infty}F(x)$ \\ 
-   $F(-\infty)\coloneqq \lim_{x \to -\infty}F(x)$
-  
-\end{cases} $\in \overlinei\mathbb{R}$
+\noindent \textbf{Propiedades generales de una medida.} Si $\mu$ es una medida sobre $(X,\mathscr{M})$, entonces:
+\begin{enumerate}
+	\item $\mu$ es monótona (en $\mathscr{M}$);
 
+	\item $\mu$ es $\sigma$-subaditiva;
 
-Sea además la clase $\mathcal{I}$ de intevalos de $\mathbb{R}$  dada por:
+	\item $\mu$ es \textbf{continua por debajo}: si $(A_n)_{n\in\N} \subseteq \mathscr{M}$ es \underline{creciente} $(A_n \subseteq A_{n+1}\ \forall n)$ entonces
+	\[ \mu \left( \bigcup_{n\in\N} A_n \right) = \lim_{n \to \infty} \mu(A_n). \]
 
-\begin{align*}
-  \mathcal{I}&\coloneqq [I(a,b):\infty \leq a \leq b \leq \infty], text{ donde } I(a,b)\coloneqq(a,b])\cap \mathbb{R} \\
-  {(a,b]: -infty\leq a \leq b < \infty}\cap {(a,\infty):-\infty \leq a < \infty}
+	\item $\mu$ es \textbf{continua por arriba}: si $(A_n)_{n\in\N} \subseteq \mathscr{M}$ es \underline{decreciente} $(A_{n+1} \subseteq A_n\ \forall n)$ y $\mu(A_{n_0})<\infty$ para algún $n_0\ (\implies \mu(A_n)<\infty\ \forall n\geq n_0)$, entonces
+	\[ \mu \left( \bigcap_{n\in\N}A_n \right) = \lim_{n \to \infty} \mu(A_n). \]
 
-\end{align*}
+	\noindent (\textbf{Cuidado!} (4) puede no valer si $\mu (A_n) = \infty \ \forall n \in \N$)
+\end{enumerate}
 
-Ejemplo (Premedidas)
+\begin{definition}[premedida extendible y unívocamente extendible]
+	Una premedida $\mathcal{T} : \mathscr{S} \to [0,\infty]$ definida sobre una semiálgebra de subconjunto de $X$, se dice:
+	\begin{enumerate}
+		\item \textbf{Extendible} si es
+		\begin{enumerate}
+			\item[(E1)] finitamente aditiva en $\mathscr{S}$;
+
+			\item[(E2)] $\sigma$-subaditiva en $\mathscr{S}$.
+		\end{enumerate}
+
+		\item \textbf{Unívocamente extendible} si es extendible y se cumple
+		\begin{enumerate}
+			\item[(E3)] $\sigma$-finita
+		\end{enumerate}
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	Los nombres de extendible y unívocamente extendible no se encontrarán en el Rana (los puso el profe).
+\end{remark}
+
+\begin{theorem}[Extensión de Carathéodory]
+	Dados un espacio $X$ y una premedida $\mathcal{T}$ sobre una semiálgebra $\mathscr{S}$ de subconjuntos de $X$ tal que $\mathcal{T}$ es extendible, existe una extensión de $\mathcal{T}$ a una medida $\mu_{\mathcal{T}}$ definida sobre $\sigma(\mathscr{S})$ la $\sigma$-álgebra generada por $\mathscr{S}$. Más aún, si $\mathcal{T}$ es unívocamente extendible, entonces la extensión $\mu_{\mathcal{T}}$ a $\sigma(\mathscr{S})$ es \underline{única}. \\
+	Por último, si $\mathcal{T}$ es unívocamente extendible, entonces se puede extender de manera única a una medida $\overline{\mu_{\mathcal{T}}}$ sobre la $\mu_{\mathcal{T}}$-completación de $\sigma(\mathscr{S})$, i.e. la $\sigma$-álgebra $\overline{\sigma(\mathscr{S})}$ dada por
+	\[ \overline{\sigma(\mathscr{S})} \coloneq \{ B \cup N : B \in \sigma(\mathscr{S}), \exists \widetilde{N} \in \sigma(\mathscr{S}) \text{ con } N \subseteq \widetilde{N} \text{ y } \mu_{\mathcal{T}} (\widetilde{N}) = 0 \} \]
+	\noindent mediante la fórmula $\overline{\mu_{\mathcal{T}}}(B\cap N) \coloneq \mu_{\mathcal{T}}(B)$.
+\end{theorem}
+
+\begin{remark}
+	Si $\mathcal{T} : \mathscr{S} \to [0,\infty]$ es $\sigma$-aditiva en $\mathscr{S}$ y $\mathscr{S}$ es una semiálgebra, entonces $\mathcal{T}$ es extendible.
+\end{remark}
+
+\begin{remark}
+	La extensión puede no ser única si $\mathcal{T}$ no es $\sigma$-finita.
+\end{remark}
+\begin{eg}
+	$\widetilde{\mathcal{I}}_{\Q} \coloneq \widetilde{\mathcal{I}} \cap \Q = \{ (a,b] \cap \Q \ : \ -\infty \leq a \leq b \leq \infty \}$ 
+\end{eg}
+
+\begin{note}~
+	\begin{itemize}
+		\item $\widetilde{\mathcal{I}}_{\Q}$ es una semiálgebra;
+
+		\item $\sigma (\widetilde{\mathcal{I}}_{\Q}) = \sigma (\widetilde{\mathcal{I}} \cap \Q) \stackrel{\text{Ej!}}{=} \sigma (\widetilde{\mathcal{I}}) \cap \Q = \beta(\R) \cap \Q = \mathcal{P}(\Q)$ (9.52)
+
+	\item $\mathcal{T} : \widetilde{\mathcal{I}}_{\Q} \to [0,\infty]$, dada por $\mathcal{T}(A) \coloneq \begin{cases}
+			0 \quad A = \varnothing \\
+			\infty \quad A \neq \varnothing,\ A \in \widetilde{\mathcal{I}}_{\Q}
+		\end{cases}$ (Observar que $\mathcal{T}$ no es $\sigma$-finita)
+
+		\item Para cada $r > 0,\ \mu_r : \mathcal{P}(\Q) \to [0,\infty]$ dada por $\mu_r(A) \coloneq r(\# A)$ es una extensión de $\mathcal{T}$ (y es una medida)
+	\end{itemize}
+\end{note}
+
+\begin{definition}[espacio completo y conjuntos $\mu$-nulos]
+	Sea $(X,\mathscr{M},\mu)$ un EdM y definamos 
+	\[ \mathscr{N}_{\mu} \coloneq \{ E \subset X \ : \ \exists N \in \mathscr{M} \text{ con } E \subseteq N \text{ y } \mu(N) = 0 \} \] 
+	Los elementos de $\mathscr{N}_{\mu}$ se dicen \underline{conjuntos $\mu$-nulos}. Diremos que $(X,\mathscr{M},\mu)$ es \underline{completo} si $\mathscr{N}_{\mu} \subseteq \mathscr{M}$
+\end{definition}
+
+\begin{remark}
+	$(X,\overline{\sigma(\mathscr{S})},\overline{\mu_{\delta}})$ es \underline{completo}. En efecto, $\mathscr{N}_{\overline{\mu_{\delta}}}$ corresponde al subconjunto de $\overline{\sigma(\mathscr{S})}$ que se obtiene tomando $B=\varnothing$.
+\end{remark}
+
+\begin{remark}
+	Veremos más adelante que las siguientes premedidas son UE:
+
+	\begin{itemize}
+		\item[(i)] Premedidas de Lebesgue-Stieltjes (en particular, la función longitud $\lambda$ (sobre $\widetilde{\mathcal{I}}$) y las premedidas de probabilidad).
+
+		\item[(ii)] Premedidas de Lebesgue en $\R^d$, con $d \in \N$.
+	\end{itemize}
+\end{remark}
+
+\noindent En particular;
+
+\begin{corollary}
+	Para cada función $F$ de Lebesgue-Stieltjes, existe una $\sigma$-álgebra $\mathscr{M}_F$ sobre $\R$ y una única medida $\mu_F$ en $(\R,\mathscr{M}_F)$ tal que
+	\[ \mu_F = (I(a,b)) = F(b) - F(a) \quad \forall -\infty \leq a \leq b \leq \infty \]
+	Además, $\beta(\R) \subseteq \mathscr{M}_F$. Es decir, $\mu_F$ es una medida que extiende a $\mathcal{T}_F$, a todo $\mathscr{M}_F$ (y en particular, a todo $\beta(\R)$). Además, $(\R, \mathscr{M}_F, \mu_F)$ es un EdM completo. ($\mathscr{M}_F \coloneq \overline{\sigma(\widetilde{\mathcal{I}})^F},\ \mu_F \coloneq \overline{\mu_{\mathcal{T}_F}}$). La medida $\mu_F$ se conoce como \underline{medida de L-S asociada a $F$}. En particular, para cualquier función de distribución $F$, existe una única medida de probabilidad $\mathbb{P}_F$ en $(\R,\beta(\R))$ tal que 
+	\[ \mathbb{P}_F(I(a,b)) = F(b) - F(a) \quad \forall -\infty \leq a \leq b \leq \infty \]
+	(En la guía 3 veremos que $F \to \mathbb{P}_F$ es una biyección)
+\end{corollary}
+
+\begin{note}
+	Los $\beta$ son los Borelianos y $I(a,b) = (a,b] \cap \R$. (super $F \to$ 10.26).
+\end{note}
+
+\begin{eg}[Importante!]
+	\textbf{Medida de Lebesgue en $\R$.} Tomando $F = id$ en el Corolario anterior, obtenemos una $\sigma$-álgebra $\mathscr{L}(\R) \coloneq \mathscr{M}_{id}$ con $\beta(\R) \subseteq \mathscr{L}(\R)$ y una medida $\mu_{id}$ en $(\R,\mathscr{L}(\R))$ tal que $\mu_{id}(I(a,b)) = b-a \quad \forall -\infty \leq a \leq b \leq \infty$. En particular, de esto se deduce que $\mu_{id}(I) = |I|\quad \forall I \in \mathcal{I}$. Dicha medida recibe el nombre de \underline{medida de Lebesgue} (en $\R$), y los elementos de $\mathscr{L}(\R)$ se dicen \underline{conjuntos medibles Lebesgue}. Adoptaremos la notación $\mu_{id}(E) \coloneq \lambda(E) \coloneq |E|$. La medida $\mu_{id}$ \underline{es} la extensión de la noción de longitud que buscábamos y $\mathscr{L}(\R)$ son los conjuntos cuya "longitud" podremos medir. Además, los conjuntos de medida nula (de la guía 2), son \underline{exactamente} aquellos $A \in \mathscr{L}(\R)$ tal que $\mu_{id}(A) = 0$ (lo veremos más adelante!).
+\end{eg}
+
+\begin{eg}[Medida de Lebesgue en $\R^d$]
+	Si $\mathcal{I}_d$ son los intervalos en $\R^d$ y definimos $\mathcal{T}:\mathcal{I}_d \to [0,\infty]$ como $\mathcal{T}(I)\coloneq|I|$, entonces $\mathcal{I}_d$ es una semiálgebra y $\mathcal{T}$ es una premedida $\sigma$-aditiva en $\mathcal{I}_d$ (lo veremos después). Por lo tanto, $\mathcal{T}$ se puede extender (de manera única, pues $\mathcal{T}$ es $\sigma$-finita) a una medida $\mu_{\delta}$ sobre la $\sigma$-álgebra $\mathscr{L}(\R^d) = \overline{\sigma(\mathcal{I}_d)^{\mathcal{T}}}$, llamada \underline{medida de Lebesgue en $\R^d$} y $\mathscr{L}(\R^d)$ es la clase de \underline{conjuntos medibles Lebesgue en $\R^d$}. Al igual que antes, dado $E \in \mathscr{L}(\R^d)$, notamos $|E| \coloneq \mu_{\mathcal{T}}(E)$.
+\end{eg}
 
 \end{document}
