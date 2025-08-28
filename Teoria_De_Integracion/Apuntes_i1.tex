@@ -58,20 +58,30 @@
 \usepackage{subcaption}			% Include subfigures.
 \usepackage{hyperref}			% Allows clickable references.
 \hypersetup{colorlinks=true, allcolors=black} 	% Colors of links
-\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape pages
+\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape
+\usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{fancyhdr}			% Modify header and footer
 \usepackage{bm}				% Allows to use bold text in math mode with \bm
 \usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
-\usepackage{titlesec}			% Change title format
+\usepackage{titlesec}
 
 
-\newtheorem{theorem}{Teorema}
-\newtheorem{lemma}{Lema}
-\newtheorem{corollary}{Corolario}
-\newtheorem{definition}{Definición}
-\newtheorem{example}{Ejemplo}
-\newtheorem{remark}{Observación}
+
+\theoremstyle{definition} % hace que el cuerpo sea upright (no itálico)
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{note}[theorem]{Nota}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
 
 %========== CHANGE TITLE FORMAT  ======================
 %\titleformat{\section}
