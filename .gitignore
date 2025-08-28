@@ -13,4 +13,5 @@
 *.fdb_latexmk
 *.synctex.gz(busy)
 *.DS_Store
+*.md
 Image/
