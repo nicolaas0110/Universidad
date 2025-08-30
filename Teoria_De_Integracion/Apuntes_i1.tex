@@ -790,4 +790,115 @@ Nos gustaría extender $\lambda$ a una clase más grande que $\mathcal{I}$. Más
 	Si $\mathcal{I}_d$ son los intervalos en $\R^d$ y definimos $\mathcal{T}:\mathcal{I}_d \to [0,\infty]$ como $\mathcal{T}(I)\coloneq|I|$, entonces $\mathcal{I}_d$ es una semiálgebra y $\mathcal{T}$ es una premedida $\sigma$-aditiva en $\mathcal{I}_d$ (lo veremos después). Por lo tanto, $\mathcal{T}$ se puede extender (de manera única, pues $\mathcal{T}$ es $\sigma$-finita) a una medida $\mu_{\delta}$ sobre la $\sigma$-álgebra $\mathscr{L}(\R^d) = \overline{\sigma(\mathcal{I}_d)^{\mathcal{T}}}$, llamada \underline{medida de Lebesgue en $\R^d$} y $\mathscr{L}(\R^d)$ es la clase de \underline{conjuntos medibles Lebesgue en $\R^d$}. Al igual que antes, dado $E \in \mathscr{L}(\R^d)$, notamos $|E| \coloneq \mu_{\mathcal{T}}(E)$.
 \end{eg}
 
+\subsection*{Demostración del teorema de extensión de Carathéodory}
+
+\textbf{Paso 1:} Medidas Exteriores
+
+\begin{prop}
+	Si $I \subseteq \R$ es un intervalo,
+	\[ |E|_{e} = \inf \{ \sum_{n=1}^{\infty} |I_n| \ : \  (I_n)_{n\in\N} \text{ intervalos, } E \subseteq \bigcup_{n=1}^{\infty} I_n \} \]
+\end{prop}
+\begin{proof}[Proof ]
+	$\geq)$ Tomando $I_1 = I,\ I_{n+1} = \varnothing \quad \forall n \in \N$ \newline
+
+	$\leq)$ Por la $\sigma$-subaditividad de $\lambda$ en $\mathcal{I}$: si $I\subseteq \bigcup_{n=1}^{\infty}$ entonces $\lambda(I) \leq \sum_{i=1}^{\infty} \lambda(I_i)$.
+\end{proof}
+
+\begin{definition}[Medida exterior inducida por una premedida]
+	Sea $X$ un espacio, $\mathscr{C}$ una clase de subconjuntos de $X$ y $\mathcal{T} : \mathscr{C} \to [0,\infty]$ una premedida. Definimos la \underline{medida exterior inducida por $\mathcal{T}$} como la aplicación $\mu_{\mathcal{T}}^{*} : \mathscr{P}(X) \to [0,\infty]$ dada por
+	\[ \mu_{\mathcal{T}}^{*}(A) \coloneq \inf \{ \sum_{n=1}^{\infty} \mathcal{T}(C_i) \ : \ (C_i)_{i\in\N} \subseteq \mathscr{C} \text{ y } A \subseteq \bigcup_{i=1}^{\infty} C_i \} \]
+	con la convención de que $\inf \varnothing \coloneq \infty$.
+\end{definition}
+
+\begin{eg}
+	$\mu_{\lambda}^{*} =$ \textit{medida exterior de Lebesgue} y la notamos $|E|_e \coloneq \mu_{\lambda}^{*}(E)$.
+\end{eg}
+
+Idealmente, nos gustaría que $\mu_{\mathcal{T}}^{*}$ cumpla
+\[ \begin{cases}
+	(C1) \ \mu_{\mathcal{T}^{*}}(C) = \mathcal{T}(C) \quad \forall C \in \mathscr{C} \\
+	(C2) \ \mu_{\mathcal{T}}^{*} \text{ es } \sigma\text{-subaditiva en } \mathscr{P}(X)
+\end{cases} \]
+no tienen por qué cumplirse ninguna de la 2:
+\begin{enumerate}
+	\item[(C1)] $X = \{a,b\},\ \mathscr{C} = \{\varnothing, \{a\}, X\},\ \mathcal{T}(A) = \begin{cases}
+		0 \quad A = \varnothing \\
+		2 \quad A = \{a\} \\
+		1 \quad A = X
+	\end{cases} \mathcal{T}(\{a\}) = 2,\ \mu_{\mathcal{T}}^{*}(\{a\}) = 1 \neq \mathcal{T}(\{a\})$.
+
+	\item[(C2)] Medida exterior de Lebesgue no es $\sigma$-aditiva (lo vemos mas adelante!)
+\end{enumerate}
+
+\begin{proposition}
+	Si $\mathcal{T}$ es una premedida sobre una semiálgebra $\mathscr{S}$ que satisface
+	\begin{enumerate}
+		\item[(E2)] $\mathcal{T}$ es $\sigma$-subaditiva en $\mathscr{S}$,
+	\end{enumerate}
+	entonces $\mu_{\mathcal{T}}^{*}(A) = \mathcal{T}(A)\quad \forall A \in \mathscr{S}$ (i.e. $\mu_{\mathcal{T}}^{*}$ cumple (C1)).
+\end{proposition}
+\begin{proof}
+	$\underline{\mu_{\mathcal{T}}^{*}(A) \leq \mathcal{T}(A).}$ Tomando $C_1 = A \in \mathscr{S},\ C_{n+1} = \varnothing \in \mathscr{S}$. Luego $(C_n)_{n\in\N}$ es cubrimiento de $A$ por elementos de $\mathscr{S}$ y luego
+	\[ \mu_{\mathcal{T}}^{*}(A) \leq \sum_{n\in\N} \mathcal{T}(C_n) = \mathcal{T}(A) \]
+	$\underline{\mathcal{T}(A) \leq \mu_{\mathcal{T}}^{*}(A).}$ Si $(C_n)_{n\in\N}\subseteq \mathscr{S}$ es un cubrimiento de $A \in \mathscr{S}$ entonces por (E2), tenemos que $\mathcal{T}(A) \leq \sum_{n\in\N} \mathcal{T}(C_n)$. Tomando $\inf$ sobre tales cubrimientos, resulta $\mathcal{T}(A) \leq \mu_{\mathcal{T}}^{*}(A)$.
+\end{proof}
+
+\begin{theorem}
+	Sean $X$ un espacio, $\mathscr{C}$ una clase de subconjuntos de $X$ y $\mathcal{T}:\mathscr{C} \to [0,\infty]$ una premedida. Entonces,
+	\begin{enumerate}
+		\item $\mu_{\mathcal{T}}^{*}(\varnothing)$;
+
+		\item $\mu_{\mathcal{T}}^{*}$ es monótona $(A \subseteq B \implies \mu_{\mathcal{T}}^{*}(A)\leq\mu_{\mathcal{T}}^{*}(B))$;
+
+		\item $\mu_{\mathcal{T}}^{*}$ es $\sigma$-subaditiva $(A\subseteq\bigcup_{n\in\N}A_n \implies \mu_{\mathcal{T}}^{*}(A) \leq \sum_{n=1}^{\infty} \mu_{\mathcal{T}}^{*}(A_n)$.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}[Proof ]
+	\begin{enumerate}
+		\item $\mu_{\mathcal{T}}^{*}(\varnothing)\geq 0$ es por definición. Para ver que $\mu_{\mathcal{T}}^{*}(\varnothing)\leq 0$, tomamos el cubrimiento $C_n = \varnothing$ y repetimos el argumento de la Proposición anterior.
+		
+		\item Si $\mu_{\mathcal{T}}^{*}(B)=\infty$, la desigualdad es inmediata. Si $\mu_{\mathcal{T}}^{*}(B)<\infty$, entonces existen cubrimientos de $B$ por elementos de $\mathscr{S}$. Sea $(C_n)_{n\in\N}\subseteq\mathscr{S}$ un cubrimiento de $B$. Entonces, $(C_n)_{n\in\N}$ es también cubrimiento de $A$ y, luego, $\mu_{\mathcal{T}}^{*}(A)\leq \sum_{n\in\N} \mathcal{T}(C_n)$. Como esto es cierto para todo cubrimiento $(C_n)_{n\in\N}$ de $B$, tomando ínfimo en la desigualdad anterior sobre tales cubrimientos resulta $\mu_{\mathcal{T}}^{*}(A) \leq \mu_{\mathcal{T}}^{*}(B)$.
+
+		\item Dado $\varepsilon>0$, sea $(C_{i}^{(n)})_{i\in\N}$ un cubrimiento de $A_n$ tal que $\sum_{i=1}^{\infty} \mathcal{T}(C_{i}^{(n)}) \leq \mu_{\mathcal{T}}^{*}(A_n) + \frac{\varepsilon}{2^n}$. Luego, notando que $(C_{i}^{(n)}\ : \ i\in\N,\ n\in\N)$ es un cubrimiento de $A$, obtenemos que
+		\begin{align*}
+			\mu_{\mathcal{T}}^{*}(A) \leq \sum_{n=1}^{\infty} \sum_{i=1}^{\infty} \mathcal{T}(C_{i}^{(n)}) & \leq \sum_{n=1}^{\infty} \left(\mu_{\mathcal{T}}^{*}(A_n) + \frac{\varepsilon}{2^n} \right) \\
+			& \leq \sum_{n=1}^{\infty} \mu_{\mathcal{T}}^{*}(A_n) + \varepsilon \underbrace{\sum_{n=1}^{\infty} \frac{1}{2^m}}_{1}
+		\end{align*}
+		Luego, $\mu_{\mathcal{T}}^{*}(A) \leq \sum_{n=1}^{\infty} \mu_{\mathcal{T}}^{*}(A_n) + \varepsilon \quad \forall \varepsilon>0$. Tomando $\varepsilon \to 0^+$, obtenemos la $\sigma$-subaditividad de $\mu_{\mathcal{T}}^{*}$.
+	\end{enumerate}
+\end{proof}
+
+\begin{definition}[medida exterior]
+	Sea $X$ un espacio. Decimos que $\mu^{*} : \mathscr{P}(X)\to[0,\infty]$ es una \underline{medida exterior} si:
+	\begin{enumerate}
+		\item $\mu^{*}(\varnothing) = 0$;
+
+		\item $A \subseteq B \implies \mu^{*}(A)\leq \mu^{*}(B)$;
+
+		\item $A \subseteq \bigcup_{n\in\N} A_n \implies \mu^{*}(A) \leq \sum_{n=1}^{\infty} \mu^{*}(A_n)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{eg}~
+	\begin{enumerate}
+		\item Medidas exteriores generadas por una premedida;
+
+		\item Si $(\mu_{\gamma}^{*})_{\gamma\in\Gamma}$ son medidas exteriores sobre $X$, entonces
+		\[ \mu^{*}(A) \coloneq \sup_{\gamma\in\Gamma} \mu_{\gamma}^{*}(A) \]
+		es una medida exterior (Ej. Guía 3).
+
+		\item \textbf{Medida exterior $s$-dimensional de Hausdorff en $\R^d$.}
+		\begin{itemize}
+			\item Si $I$ es un intervalo en $\R^d$, entonces $|rI| = r^d|I|$;
+
+			\item Si $E \subseteq \R^d$ es medible Lebesgue, entonces $|rE| = r^d|E|$;
+
+			\item En particular, si $E = B(x,r)$, entonces
+			\[ |E| = |B(0,r)| = |rB(0,1)| = r^d|B(0,1)| = C_d (diam E)^d,\quad C_d \coloneq \frac{|B(0,1)|}{2^d} \]
+
+			\item Si $E \subseteq \R^d$ es "s-dimensional" y $\mathscr{H}_s$ es la mdeida que queremos, entonces debería valer que...
+		\end{itemize}
+	\end{enumerate}
+\end{eg}
+
 \end{document}

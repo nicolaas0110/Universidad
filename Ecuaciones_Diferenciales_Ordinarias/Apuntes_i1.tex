@@ -501,7 +501,7 @@ Funciones Lipschitz: $\Omega \subset \R^{n+1},\ (x,y) \in \Omega,\ x \in \R$, y 
 		\[ |\varphi(\hat{x}_{0} - y_{0}| = b_{0} \text{ y } |\varphi(x) -y_{0}\quad x \in (x_{0},\hat{x}_0). \]
 		\begin{align*}
 			b_{0} & = |\varphi(\hat{x}_0)-y_{0}| \\ 
-			& = \left| \int_{x_0}^{\hat{x}_0} f(s,\varphi(s))ds \right| \\
+			&lc= \left| \int_{x_0}^{\hat{x}_0} f(s,\varphi(s))ds \right| \\
 			& \leq \left| \int_{x_0}^{\hat{x}_0 } |f(s,\varphi(s))| ds \right| \\
 			& \leq M |\hat{x}_0 - x_{0}| \leq M \delta < b_0 
 		.\end{align*}
@@ -524,8 +524,10 @@ Funciones Lipschitz: $\Omega \subset \R^{n+1},\ (x,y) \in \Omega,\ x \in \R$, y 
 	con $L\delta<1$. Luego, $T: X \to X$ es una contracción, y entonces admite un único punto fijo $\hat{\varphi} \in X$, que constituye la única solución del (PC) en $I_{\delta}$. 
 \end{proof}
  
-\begin{theorem}[Picard-Lindelöf para EDOs de orden superior] 
-  Sea $\Omega \subset \R^{n+1}$ un conjunto abierto y $g \in C(\Omega;\R)\cap lip_{loc}(y,y',\cdots, y^{n-1};\R)$. dado cualquier punto $(x_0,y_0,y'_0,\cdots,y_0^{n-1})\in \Omega$, existe $\delta > 0$ tal que, si ponemos $I_{\delta}=[x_i -\delta, x_0+ \delta]$, el problema de Cauchy
+i\begin{theorem}[Picard-Lindelöf para EDOs de orden superior]
+  Sea $\Omega \subset \R^{n+1}$ un conjunto abierto y 
+  \[g \in C(\Omega;\R)\cap \text{lip}_{\textit{loc}}(y,y',\ldots, y^{n-1};\R).\] 
+  dado cualquier punto $(x_0,y_0,y'_0,\ldots,y_0^{n-1})\in \Omega$, existe $\delta > 0$ tal que, si ponemos $I_{\delta}=[x_0 -\delta, x_0+ \delta]$, el problema de Cauchy
   \[
     \begin{cases}
       y^{m}(x)=g(x,y(x),y'(x),\ldots,y^{n-1}(x)) \quad \forall x \in I_{\delta} \\
@@ -543,20 +545,19 @@ Funciones Lipschitz: $\Omega \subset \R^{n+1},\ (x,y) \in \Omega,\ x \in \R$, y 
     \varphi_{\lambda}(x)=f(x)+\lambda\int_{a}^{x}k(x,t)\varphi_{\lambda}(t)dt.\quad \forall x \in [a,b].
   \]
 \end{example}
-
-Un poco más de análisis Funcional.
+\subsection{Un poco más de análisis Funcional.}
 Recordamos que en cualquier espacio métrico, un sub-conjunto es compacto si y sólo si es secuecialmente compacto.
 
 \begin{definition}
   Sean $a<b$ números reales, $I=[a,b]$ Dada una familia de funciones $  F\subset C(I;\R)$, decimos que
   \begin{enumerate}
-    \item $F$ es relativamente compacto si $\overline{F}$ es compacto, vale decir para cualquier sucesión $(\varphi_n)_{n\in \N} \subset F$, existen $\varphi \in C(I;\R)$ y una sub-sucesión $(\varphi_{n}_k)_{k\in \N}$ tales que $\varphi_{n}_k \xrightarrow{k\to \infty}\varphi$ es $C(I;\R)$
-    \item $F$ es equicontinua si $(\forall \epsilon >9)(\exists \delta > 0)(\forall x_1,x_2 \in I) \quad |x_1-x_2|<\delta \Rightarrow |\varphi(x_1)-\Phi(x_2)|<\epsilon \forall \varphi \in F$ 
+    \item $F$ es relativamente compacto si $\overline{F}$ es compacto, vale decir para cualquier sucesión $(\varphi_n)_{n\in \N} \subset F$, existen $\hat{\varphi} \in C(I;\R)$ y una sub-sucesión $(\varphi_{n_k})_{k\in \N}$ tales que $\varphi_{n_k} \xrightarrow{k\to \infty}\hat{\varphi}$ es $ C(I;\R)$
+    \item $F$ es equicontinua si $(\forall \epsilon >0)(\exists \delta > 0)(\forall x_1,x_2 \in I) \quad |x_1-x_2|<\delta \Rightarrow |\varphi(x_1)-\varphi(x_2)|<\epsilon \forall \varphi \in F$ 
     \item $F$ es acotada si $\sup_{\varphi \in F}|\varphi|_{\infty} < \infty $ 
   \end{enumerate}
 \end{definition}
 
-\begin{theorem}[Arzela-Ascoli] 
+\begin{theorem}[Arzelà-Ascoli] 
   Sean $a<b$ números reales y $I=[a,b]$. Dada una familia $F\subset C(I;\R)$, se tiene que $F$ es relativamente compacto si y sólo si $F$ es equicontinua y acotada.
 \end{theorem}
 
@@ -565,22 +566,37 @@ Recordamos que en cualquier espacio métrico, un sub-conjunto es compacto si y s
 \end{theorem}
 
 \begin{theorem}[Punto fijo de Schauder]
-  Sea $\mathcal{X}$ un espacio de Banach sobre $\R$, y $K\subset \mathcal{X}$ un conjunto conexo, cerrado, acotado y no vacío. Consideremos una aplicación $T:K\rightarrow K$  continua y tal que $T(K)$ es relativamente conpacto, Entonces existe, al menos, un punto fijo de $T$ en $K$.
-\end{theorem}
+  Sea $\mathcal{X}$ un espacio de Banach sobre $\R$, y $K\subset \mathcal{X}$ un conjunto conexo, cerrado, acotado y no vacío. Consideremos una aplicación $T:K\rightarrow K$  continua y tal que $T(K)$ es relativamente compacto, Entonces existe, al menos, un punto fijo de $T$ en $K$.
+d\end{theorem}
 
 \begin{remark}
   $T(k)$ es relativamente compactio si y sólo si $\overline{T(K)}$ es compacto, si y sólo si cualquier sucesión $(X_n)_{n\in \N}\subset \mathcal{X}$ resulta que $(T(X_n))_{n\in \N}$ admite una sub-sucesión convergente (a un límite que no necesariamente pertenece a $T(K)$).
 \end{remark}
+
 \begin{theorem}[Peano] Sea $\Omega \subset \R^{n+1}$ un conjunto abierto y $f \in C(\Omega;\R^n)$. Entonces, para cualquier $(x_0,y_0)\in \Omega$, existe $\delta>0$ tal que, si ponemos $I_{\delta}=[x_o-\delta,x_o+\delta]$, el problema de Cauchy
   \[
     \begin{cases}
-      y´(x)=f(x,y(z)) \quad x \in I_{\delta} \\ y(x_0)=y_0
+      y´(x)=f(x,y(x)) \quad x \in I_{\delta} \\ y(x_0)=y_0
     \end{cases}
   \]
   Admite (al menos) una solución
 \end{theorem}
 
 \begin{proof}
-
+  Como $\Omega$ es abierto, existen $a_0>0$ y $b_0>0$ tales que, si denotamos $R=[x_0-a_0,x_0+a_0]\times \overline{B(y_0,b_0)}$, entonces $R \subset \Omega$. Sea $M=\max_{(x,y)\in \R}|f(x,y)|$ y tomamos $\delta > 0$ tales que $0 < \delta < \min\left\{a_0, \frac{b_0}{M}\right\}$. Definamos 
+  \[  K=\{\varphi \in C(I_{\delta};\R^n)| \varphi(x_0)=y_0;\quad |\varphi(x)-y_0|\leq b_o \quad \forall x \in I_{\delta}\}\]
+  que es no vacío, conexo, conexo y acotado. Definamos ahroa la aplicación $T:K\rightarrow C(I_{\delta};\R^n)$ mediante la fórmula 
+  \[ T(\varphi)(x)=y_0 + \int_{x_0}^{x} f(s,\varphi(s))ds \quad \forall \varpgi \in K, \quad \forall x \in I_{\delta}\]
+  Notamos que $T(\varphi)\in C(I_{\delta};\R^n) \quad \forall \varphi \in K$. Además, si $\varphi \in K$, se tiene que $(x,\varphi(x)\in \R, \quaf \forall x \in I_{\delta}$ y así:
+  \[ |T(\varphi)(x)-y_0|\leq \left| \int_{x_0}^{x}|f(s,\varphi(s))|ds \right| \leq M|x-x_0|\leq M\delta -b_0 \quad \forall x \in I_{\delta} \]
+  y como $T(\varphi)(x_0)=y_0$, entonces $T(\varphi)\in K\quad \forall \varphi \in K.$. Ahora, afirmamos que $T:K\rightarrow K$ es continua, sea $\epsilon >0$. Como $f$ es uniformemente continua en $\R$, exite $\delta_0 >0$ tal que $:\forall(s,y_1),)(s,y_2)\in \R$, 
+  \[|y_1-y_2|\leq \delta_0 \Rightarrow |f(s,y_1)-f(s,y_2)|\leq \frac{\epsilon}{\delta}\]
+  Por ende, si $\varphi_1,\varphi_2 \in K$ son tales que $|\varphi_1,\varphi_2|_{\infty}\leq \delta_0$, entonces $|\varphi_1(s)-\varphi_2(s)|\leq \delta_0\quad \forall s \in I_{\delta}$. Entonces 
+  \[ |f(s,\varphi_1(s))-f(s,\varphi_2(s))|\leq \frac{\epsilon}{\delta}\quad \forall s \in I_{\delta} \]
+  Luego,
+  \[|t(\varphi_1)(x)-T(\varphi_2)(x)|\leq \left|\int_{x_0}^{x}|f(s,\varphi_1(s))-f(s,\varphi_2(s))|\right| \leq \frac{\epsilon}{\delta}|x-x_0|\leq \epsilon \quad \forall x \in I_{\delta}\]
+  Entonces $||T(\varphi_1)-T(\varphi_2)||_{\infty}\leq \epsilon \quad \forall \varphi_1,\varphi_2\in K$ tales que $||\varphi_1 -\varphi_2||_{\infty} \leq \delta_0$ aprovechamos para demostrar que la familia $T(K)\subset C(I_{\delta};\R^n)$ es equicontinua....  
+  
 \end{proof}
+
 \end{document}
