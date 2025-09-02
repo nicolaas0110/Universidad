@@ -853,7 +853,8 @@ no tienen por qué cumplirse ninguna de la 2:
 		\item $\mu_{\mathcal{T}}^{*}$ es $\sigma$-subaditiva $(A\subseteq\bigcup_{n\in\N}A_n \implies \mu_{\mathcal{T}}^{*}(A) \leq \sum_{n=1}^{\infty} \mu_{\mathcal{T}}^{*}(A_n)$.
 	\end{enumerate}
 \end{theorem}
-\begin{proof}[Proof ]
+\begin{proof}
+
 	\begin{enumerate}
 		\item $\mu_{\mathcal{T}}^{*}(\varnothing)\geq 0$ es por definición. Para ver que $\mu_{\mathcal{T}}^{*}(\varnothing)\leq 0$, tomamos el cubrimiento $C_n = \varnothing$ y repetimos el argumento de la Proposición anterior.
 		
@@ -896,9 +897,44 @@ no tienen por qué cumplirse ninguna de la 2:
 			\item En particular, si $E = B(x,r)$, entonces
 			\[ |E| = |B(0,r)| = |rB(0,1)| = r^d|B(0,1)| = C_d (diam E)^d,\quad C_d \coloneq \frac{|B(0,1)|}{2^d} \]
 
-			\item Si $E \subseteq \R^d$ es "s-dimensional" y $\mathscr{H}_s$ es la mdeida que queremos, entonces debería valer que...
+			\item Si $E \subseteq \R^d$ es "s-dimensional" y $\mathscr{H}_s$ es la medida que queremos, entonces 
+      \[ H_s(E) \approx \sum_{i\in \N} H_s(E\cap B(x_i,r_i))\approx \sum_{i \in \N}(\text{diam}(E\cap B(x_i,r_i)))^s \]
 		\end{itemize}
 	\end{enumerate}
 \end{eg}
+
+Teniendo eso en cuenta, dados $d \in \N, s \in [0,d], \delta >0$, definimos
+\begin{itemize}
+  \item $C_{\delta}\coloneqq {A\subseteq \R^d:\text{  diam } A < \delta }$. \\
+  
+  \item $H_s^{(\delta)}(E)\coloneqq \inf{\sum_{n\in \N}(\text{diam }A_n)^s: (A_n)_{n\in \N} \subseteq C_{\delta}, E\subseteq \cup_{n\in \N}A_n}$.
+\end{itemize}
+Observar que si $\delta´< \delta $ entonces $H_s^{(\delta´)}(E) \geq H_s^{(\delta)}(E)$. Luego, podemos definir:
+\[
+  H_s(E) = \sup_{\delta > 0}H_s^{(\delta)}(E) = \lim_{\delta \to 0^+} H_s^{(\delta)}(E)
+\]
+
+
+\begin{definition}
+  Sea $X$ un espacio y $\mu^*:P(X)\rightarrow [0,\infty]$ medida exterior. Decimos que $E\subseteq X$ es un conjunto $\mu^*$-medible si 
+  \[
+    \mu^*(A)= \mu^*(A\cap E)+ \mu^*(A\cap E^c) \quad \forall A\subseteq X
+  \]
+\end{definition}
+observación. Que $\mu^*(A)\geq \mu^*(A\cap E)+ \mu^*(A\cap E^c) $ vale siempre (por $\sigma$-subaditividad de $\mu^*$). Luego, para ver que $E$ es $\mu^*$-medible, baste ver que $\mu^*(A)\geq \mu^*(A\cap E)+ \mu^*(A\cap E^c)$ 
+
+
+\begin{theorem}
+  Sea $\mu^*$ una medida exterior sobre un espacio $X$. Entonces:
+  \begin{enumerate}
+    \item[(1)] $\mu^*(E)=0 \Rightarrow E$ es $\mu^*$-medible.
+
+    \item[(2)] La clase $\mathcal{M}_{\mu^*}$ de conjuntos $\mu^*$-medibles es un $\sigma$-álgebra.
+
+    \item[(3)] La restricción $\mu$ de $\mu^*$ a $\mathcal{M}_{\mu^*}$ es una medida.
+  \end{enumerate}
+  En particular, $(X, \mathcal{M}_{\mu^*}, \mu)$ es un espacio de medida completo. 
+\end{theorem}
+
 
 \end{document}
