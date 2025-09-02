@@ -45,6 +45,7 @@
 \def\imageSize{0.6}
 
 %===================== PACKAGES TO USE  =============================
+	% Change title format
 \usepackage{amsmath} 			% Allows me the use of matrix in math mode
 \setcounter{MaxMatrixCols}{20} 		% Increases the maximum number of columns in matrix from 10 to 20.
 \usepackage{pdfpages} 			% Attach pdfs using \includepdf[pages=initial-final]{path.pdf}
@@ -58,12 +59,30 @@
 \usepackage{subcaption}			% Include subfigures.
 \usepackage{hyperref}			% Allows clickable references.
 \hypersetup{colorlinks=true, allcolors=black} 	% Colors of links
-\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape pages
-
+\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{fancyhdr}			% Modify header and footer
 \usepackage{bm}				% Allows to use bold text in math mode with \bm
 \usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
-\usepackage{titlesec}			% Change title format
+\usepackage{titlesec}
+
+
+
+\theoremstyle{definition} % hace que el cuerpo sea upright (no itálico)
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{note}[theorem]{Nota}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+
 
 
 %========== CHANGE TITLE FORMAT  ======================
@@ -198,9 +217,254 @@
 \tableofcontents
 \cleardoublepage
 
-\section{Estadística}
-\label{sec:Estadística}
+% --- Clase 1: ---
 
-Estadística
+\section{Clase 1: Razonamiento Estádistico.}
+
+\subsection{La Historia que dio Origen al Diseño Experimental}
+
+La primera clase introduce el concepto de \textbf{razonamiento estadístico} a través de una historia real que ocurrió en Cambridge, Inglaterra, a finales de la década de 1920. En una reunión social, una dama afirmó que el sabor del té era diferente dependiendo de si se había vertido primero la leche en la taza o el té.
+
+El eminente estadístico, Sir Ronald Aylmer Fisher, en lugar de desestimar la afirmación, propuso evaluarla a través de un experimento diseñado para obtener evidencia objetiva. Este evento es considerado el origen del Diseño Experimental moderno.
+
+\subsection{El Experimento de Fisher}
+
+Para verificar la afirmación de la dama, Fisher diseñó un experimento con las siguientes características:
+
+\begin{itemize}
+    \item \textbf{Preparación:} Se prepararon 8 tazas de té en total.
+    \item \textbf{Grupos:} En 4 de las tazas se sirvió el té antes que la leche, y en las 4 restantes, la leche antes que el té.
+    \item \textbf{Aleatorización:} Las 8 tazas se le presentaron a la dama en un orden completamente aleatorio para que ella las probara y clasificara.
+    \item \textbf{Información previa:} A la dama se le informó que había exactamente 4 tazas de cada tipo de preparación.
+\end{itemize}
+
+La pregunta central del experimento era: ¿qué resultados nos harían concluir que la dama realmente tiene la habilidad que dice tener y no está simplemente adivinando?.
+
+\subsection{Análisis Probabilístico y Toma de Decisión}
+
+El núcleo del razonamiento de Fisher fue el uso de la probabilidad para determinar qué tan sorprendente sería un resultado si la dama estuviera adivinando. La idea es evaluar la probabilidad de que un resultado ocurra \textbf{por puro azar}.
+
+\begin{itemize}
+    \item \textbf{Hipótesis Nula ($H_0$):} La dama no tiene ninguna habilidad para distinguir la preparación. Cualquier acierto es producto del azar.
+    \item \textbf{Hipótesis Alternativa ($H_A$):} La dama sí tiene la habilidad de distinguir la preparación.
+\end{itemize}
+
+Fisher calculó la probabilidad de los posibles resultados bajo el supuesto de que la hipótesis nula era cierta:
+\begin{itemize}
+    \item La probabilidad de acertar \textbf{todas las tazas} (las 4 de un tipo) por azar es de solo \textbf{1.4\%}. Este es un evento muy improbable.
+    \item La probabilidad de acertar \textbf{exactamente 3} de las 4 tazas de un tipo por azar es de aproximadamente \textbf{23\%}. Este evento es considerablemente más probable.
+\end{itemize}
+
+\textbf{Conclusión del experimento:} Se determinó que acertar las 4 tazas sería evidencia suficiente para convencer a los presentes de su habilidad, ya que la probabilidad de que esto ocurriera por azar era muy baja (1.4\%). Un acierto de solo 3 tazas no se consideraría evidencia suficiente.
+
+\subsection{Pasos Fundamentales del Razonamiento Estadístico}
+
+La historia de la dama catadora de té ilustra los pilares de la inferencia estadística y las pruebas de hipótesis:
+\begin{enumerate}
+    \item \textbf{Definición de hipótesis:} Se formula una hipótesis nula y una alternativa.
+    \item \textbf{Diseño de un experimento:} Se crea un método para recolectar datos que permita discriminar entre las hipótesis.
+    \item \textbf{Establecimiento de la significancia:} Se fija un umbral de probabilidad (la máxima probabilidad de error que se permitirá) por debajo del cual un resultado se considera "raro" o "estadísticamente significativo" si la hipótesis nula fuera cierta.
+    \item \textbf{Determinación de la región de rechazo:} Se definen los resultados del experimento que se considerarán evidencia suficiente para rechazar la hipótesis nula.
+\end{enumerate}
+
+% --- Clase 2: Conceptos Básicos ---
+
+\section{Clase 2: Conceptos Básicos}
+
+\begin{definition}[Experimento Aleatorio]
+Un experimento aleatorio corresponde a una situación cuyo resultado no se puede predecir con total certeza.
+\end{definition}
+
+\begin{definition}[Espacio Muestral]
+El espacio muestral de un experimento corresponde al conjunto de todos sus resultados posibles. Usualmente se denota por $\Omega$.
+\end{definition}
+
+\begin{definition}[Evento Aleatorio]
+Un evento aleatorio corresponde a cualquier subconjunto del espacio muestral $\Omega$.
+\end{definition}
+
+\begin{definition}[$\sigma$-álgebra]
+Un $\sigma$-álgebra corresponde a una colección de subconjuntos de $\Omega$, denotada por $\mathcal{F}$, que cumple con las siguientes condiciones:
+\begin{enumerate}
+    \item $\Omega \in \mathcal{F}$
+    \item $A \in \mathcal{F} \implies A^{c} \in \mathcal{F}$
+    \item $A_{1}, A_{2}, \dots \in \mathcal{F} \implies \bigcup_{i=1}^{\infty} A_{i} \in \mathcal{F}$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Conjunto Potencia]
+El conjunto de todos los subconjuntos posibles de un espacio muestral $\Omega$ corresponde a un $\sigma$-álgebra, se denomina conjunto potencia de $\Omega$ y se denota por $2^{\Omega}$.
+\end{definition}
+
+\begin{definition}[Espacio Medible]
+El par $(\Omega, \mathcal{F})$, donde $\Omega$ es no vacío y $\mathcal{F}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$, se denomina espacio medible.
+\end{definition}
+
+\begin{definition}[Medida de Probabilidad]
+Sea $(\Omega, \mathcal{F})$ un espacio medible. Una medida de probabilidad, definida sobre él, es una función $P: \mathcal{F} \longrightarrow [0,1]$, que cumple con:
+\begin{itemize}
+    \item \textbf{Axioma I:} $P(\Omega) = 1$
+    \item \textbf{Axioma II:} $P(A) \ge 0, \forall A \in \mathcal{F}$
+    \item \textbf{Axioma III:} ($\sigma$-aditividad) Si $A_{1}, A_{2}, \dots$ son disjuntos dos a dos, entonces:
+    $$ P\left(\bigcup_{i=1}^{\infty} A_{i}\right) = \sum_{i=1}^{\infty} P(A_{i}) $$
+\end{itemize}
+\end{definition}
+
+\begin{definition}[Espacio de Probabilidad]
+El trío $(\Omega, \mathcal{F}, P)$, donde $\Omega$ es no vacío, $\mathcal{F}$ es una $\sigma$-álgebra de subconjuntos de $\Omega$, y $P$ es una medida de probabilidad, se denomina espacio de probabilidad.
+\end{definition}
+
+% --- Clase 3: Definiciones de probabilidad útiles en Estadística ---
+
+\section{Clase 3: Definiciones de Probabilidad}
+
+\begin{definition}[Probabilidad Clásica]
+Sea $(\Omega, \mathcal{F})$ un espacio medible, con $\Omega$ numerable y finito. Para un evento $A \in \mathcal{F}$, la medida de probabilidad clásica se define como:
+$$ P(A) = \frac{\#A}{\#\Omega} $$
+\end{definition}
+
+\begin{definition}[Ocurrencia de un Evento]
+Sea $(\Omega, \mathcal{F})$ un espacio medible asociado a un experimento aleatorio. Se dice que un evento $A \in \mathcal{F}$ ocurrió si, una vez realizado el experimento, su resultado está contenido en A.
+\end{definition}
+
+\begin{definition}[Probabilidad Frecuentista]
+Sea $(\Omega, \mathcal{F})$ un espacio medible asociado a un experimento aleatorio que se repite infinitas veces. Sea $f_{n}(A)$ la frecuencia relativa de veces en que el evento $A \in \mathcal{F}$ ha ocurrido en las primeras $n$ repeticiones. La probabilidad frecuentista se define como:
+$$ P(A) = \lim_{n \to \infty} f_{n}(A) $$
+\end{definition}
+
+\begin{definition}[Probabilidad Subjetiva o Bayesiana]
+La probabilidad es una medida racional de la incertidumbre, condicional al estado de conocimiento. Este paradigma asigna probabilidades a objetos determinísticos para describir la incertidumbre sobre sus valores, la cual debe ser actualizada a la luz de nuevos datos.
+\end{definition}
+
+% --- Clase 4: Probabilidad condicional e independencia ---
+
+\section{Clase 4: Probabilidad Condicional e Independencia}
+
+\begin{definition}[Probabilidad Condicional]
+Sean $(\Omega, \mathcal{F}, P)$ un espacio de probabilidad, y sean $A$ y $B$ elementos de $\mathcal{F}$. La probabilidad condicional de un evento $A$, dado un evento $B$ tal que $P(B) > 0$, se define como:
+$$ P(A|B) = \frac{P(A \cap B)}{P(B)} $$
+\end{definition}
+
+\begin{definition}[Independencia entre dos Eventos]
+Dos eventos, A y B, se dicen independientes si se cumple cualquiera de las siguientes condiciones equivalentes:
+$$ P(A|B) = P(A) \quad \Leftrightarrow \quad P(B|A) = P(B) \quad \Leftrightarrow \quad P(A \cap B) = P(A)P(B) $$
+\end{definition}
+
+\begin{definition}[Independencia Mutua]
+Los eventos $E_{1}, \dots, E_{n}$ se dicen mutuamente independientes si y solo si, para toda subcolección de tamaño $m$, con $1 \le m \le n$, se cumple que:
+$$ P(E_{j_{1}} \cap E_{j_{2}} \cap \dots \cap E_{j_{m}}) = \prod_{k=j_{1}}^{j_{m}} P(E_{k}) $$
+\end{definition}
+
+\begin{definition}[Partición de un Conjunto]
+Sea $E_{1}, E_{2}, \dots$ una colección de subconjuntos de $\Omega$ tales que:
+\begin{enumerate}
+    \item[(i)] $E_{i} \cap E_{j} = \emptyset$, para todo $i \ne j$
+    \item[(ii)] $\bigcup_{i=1}^{\infty} E_{i} = \Omega$
+\end{enumerate}
+Decimos que esta colección corresponde a una partición del conjunto $\Omega$.
+\end{definition}
+
+\begin{theorem}[Teorema de Probabilidad Total]
+Sea $E_{1}, E_{2}, \dots$ una partición de $\Omega$. Entonces, para todo evento A, se cumple:
+$$ P(A) = \sum_{i=1}^{\infty} P(A|E_{i})P(E_{i}) $$
+\end{theorem}
+
+\begin{theorem}[Teorema de Bayes]
+Sea la colección de eventos $E_{1}, E_{2}, \dots$ una partición de $\Omega$. Entonces, para todo evento A y para cualquier $j \in \mathbb{N}$, se cumple:
+$$ P(E_{j}|A) = \frac{P(A|E_{j})P(E_{j})}{\sum_{i=1}^{\infty} P(A|E_{i})P(E_{i})} $$
+\end{theorem}
+
+% --- Clase 5: Variables aleatorias ---
+
+\section{Clase 5: Variables Aleatorias}
+
+\begin{definition}[Variable Aleatoria]
+Sea $(\Omega, \mathcal{F}, P)$ un espacio de probabilidad. Una variable aleatoria es una función $X: \Omega \to \mathbb{R}$ que satisface la condición:
+$$ \{\omega \in \Omega : X(\omega) \le x\} \in \mathcal{F}, \quad \text{para todo } x \in \mathbb{R} $$
+\end{definition}
+
+\begin{definition}[Función de Distribución]
+Sea $X$ una variable aleatoria definida sobre un espacio de probabilidad $(\Omega, \mathcal{F}, P)$. Se denomina función de distribución de $X$ a la función $F_{X}: \mathbb{R} \to [0,1]$ definida como:
+$$ F_{X}(x) = P(X \le x) \equiv P(\{\omega \in \Omega : X(\omega) \le x\}), \quad x \in \mathbb{R} $$
+\end{definition}
+
+% --- Clase 6: Variables aleatorias discretas ---
+
+\section{Clase 6: Variables Aleatorias Discretas}
+
+\begin{definition}[Soporte de una Variable Aleatoria]
+El conjunto $\mathcal{B} \subseteq \mathbb{R}$ más pequeño que cumple con $P(X \in \mathcal{B}) = 1$ se denomina soporte de la variable aleatoria X.
+\end{definition}
+
+\begin{definition}[Variable Aleatoria Discreta]
+Una variable aleatoria $X$ se dice discreta si y solo si su soporte es un conjunto numerable.
+\end{definition}
+
+\begin{definition}[Función de Probabilidad]
+Sea X una variable aleatoria discreta con valores en $\{x_{1}, x_{2}, \dots\}$. Se denomina función de probabilidad de X a la función $p_X$ definida como:
+$$ p_{X}(x_{i}) = P(X = x_{i}), \quad i=1, 2, \dots $$
+\end{definition}
+
+\begin{definition}[Media o Valor Esperado]
+Sea X una variable aleatoria discreta. La media, esperanza, o valor esperado de X se define como:
+$$ \mu_{X} = E(X) = \sum_{x} x \cdot p_{X}(x) $$
+\end{definition}
+
+\begin{definition}[Varianza]
+Sea X una variable aleatoria discreta con media $\mu_X$. La varianza de X se define como:
+$$ \sigma_{X}^{2} = \text{Var}(X) = E[(X - \mu_{X})^{2}] $$
+\end{definition}
+
+\begin{definition}[Desviación Estándar]
+La desviación estándar de una variable aleatoria X corresponde a la raíz cuadrada positiva de la varianza de X.
+\end{definition}
+
+% --- Clase 7: Distribuciones Discretas ---
+
+\section{Clase 7: Distribuciones Discretas}
+
+\begin{definition}[Distribución Bernoulli]
+Una variable aleatoria X tiene distribución Bernoulli si solo toma los valores 0 y 1. Su función de probabilidad, con parámetro $p \in [0,1]$, es:
+$$ p_{X}(x) = p^{x}(1-p)^{1-x} I_{\{0,1\}}(x) $$
+\end{definition}
+
+\begin{definition}[Proceso de Bernoulli]
+Una secuencia infinita $X_{1}, X_{2}, \dots$ de variables aleatorias independientes e idénticamente distribuidas Bernoulli(p) se denomina proceso de Bernoulli.
+\end{definition}
+
+\begin{definition}[Distribución Binomial]
+Sea $X_{1}, \dots, X_{n}$ las primeras $n$ realizaciones de un proceso de Bernoulli. La variable aleatoria $X = \sum_{i=1}^{n} X_{i}$, que cuenta el número de éxitos, sigue una distribución Binomial con parámetros $n \in \mathbb{N}$ y $p \in [0,1]$.
+\end{definition}
+
+\begin{definition}[Distribución Geométrica]
+Considere un proceso de Bernoulli con parámetro $p \in [0,1]$. La variable aleatoria X que representa el número de ensayos hasta que se observa el primer éxito sigue una distribución Geométrica de parámetro p. Su función de probabilidad es:
+$$ p_{X}(x) = p(1-p)^{x-1} I_{\mathbb{N}}(x) $$
+\end{definition}
+
+\begin{definition}[Distribución Binomial Negativa]
+Considere un proceso de Bernoulli con parámetro $p \in [0,1]$. La variable aleatoria X que representa el número de ensayos hasta que ocurre el $r$-ésimo éxito sigue una distribución Binomial Negativa con parámetros $(r,p)$. Su función de probabilidad es:
+$$ p_{X}(x) = \binom{x-1}{r-1} p^{r}(1-p)^{x-r} I_{\{r, r+1, \dots\}}(x) $$
+\end{definition}
+
+\begin{definition}[Proceso de Poisson]
+Sea $N(t)$ el número de eventos que ocurren en el intervalo de tiempo $[0, t]$. Estos eventos constituyen un Proceso de Poisson de tasa $\lambda > 0$ si se cumplen las siguientes condiciones:
+\begin{enumerate}
+    \item $N(0)=0$
+    \item Los eventos ocurren de manera independiente.
+    \item La distribución del número de eventos en un intervalo depende únicamente de la longitud del intervalo.
+    \item Existe $\lambda > 0$ tal que $\lim_{h \to 0} \frac{P(N(h)=1)}{h} = \lambda$.
+    \item $\lim_{h \to 0} \frac{P(N(h)\ge 2)}{h} = 0$.
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Distribución de Poisson]
+Una variable aleatoria X sigue una distribución de Poisson de parámetro $\lambda > 0$ si su función de probabilidad está dada por:
+$$ p_{X}(x) = \frac{e^{-\lambda} \lambda^{x}}{x!} I_{\mathbb{N} \cup \{0\}}(x) $$
+\end{definition}
+
+\begin{definition}[Distribución Hipergeométrica]
+Una variable aleatoria X tiene distribución Hipergeométrica con parámetros $N, n, r$ (donde $N,n,r \in \mathbb{N}$, $n \le N, r \le N$) si su función de probabilidad es de la forma:
+$$ p_{X}(x) = \frac{\binom{r}{x} \binom{N-r}{n-x}}{\binom{N}{n}} I_{\{0, 1, \dots, \min(r,n)\}}(x) $$
+\end{definition}
 
 \end{document}
