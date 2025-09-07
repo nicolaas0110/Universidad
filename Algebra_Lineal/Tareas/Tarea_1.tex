@@ -44,7 +44,7 @@
 %===================== USEFUL VARIABLES  =============================
 \def\imageSize{0.6}
 
-%===================== PACKAGES TO USE  =============================
+%===================== PACKAGES TO USE  ============================
 \usepackage{amsmath} 			% Allows me the use of matrix in math mode
 \setcounter{MaxMatrixCols}{20} 		% Increases the maximum number of columns in matrix from 10 to 20.
 \usepackage{pdfpages} 			% Attach pdfs using \includepdf[pages=initial-final]{path.pdf}
@@ -58,21 +58,28 @@
 \usepackage{subcaption}			% Include subfigures.
 \usepackage{hyperref}			% Allows clickable references.
 \hypersetup{colorlinks=true, allcolors=black} 	% Colors of links
-\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape pages
+\usepackage{pdflscape}			% Allows the use of the environment lscape for landscape
+\usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{fancyhdr}			% Modify header and footer
 \usepackage{bm}				% Allows to use bold text in math mode with \bm
-\usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
-\usepackage{titlesec}			% Change title format
+\usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equat
+\usepackage{tikz}
+\usepackage{titlesec}
 
-
-\newtheorem{theorem}{Teorema}
-\newtheorem{lemma}{Lema}
-\newtheorem{corollary}{Corolario}
-\newtheorem{definition}{Definición}
-\newtheorem{example}{Ejemplo}
-\newtheorem{remark}{Observación}
-
+\theoremstyle{definition} % hace que el cuerpo sea upright (no itálico)
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{proposition}[theorem]{Proposición}
+\newtheorem{corollary}[theorem]{Corolario}
+\newtheorem{definition}[theorem]{Definición}
+\newtheorem{example}[theorem]{Ejemplo}
+\newtheorem{remark}[theorem]{Observación}
+\newtheorem{note}[theorem]{Nota}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
 %========== CHANGE TITLE FORMAT  ======================
 %\titleformat{\section}
 %{\bfseries}	% format
@@ -211,7 +218,7 @@
 Sea \(V\) un espacio vectorial real.
 
 \begin{itemize}
-  \item Llamamos la \emph{complejificación} de \(V\), que denotamos por \(V_{\mathbb C}\), al producto \(V\times V\). Un elemento de \(V_{\mathbb C}\) es un par ordenado \((u,v)\), donde \(u,v\in V\); denotamos a tal elemento por \(u+iv\).
+  \item Llamamos la complejificación de \(V\), que denotamos por \(V_{\mathbb C}\), al producto \(V\times V\). Un elemento de \(V_{\mathbb C}\) es un par ordenado \((u,v)\), donde \(u,v\in V\); denotamos a tal elemento por \(u+iv\).
   \item Definimos la suma en \(V_{\mathbb C}\) mediante la regla
   \[
     (u_1+iv_1)+(u_2+iv_2)=(u_1+u_2)+i(v_1+v_2)
@@ -225,6 +232,10 @@ Sea \(V\) un espacio vectorial real.
 \end{itemize}
 Demuestre que con las definiciones anteriores, \(V_{\mathbb C}\) es un espacio vectorial sobre complejo.
 
+\begin{proof}
+  
+\end{proof}
+
 \section*{Problema 2}
 Suponga que \(U\) es un subespacio vectorial de \(V\) con \(U\neq V\). Suponga además que \(S\in\mathcal L(U,W)\), para algún espacio vectorial \(W\), y que \(S\neq 0\) (es decir, suponga que \(Su\neq 0\) para algún \(u\in U\)). Defina \(T:V\to W\) mediante
 \[
@@ -237,14 +248,56 @@ Suponga que \(U\) es un subespacio vectorial de \(V\) con \(U\neq V\). Suponga a
 Determine si \(T\) es una transformación lineal.
 
 \section*{Problema 3}
-Considere el espacio vectorial \(P_3(\mathbb{R})\) de los polinomios de grado menor o igual a \(3\), y la función \(T:P_3(\mathbb{R)\to P_3(\mathbb R)\) definida por
+Considere el espacio vectorial \(\mathbb{P}_3(\R)\) de los polinomios de grado menor o igual a \(3\), y la función \(T:\mathbb{P}_3(\R)\to \mathbb{P}_3(\R)\) definida por
 \[
   T(p(x)) = p(0)\,x^3 + p(1)\,(x-4)^2.
 \]
 
 \begin{enumerate}
   \item[(a)] Muestre que \(T\) es una transformación lineal.
+    \begin{proof}
+      Sean $p(x),q(x) \in \mathbb{P}_3(\R)$ 
+        \begin{align*}
+          T(p(x)+q(x))&=(q+p)(0)x^3+(p+q)(1)(x-4)^2 \\
+          &=p(0)x^3 +q(0)x^3+p(1)(x-4)^2+q(1)(x-4)^2 \\
+          &=p(0)x^3 +q(1)(x-4)^2+q(0)x^3+q(1)(x-4)^2 \\
+          &=T(p(x))+T(q(x))
+        \end{align*}
+      Así, obtenemos que $T(p(x)+q(x))=T(p(x))+T(p(x)) \quad \forall p(x),p(x)\in \mathbb{P}_3(\R)$. Ahora, sea $\alpha \in \mathbb{F}$, tenemos que 
+        \begin{align*}
+          T(\alpha \cdot p(x)) &= (\alpha \cdot p(0)x^3)+(\alpha \cdot p(1)(x-4)^2) \\
+          & = \alpha \cdotp(0)x^3 + \alpha \cdot p(1)(x-4)^2 \\
+          & = \alpha(p(0)x^3 + q(1)(x-4)^2) \\
+          & = \alpha \cdot T(p(x))
+        \end{align*}
+      Por lo tanto, $T$ es una transformación lineal. 
+    \end{proof}
   \item[(b)] Encuentre la matriz representante de \(T\) respecto a la base canónica \(\{1,x,x^2,x^3\}\).
+    \begin{proof}
+      En primer lugar, calculamos los respectivos componentes de la base, para $T(1)$, necesitamos que $p(x)=1$, es decir $p(0)=1$ y $p(1)=1$, por lo tanto
+      \begin{align*}
+        T(1) &= p(0)x^3 + p(1)(x-4)^2 \\
+        & = x^3 +(x-4)^2 \\ 
+        & = 16- 8x+x^2 +x^3 \\
+        & = 16 \cdot 1 - 8 \cdot x + 1\cdot x^2 + 1 \cdot x^3
+      \end{align*}
+      Ahora, notamos que para los siguientes tres vectores de la base, $T(x^1),T(x^2)$ y  $T(x^3)$, necesitamos que $p(x^1)=x^1, p(x^2)=x^2$ y $p(x^3)=x^3$, es decir, $p(0)=0$ y $p(1)=1$, por lo tanto
+      \begin{align*}
+        T(x) &= p(0)x^3+  p(1)(x-4)^2 \\
+        & = 0 \cdot x^3 +1 \cdot (x-4)^2 \\
+        & = 16-8 x+x^2 \\
+        & = 16 \cdot 1 -8 \cdot x + 1\cdot x^2 + 0\cdot x~3
+      \end{align*} 
+      Finalmente, la matriz asociada a la transformación lineal respecto a $\{1,x,x^2,x^3\}$ viene determinada por los escalares de las respectivas combinaciones lineales, es decir:
+      \[
+      A = \begin{pmatrix}
+        16 & 16 & 16 & 16 \\
+        -8 & -8 & -8 & -8 \\
+        1 & 1 & 1 & 1 \\
+        1 & 0 & 0 & 0
+      \end{pmatrix}
+      \]
+    \end{proof}
 \end{enumerate}
 
 \section*{Problema 4}
@@ -257,12 +310,201 @@ Sea \(P(v_1,v_2)\) el paralelogramo generado por ambos vectores, y sea \(A=[v_1,
 \[
   \det A = \operatorname{Area}\big(P(v_1,v_2)\big).
 \]
+\begin{proof}
+  Observamos como se ve el paralelogramo formado por $v_1,v_2 \in \R^2$.
+    \begin{center}
+    \begin{tikzpicture}[scale=0.75] % Ajustar escala para que se parezca al tamaño de la imagen
+      % --- Configuración general de estilo ---
+      % Flechas para los ejes (ajustado para tener flechas)
+      \tikzstyle{axis} = [thick, ->, >=stealth'] 
+      \tikzstyle{parallelogram_line} = [thin] % Líneas del paralelogramo más finas
+      
+      % --- Grilla (como en la imagen, líneas finas y sin color) ---
+      \draw[gray!50, very thin, step=1] (0,0) grid (5,7);
+
+      % --- Ejes Coordenados (con flechas al final) ---
+      \draw[axis] (-0.5,0) -- (5.5,0) node[below right] {$x$};
+      \draw[axis] (0,-0.5) -- (0,7.5) node[left] {$y$}; % 'node[left]' para la 'y' al final
+
+      % --- Coordenadas de los vértices ---
+      \coordinate (O) at (0,0);
+      \coordinate (v1_coords) at (4,3);
+      \coordinate (v2_coords) at (1,4);
+      \coordinate (sum_coords) at (5,7); % v1 + v2
+
+      % --- Dibujar el Paralelogramo (solo contorno, sin relleno como en la imagen) ---
+      % Lado v1 desde el origen
+      \draw[parallelogram_line] (O) -- (v1_coords);
+      % Lado v2 desde el origen
+      \draw[parallelogram_line] (O) -- (v2_coords);
+      % Lado paralelo a v1 desde v2
+      \draw[parallelogram_line] (v2_coords) -- (sum_coords);
+      % Lado paralelo a v2 desde v1
+      \draw[parallelogram_line] (v1_coords) -- (sum_coords);
+
+      % --- Etiquetar los vértices ---
+      \node[below left] at (O) {$(0,0)$};
+      \node[above right] at (v1_coords) {$(4,3)$};
+      % Ajuste aquí: 'above right' para moverlo del eje y
+      \node[above right] at (v2_coords) {$(1,4)$}; 
+      \node[above right] at (sum_coords) {$(5,7)$};
+
+    \end{tikzpicture}
+  \end{center}
+  Ahora, consideramos dos áreas axuliares para calcular área$(P(v_1,v_2))$
+
+  \begin{figure}[h!] 
+\centering % Centra el conjunto de las dos imágenes en la página
+
+% --- INICIO DE LA PRIMERA FIGURA (CON ETIQUETAS FINALES AJUSTADAS) ---
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+        % --- Estilos ---
+        \tikzstyle{axis} = [thick, ->, >=stealth']
+        \tikzstyle{parallelogram_line} = [thin]
+
+        % --- Grilla ---
+        \draw[gray!50, very thin, step=1] (0,0) grid (5,7);
+
+        % --- Ejes Coordenados ---
+        \draw[axis] (-0.5,0) -- (5.5,0) node[below right] {$x$};
+        \draw[axis] (0,-0.5) -- (0,7.5) node[left] {$y$};
+
+        % --- Coordenadas ---
+        \coordinate (O) at (0,0);
+        \coordinate (v1_coords) at (4,3);
+        \coordinate (v2_coords) at (1,4);
+        \coordinate (sum_coords) at (5,7);
+
+        % --- Rectángulo contenedor ---
+        \draw[black, thick, dashed] (0,0) rectangle (5,7);
+
+        % --- Etiquetas del Rectángulo (AJUSTE FINAL) ---
+        \node[below left, xshift=-2pt, yshift=-2pt] at (0,0) {$(0,0)$};
+        \node[below, yshift=-2pt] at (5,0) {$(5,0)$}; % <-- CAMBIO: Posición 'below' para no tapar la 'x'
+        \node[above right] at (0,7) {$(0,7)$}; % <-- CAMBIO: Posición 'above right' para no tapar la 'y'
+        \node[above right] at (5,7) {$(5,7)$};
+
+        % --- Paralelogramo ---
+        \draw[parallelogram_line, black, thick] (O) -- (v1_coords) -- (sum_coords) -- (v2_coords) -- cycle;
+    \end{tikzpicture}
+\end{minipage}%
+\hfill % Espacio flexible entre las figuras
+% --- INICIO DE LA SEGUNDA FIGURA (CON ETIQUETAS CENTRADAS Y SIN COORDENADAS) ---
+\begin{minipage}{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+        % --- Estilos ---
+        \tikzstyle{axis} = [thick, ->, >=stealth']
+        \tikzstyle{parallelogram_line} = [thin]
+
+        % --- Grilla ---
+        \draw[gray!50, very thin, step=1] (0,0) grid (5,7);
+
+        % --- Ejes Coordenados ---
+        \draw[axis] (-0.5,0) -- (5.5,0) node[below right] {$x$};
+        \draw[axis] (0,-0.5) -- (0,7.5) node[left] {$y$};
+
+        % --- Coordenadas ---
+        \coordinate (O) at (0,0);
+        \coordinate (v1_coords) at (4,3);
+        \coordinate (v2_coords) at (1,4);
+        \coordinate (sum_coords) at (5,7);
+
+        % --- Áreas exteriores (con grises suaves) ---
+        \fill[gray!10] (O) -- (0,4) -- (v2_coords) -- cycle;
+        \fill[gray!15] (O) -- (4,0) -- (v1_coords) -- cycle;
+        \fill[gray!20] (v2_coords) -- (1,7) -- (sum_coords) -- cycle;
+        \fill[gray!25] (v1_coords) -- (5,3) -- (sum_coords) -- cycle;
+
+        % --- Nuevos rectángulos ---
+        \fill[gray!30] (0,4) rectangle (1,7); \draw[black] (0,4) rectangle (1,7);
+        \fill[gray!35] (4,0) rectangle (5,3); \draw[black] (4,0) rectangle (5,3);
+
+        % --- Contenedor y Paralelogramo ---
+        \draw[black, thick] (0,0) rectangle (5,7);
+        \draw[parallelogram_line, black, thick] (O) -- (v1_coords) -- (sum_coords) -- (v2_coords) -- cycle;
+
+        % --- ETIQUETAS DE ÁREA PERFECTAMENTE CENTRADAS ---
+        \node at (0.33, 2.67) {A1};
+        \node at (2.67, 1.0)  {A2};
+        \node at (2.33, 6.0)  {A3};
+        \node at (4.67, 4.33) {A4};
+        \node at (0.5, 5.5)   {A5};
+        \node at (4.5, 1.5)   {A6};
+        
+    \end{tikzpicture}
+\end{minipage}
+
+\end{figure}
+ 
+  Notemos que podemos calcular ambas áreas, ya que la primera corresponde a un rectangulo y la segunda es la suma de rectángulos y triángulos rectángulos. Por lo tanto, la resta de áreas es igual a
+  \begin{align*}
+    A_1-A_2 & = 35 -22 \\
+    & = 13
+  \end{align*}
+  Además, podemos calular $\det (A)$:
+  \begin{align*}
+    \det (A) &= \det \begin{vmatrix}
+      4 & 1 \\
+      3 & 4
+    \end{vmatrix} \\
+    & = 4\cdot 4 - 1 \cdot 3 \\
+    & = 13
+  \end{align*}
+  Con esto, concluimos que \det (A)= Área$(P(v_1,v_2))$.
+\end{proof}
 
 \section*{Problema 5}
-Sea \(A\in M_{n\times n}(\mathbb R)\). Decimos que \(A\) es \emph{nilpotente} de orden \(k\) si \(A^k=0\) para algún \(k\in\mathbb Z_{>0}\). Por otro lado, decimos que \(A\) es \emph{ortogonal} si \(A^{T}A=I\). Pruebe las siguientes propiedades:
+Sea \(A\in M_{n\times n}(\R)\). Decimos que \(A\) es \emph{nilpotente} de orden \(k\) si \(A^k=0\) para algún \(k\in\Z_{>0}\). Por otro lado, decimos que \(A\) es \emph{ortogonal} si \(A^{T}A=I\). Pruebe las siguientes propiedades:
 \begin{enumerate}
   \item[(a)] El determinante de toda matriz nilpotente es \(0\).
+    \begin{proof}
+      Sea $A \in M_{n\times n}(\R)$ una matriz nilpotente, es decir, para algún $k \in \Z > 0$ se tiene que $A^k=0$. En particular, para dicho caso $k$ se tiene que 
+      \[
+          M_0 =   \begin{vmatrix}
+          0 & 0 & 0 & \cdots & 0\\[4pt]
+          0 & 0 & 0 & \cdots & 0\\[4pt]
+          \vdots & \vdots & \vdots & \ddots & \vdots\\[4pt]
+          0 & 0 & 0 & \cdots & 0
+          \end{vmatrix} = \det(A^k)=\det (A\cdot A \cdots A)
+      \]
+      Luego, sabemos que para $A,B \in M_{n\times n}(R)$, entonces 
+      \[
+        \det (AB)=\det (A) \det (B)
+      \]
+      tenemos que 
+      \[
+        \det (A\cdot A\cdots \A)= \det (A) \cdot (A) \cdots \det (A) 
+      \]
+      \[
+        M_0 = \det(A) \cdot \det (A) \cdots \det (A)
+      \]  
+      Por lo tanto, 
+      \[
+        \det (A) = 0
+      \]
+    \end{proof}
   \item[(b)] El determinante de toda matriz ortogonal es \(\pm 1\).
+  \begin{proof}
+    Sea $A\in \M_{n\times n}(\R)$ una matriz ortogonal. Definimos $L = \det (A)$ y utilizamos
+    \[
+      \det (A)= \det (A^t) \text{ y } \det(AB)=\det (A) \det (B) \quad \forall A,B\in M_{x \times n}(\R) 
+    \]
+    tenemos que $L = \det (A)= \det (A^t)$. Por lo tanto
+    \begin{align*}
+      1 &= \det (A) \\
+      & = \det (A^t A) \\
+      &= \det (A^t)\det (A)\\
+      &= L \times L \\
+      &= L^2
+    \end{align*}
+    Entonces
+    \[
+      L=\det(A)=\pm 1
+    \]
+  \end{proof}
 \end{enumerate}
 
 \section*{Problema 6}
