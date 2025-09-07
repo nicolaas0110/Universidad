@@ -921,20 +921,73 @@ Observar que si $\delta´< \delta $ entonces $H_s^{(\delta´)}(E) \geq H_s^{(\de
     \mu^*(A)= \mu^*(A\cap E)+ \mu^*(A\cap E^c) \quad \forall A\subseteq X
   \]
 \end{definition}
-observación. Que $\mu^*(A)\geq \mu^*(A\cap E)+ \mu^*(A\cap E^c) $ vale siempre (por $\sigma$-subaditividad de $\mu^*$). Luego, para ver que $E$ es $\mu^*$-medible, baste ver que $\mu^*(A)\geq \mu^*(A\cap E)+ \mu^*(A\cap E^c)$ 
 
+\begin{remark}
+  Que $\mu^*(A)\geq \mu^*(A\cap E)+ \mu^*(A\cap E^c) $ vale siempre (por $\sigma$-subaditividad de $\mu^*$). Luego, para ver que $E$ es $\mu^*$-medible, baste ver que $\mu^*(A)\geq \mu^*(A\cap E)+ \mu^*(A\cap E^c)$ 
+\end{remark}
 
 \begin{theorem}
   Sea $\mu^*$ una medida exterior sobre un espacio $X$. Entonces:
   \begin{enumerate}
     \item[(1)] $\mu^*(E)=0 \Rightarrow E$ es $\mu^*$-medible.
 
-    \item[(2)] La clase $\mathcal{M}_{\mu^*}$ de conjuntos $\mu^*$-medibles es un $\sigma$-álgebra.
+    \item[(2)] La clase $\mathscr{M}_{\mu^*}$ de conjuntos $\mu^*$-medibles es un $\sigma$-álgebra.
 
-    \item[(3)] La restricción $\mu$ de $\mu^*$ a $\mathcal{M}_{\mu^*}$ es una medida.
+    \item[(3)] La restricción $\mu$ de $\mu^*$ a $\mathscr{M}_{\mu^*}$ es una medida.
   \end{enumerate}
-  En particular, $(X, \mathcal{M}_{\mu^*}, \mu)$ es un espacio de medida completo. 
+  En particular, $(X, \mathscr{M}_{\mu^*}, \mu)$ es un espacio de medida completo. 
 \end{theorem}
+
+\begin{proof}~
+	\begin{enumerate}
+		\item Si $A \subseteq X,\ \mu^{*}(A \cap E) \leq \mu^{*}(E) = 0$. Además, por monotonía, $\mu^{*}(A \cap E^c) \leq \mu^{*}(A)$. Luego, $\mu^{*}(A \cap E) + \mu^{*}(A \cap E^c) = 0 + \mu^{*}(A \cap E^c) \leq \mu^{*}(A)$.
+
+		\item \underline{$\varnothing \in \mathscr{M}_{\mu^{*}}$:} Se sigue de (1), pues $\mu^{*}(\varnothing) = 0$, por definición.
+
+		\underline{$E \in \mathscr{M}_{\mu^{*}}$:} Directo de la definición de $\mathscr{M}_{\mu^{*}}$, puesto que es simétrica en $E$ y $E^c$.
+
+		\underline{$(E_n)_{n\in\N} \subseteq \mathscr{M}_{\mu^{*}} \implies \bigcup_{n\in\N} E_n \in \mathscr{M}_{\mu^{*}}$:} Esto lo demostramos en tres pasos. En primer lugar, demostramos que si $E_1,E_2 \in \mathscr{M}_{\mu^{*}}$, entonces $E_1 \cap E_2, E_1 \cup E_2 \in \mathscr{M}_{\mu^{*}}$.
+		\begin{proof}
+			Si $A \subseteq X$, entonces
+			\begin{align*}
+				\mu^{*}(A) & = \mu^{*}(A \cap E_1) + \mu^{*}(A \cap E_1^c) \\
+				& = \mu^{*}(A \cap E_1) + \mu^{*}(A \cap \overbrace{E_1^c \cap E_2}^{E_2 \setminus E_1}) + \mu^{*}(A \cap \underbrace{E_1^c \cap E_2^c}_{(E_1 \cup E_2)^c}) \\
+				& \geq \mu^{*}(A \cap (E_1 \cup E_2)) + \mu^{*}(A \cap (E_1 \cup E_2)^c) 
+			.\end{align*}
+			Notar que la primera igualdad se tiene por $E_1 \in \mathscr{M}_{\mu^{*}}$ y la segunda por $E_2 \in \mathscr{M}_{\mu^{*}}$. Esto implica que $E_1 \cap E_2 \in \mathscr{M}_{\mu^{*}}$. Pero entonces $E_1 \cap E_2 = ((E_1 \cap E_2)^c)^c = (\underbrace{\underbrace{E_{1}^c}_{\in \mathscr{M}_{\mu^{*}}} \cup \underbrace{E_{2}^c}_{\in \mathscr{M}_{\mu^{*}}}}_{\in \mathscr{M}_{\mu^{*}}})^c \in \mathscr{M}_{\mu^{*}}$
+		\end{proof}
+		Para el segundo paso, demostramos que si $E_1,\dots,E_n \in \mathscr{M}_{\mu^{*}}$ disjuntos, entonces $\mu^{*}\left(A \cap \left(\displaystyle\bigcupd_{i=1}^{n} E_i \right)\right) = \displaystyle\sum_{i=1}^{n} \mu^{*}(A \cap E_i)$.
+		\begin{proof}
+			La idea es probarlo por inducción. Basta ver el caso $n=2$ (los otros casos salen iterando éste)
+			\begin{align*}
+				& \mu^{*}(A \cap (E_1 \cupd E_2)) \\
+				= \ & \mu^{*}(\underbrace{A \cap (E_1 \cupd E_2) \cap E_1}_{A \cap E_1}) + \mu^{*}(\underbrace{A \cap (E_1 \cupd E_2) \cap E_1^c}_{A \cap E_2}) 
+			.\end{align*}
+			pues $E_2 \subseteq E_1^c$ por ser disjuntos.
+		\end{proof}
+		Por último, vemos que si $(E_n)_{n\in\N} \subseteq \mathscr{M}_{\mu^{*}}$, entonces $\bigcup_{n\in\N} E_n \in \mathscr{M}_{\mu^{*}}$.
+		\begin{proof}
+			Podemos suponer que los $E_n$ son disjuntos. Si no, los cambiamos por
+			\begin{align*}
+				& E_{1}' \coloneq E_{1} \in \mathscr{M}_{\mu^{*}} \\
+				& E_{2}' \coloneq E_{2} \setminus E_{1} = E_2 \cap E_1^c \in \mathscr{M}_{\mu^{*}} \\
+				& \ \vdots \\
+				& E_{n+1}' \coloneq E_{n+1} \setminus \bigcup_{i=1}^{n} E_i \in \mathscr{M}_{\mu^{*}}
+			,\end{align*}
+			y $\displaystyle\bigcup_{n\in\N} E_n = \displaystyle\bigcupd_{n=1}^{\infty} E_{n}'$. Sea $F_n \coloneq \displaystyle\bigcupd_{i=1}^{n} E_i \longrightarrow E \coloneq \displaystyle\bigcupd_{n\in\N} E_n$. Notar que si $F_n \subseteq E$, entonces $E^c \subseteq F_{n}^{c}$. Luego, dado $A \subseteq X$, como $F_n \in \mathscr{M}_{\mu^{*}}$, se tiene
+			\begin{align*}
+				\mu^{*}(A) &= \underbrace{\mu^{*}(A \cap F_n)}_{= \sum_{i=1}^{n} \mu^{*}(A \cap E_i)} + \mu^{*}(\underbrace{A \cap F_{n}^{c}}_{\subseteq A \cap E^c}) \\
+				& \geq \sum_{i=1}^{n} \mu^{*}(A \cap E_i) + \mu^{*}(A \cap E^c)
+			.\end{align*}
+			Tomando $n \to \infty$,
+			\begin{align*}
+				\mu^{*}(A) & \geq \sum_{i=1}^{n} \mu^{*}(A \cap E_i) + \mu^{*}(A \cap E^c) \\
+				& \geq \mu^{*}(A \cap E) + \mu^{*}(A \cap E^c) \tag{$\mu^{*}\ \sigma$-subad.} \\
+				& \quad A \cap E = \bigcup_{i=1}^{\infty} A \cap E_i
+			.\end{align*}
+		\end{proof}
+	\end{enumerate}
+\end{proof}
 
 
 \end{document}
