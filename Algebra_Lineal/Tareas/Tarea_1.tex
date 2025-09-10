@@ -232,16 +232,10 @@ Sea \(V\) un espacio vectorial real.
 \end{itemize}
 Demuestre que con las definiciones anteriores, \(V_{\mathbb C}\) es un espacio vectorial sobre complejo.
 
-\begin{proof}
-  Recordemos que un espacio vectorial complejo de trata de un espacio $V$ sobre $\mathbb{F}$ = $\mathbb{C}$, es decir, la multiplicación por un escalar es realizada por un número complejo.Por lo tanto, primero verificar que $V_{\mathbb{C}}$ sea un espacio vectorial, así que a continuación vamos a demostrar las 8 propiedades que cumplen los espacios vectoriales.
-
-\\
-
-Sean $u_1, u_2, u_3, v_1, v_2, v_3  \in V$ y $a, b, c ,d \in \mathbb{R}$ entonces: \\
-
+\begin{proof}Sean $u_1, u_2, u_3, v_1, v_2, v_3  \in V$ y $a, b, c ,d \in \mathbb{R}$ entonces:
 
 \begin{enumerate}
-\item Conmutatividad:
+  \item[1)] \textbf{Conmutatividad:}
 
 \[
 (u_1 + iv_1) + (u_2 + iv_2) = (u_1 + u_2) + i(v_1 + v_2)
@@ -253,20 +247,20 @@ Como $u_1, u_2, v_1, v_2 \in V$ y $V$ es un espacio vectorial estos vectores si 
 (u_1 + u_2) + i(v_1 +v_2) = (u_2 + u_1) + i(v_2 + v_1) = (u_2 + iv_2) + (u_1 + iv_1)$.
 \]
 
-\item Asociatividad:
-
+  \item[2)] \textbf{Asociatividad:}
+\[
 \begin{align*}
     (u_1 + iv_1) + ((u_2 +iv_2) + (u_3 + iv_3)) &= (u_1 + iv_1) + ((u_2 + u_3) + i(v_2 + v_3)) \\
     &= (u_1 + u_2 + u_3) + i(v_1 + v_2 + v_3)
 \end{align*}
-
-  Ahora usamos que los vectores pertenecen a un espacio vectorial entonces cumplen con la asociatividad.
+\]
+Ahora usamos que los vectores pertenecen a un espacio vectorial entonces cumplen con la asociatividad.
 
 \[
 (u_2 +iv_2) + ((u_1 + u_3) + i(v_1 + v_3)).
 \]
 
-\item neutro Aditivo:
+  \item[3)] \textbf{Neutro Aditivo:}
 
 $\cdot$ Si definimos el vector $\vec{0}$ = (0, 0) podemos ver que para cualquier vector $w \in V_\mathbb{C}$, se cumple que:
 
@@ -274,7 +268,7 @@ $\cdot$ Si definimos el vector $\vec{0}$ = (0, 0) podemos ver que para cualquier
 \cdot w + \vec{0} = (u + iv) + (0 + i0)= (u + 0) + i(v + 0) = (u + iv)
 \]
 
-\item Inverso Aditivo :
+  \item[4)] \textbf{Inverso Aditivo:}
 
 Sea un vector $w = (u + iv)$, como $u$ y $v \in V$ poseen un inverso aditivo entonces el inverso aditivo de $w$ sería:
 
@@ -287,7 +281,7 @@ Verificamos:
  w + (-w) = (u +iv) + (-u -iv) = (u -u) + i(v -v) = \vec{0}.
 \]
 
-\item Neutro Multiplicativo :
+  \item[5)] \textbf{Neutro Multiplicativo:}
 
 Notemos que si tomamos el escalar $1 = (1 + i0)$ , para cualquier $w \in V_\mathbb{C}$ se cumple que: 
 
@@ -297,7 +291,7 @@ Notemos que si tomamos el escalar $1 = (1 + i0)$ , para cualquier $w \in V_\math
 
 Esto se cumple ya que $u$ y $v \in V$ espacio vectorial y para $V$ se cumple.
 
-\item Asociatividad de escalar: 
+  \item[6)] \textbf{Asociatividad de escalar:} 
 
 Sean $\alpha = (a + ib)$ y $\beta = (c + id)$ queremos que se cumpla para cualquier $w \in V_\mathbb{C}$:
 
@@ -325,7 +319,7 @@ Por otra parte
 
 Ya con esto es facíl notar que las expresiones son iguales por lo tanto se cumplea asociatividad en los escalares.
 
-\item Distributividad de escalar:
+\item[7)] \textbf{Distributividad de escalar:}
 
 Sean $u$ y $w \in V_\mathbb{C}$ y $\alpha = (a + ib)$ un escalar, entonces:
 \[
@@ -340,21 +334,23 @@ Sean $u$ y $w \in V_\mathbb{C}$ y $\alpha = (a + ib)$ un escalar, entonces:
 \end{align*}
 \]
 
-Por otro lado $\alpha u + \alpha w = $
+Por otro lado
+
 \[
 \begin{align*}
-  (a +ib)(u_1 + iv_1) + (a + ib)(u_2 + iv_2) &= (au_1 + iav_1 + ibu_1 -bv_1) + (au_2 + iav_2 + ibu_2 - bv_2)
-  \\
-  &= au_1 + iav_1 + ibu_1 -bv_1 + au_2 + iav_2 + ibu_2 - bv_2$.
+  \alpha u + \alpha w &= (a +ib)(u_1 + iv_1) + (a + ib)(u_2 + iv_2) \\
+  &= (au_1 + iav_1 + ibu_1 -bv_1) + (au_2 + iav_2 + ibu_2 - bv_2) \\
+  &= au_1 + iav_1 + ibu_1 -bv_1 + au_2 + iav_2 + ibu_2 - bv_2.
 \end{align*}
 \]
+    
 Reordenando (ya que conmutan):
 \[
 au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 -bv_1 -bv_2
 \]
 Nos quedan las mismas expresiones por lo que podemos concluir que se cumple la propiedad.
 
-\item Distributividad de la suma de escalares:
+\item[8)] \textbf{Distributividad de la suma de escalares:}
 
 Sean $\alpha$ y $\beta$ escalares y $w = u +iv$ un vector en $V_\mathbb{C}$ queremos demostrar.
 \[
