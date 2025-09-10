@@ -1060,35 +1060,29 @@ V_n = \begin{bmatrix}
 
 con $x = c_n$, podemos calcular el determinante de esta matriz usando la fórmula de cofactores, para ello, tomando la última ($n+1$) fila se tiene que
 
-\[
-\det(V_n)= 1\cdot(-1)^{n+2} \begin{vmatrix}
-
-    c_0 & \dots & c_0^n \\
-
-    \vdots \\
-
-    c_{n-1} &\dots & c_{n-1}^n
-
-\end{vmatrix} + x\cdot(-1)^{n+3}\begin{vmatrix}
-
-    1 & c_0^2 & \dots & c_0^n \\
-
-    1 \\
-
-    \vdots \\
-
-    1 & c_{n-1}^2 & \dots & c_{n-1}^n
-
-\end{vmatrix} + \dots x^n\cdot(-1)^{2n+2}\begin{vmatrix}
-
-    1 & \dots & c_0^{n-1} \\
-
-    \vdots \\
-
-    1 & \dots & c_{n-1}^{n-1}
-
-\end{vmatrix}
-\]
+\begin{align*}
+    \det(v_n) &= 1 \cdot (-1)^{n+2} 
+    \begin{vmatrix}
+        c_0 & c_0^2 & \dots & c_0^n \\
+        c_1 & c_1^2 & \dots & c_1^n \\
+        \vdots & \vdots & \ddots & \vdots \\
+        c_{n-1} & c_{n-1}^2 & \dots & c_{n-1}^n
+    \end{vmatrix} \quad + x \cdot (-1)^{n+3}
+    \begin{vmatrix}
+        1 & c_0^2 & \dots & c_0^n \\
+        1 & c_1^2 & \dots & c_1^n \\
+        \vdots & \vdots & \ddots & \vdots \\
+        1 & c_{n-1}^2 & \dots & c_{n-1}^n
+    \end{vmatrix} \\
+    %
+    &\quad + \dots + x^n \cdot (-1)^{2n+2}
+    \begin{vmatrix}
+        1 & c_0 & \dots & c_0^{n-1} \\
+        1 & c_1 & \dots & c_1^{n-1} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        1 & c_{n-1} & \dots & c_{n-1}^{n-1}
+    \end{vmatrix}
+\end{align*}
 
 Como sumar 2 a un número natural no altera su paridad, podemos restar 2 al exponente de $(-1)$ en cada termino, de la suma. Esto nos permite reescribir el determinante como
 
