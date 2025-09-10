@@ -240,252 +240,144 @@ Demuestre que con las definiciones anteriores, \(V_{\mathbb C}\) es un espacio v
 Sean $u_1, u_2, u_3, v_1, v_2, v_3  \in V$ y $a, b, c ,d \in \mathbb{R}$ entonces: \\
 
 
+\begin{enumerate}
+\item Conmutatividad:
 
-1) Conmutatividad :\\
+\[
+(u_1 + iv_1) + (u_2 + iv_2) = (u_1 + u_2) + i(v_1 + v_2)
+\]
 
-\\
+Como $u_1, u_2, v_1, v_2 \in V$ y $V$ es un espacio vectorial estos vectores si conmutan. 
 
-$(u_1 + iv_1) + (u_2 + iv_2) = (u_1 + u_2) + i(v_1 + v_2)$ \\
-
-\\
-
-Como $u_1, u_2, v_1, v_2 \in V$ y $V$ es un espacio vectorial estos vectores si conmutan. \\ 
-
-\\
-
-$\cdot (u_1 + u_2) + i(v_1 +v_2) = (u_2 + u_1) + i(v_2 + v_1)$ \\
-
- \\
-
-$ = (u_2 + iv_2) + (u_1 + iv_1)$.
-
-\\
-
-\\
-
-2) Asociatividad :\\
-
-\\
-
-$\cdot (u_1 + iv_1) + ((u_2 +iv_2) + (u_3 + iv_3)) = (u_1 + iv_1) + ((u_2 + u_3) + i(v_2 + v_3))$ \\
-
-\\
-
-$= (u_1 + u_2 + u_3) + i(v_1 + v_2 + v_3)$\\
-
-\\
-
-Ahora usamos que los vectores pertenecen a un espacio vectorial entonces cumplen con la asociatividad.\\
-
-\\
-
-$= (u_2 +iv_2) + ((u_1 + u_3) + i(v_1 + v_3))$.\\
-
-\\
-
-3) Neutro Aditivo : \\
-
-\\
-
-$\cdot$ Si definimos el vector $\vec{0}$ = (0, 0) podemos ver que para cualquier vector $w \in V_\mathbb{C}$, se cumple que :\\
-
-\\
-
-$\cdot$ $w + \vec{0} = (u + iv) + (0 + i0)$\\
-
-\\
-
-$= (u + 0) + i(v + 0)$\\
-
-\\
-
-$= (u + iv)$\\
-
-\\
-
-\\
-
-4) Inverso Aditivo :\\
-
-\\
-
-Sea un vector $w = (u + iv)$, como $u$ y $v \in V$ poseen un inverso aditivo entonces el inverso aditivo de $w$ sería :\\
-
-\\
-
-$-w := (-u -iv)$\\
-
-\\
-
-Verificamos:\\
-
-\\
-
-$\cdot$ $w + (-w) = (u +iv) + (-u -iv)$\\
-
-\\
-
-$= (u -u) + i(v -v) = \vec{0}$.\\
-
-\\
-
-5) Neutro Multiplicativo :\\
-
-\\
-
-Notemos que si tomamos el escalar $1 = (1 + i0)$ , para cualquier $w \in V_\mathbb{C}$ se cumple que : 
-
-$\cdot$ $1w = 1(u + iv)$\\
-
-\\
-
-$= (1u + 1iv) = (u + iv)$\\
-
-\\
-
-Esto se cumple ya que $u$ y $v \in V$ espacio vectorial y para $V$ se cumple.\\
-
-\\
-
-6) Asociatividad de escalar : \\
-
-\\
-
-Sean $\alpha = (a + ib)$ y $\beta = (c + id)$ queremos que se cumpla para cualquier $w \in V_\mathbb{C}$:\\
-
-\\
-
-$\cdot$ $\alpha(\beta w) = (\alpha\beta)w$\\
-
-\\Entonces:\\
-
-\\
-
-$\cdot$ $\alpha(\beta w) = \alpha((c + id)(u + iv))$
-
-$= \alpha(cu + civ + idu - dv)$ \\
-
-\\
-
-$=(a + ib)(cu + civ + idu - dv) = (acu +aciv + aidu -adv) + (ibcu - bcv - bdu - ibdv)$\\
-
-\\Por otra parte :\\
-
-\\
-
-$(\alpha\beta)w = ((a + ib)(c + id))(u +iv)$\\
-
-\\
-
-$= (ac +aid + ibc + -bd)(u +iv) = acu + aidu +ibcu -bdu + aciv -adv - bcv - bdiv$\\
-
-\\
-
-Ya con esto es facíl notar que las expresiones son iguales por lo tanto se cumplea asociatividad en los escalares.\\
-
-\\
-
-\\
-
-\\
-
-7) Distributividad de escalar :\\
-
-\\
-
-Sean $u$ y $w \in V_\mathbb{C}$ y $\alpha = (a + ib)$ un escalar entonces :\\
-
-\\
-
-$\cdot$ $\alpha(u + w) = \alpha((u_1 + u_2) + i(v_1 + v_2)$\\
-
-\\
-
-$= (a + ib)((u_1+u_2) + i(v_1+ v_2)) = (a +ib)(u_1 + u_2) + i(a + ib)(v_1 + v_2)$\\
-
-\\
-
-$= (au_1 + au_2 + ibu_1 + ibu_2) + i(av_1 + av_2 + ibv_1 + ibv_2)$\\
-
-\\
-
-$= au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 - bv_1 -bv_2$.\\
-
-\\
-
-Por otro lado $\alpha u + \alpha w = $\\
-
-\\
-
-$\cdot$ $(a +ib)(u_1 + iv_1) + (a + ib)(u_2 + iv_2) = (au_1 + iav_1 + ibu_1 -bv_1) + (au_2 + iav_2 + ibu_2 - bv_2)$\\
-
-\\
-
-$= au_1 + iav_1 + ibu_1 -bv_1 + au_2 + iav_2 + ibu_2 - bv_2$.\\
-
-\\
-
-Reordenando (ya que conmutan):\\
-
-\\
-
-$= au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 -bv_1 -bv_2$\\
-
-\\
-
-Nos quedan las mismas expresiones por lo que podemos concluir que se cumple la propiedad.\\
-
-\\
-
-8) Distributividad de la suma de escalares : \\
-
-\\
-
-Sean $\alpha$ y $\beta$ escalares y $w = u +iv$ un vector en $V_\mathbb{C}$ queremos demostrar.\\
-
-\\
-
-$\cdot$ $(\alpha + \beta)v = \alpha w + \beta w$\\
-
-\\
-
-$\cdot$Desarrolamos la expresión $(\alpha + \beta)w$ \\
-
-\\
-
-$\cdot$ $((a + c) + i(b + d))(u + iv) = (u+iv)(a+c) + i(u+ iv)(b+d)$\\
-
-\\
-
-$= au + cu + aiv + civ + ibu + idu + - bv - dv$\\
-
-\\
-
-Ahora desarrollamos la expresión $\alpha w + \beta w$\\
-
-\\
-
-$\cdot$ $\alpha w+ \beta w = (a + ib)(u +iv) + (c + id)(u + iv)$\\
-
-\\
-
-$= au + aiv + ibu -bv + cu + civ + idu - dv$\\
-
-\\
-
-\\
-
-\\
-
-Es fácil notar que como las expresiones son iguales término a término con esto podemos concluir que se cumple la propiedad.\\
-
-\\
-
-Entonces ya demostradas las 8 propiedades podemos concluir que el espacio $V_\mathbb{C}$ es un espacio vectorial.\\
-
-\\
-
-Además es fácil notar que, ya que, definimos la multiplicación de un escalar como $(a + ib)$, con $a$ y $b \in \mathbb{R}$, esta definición coincide con la representación algebraica de un número complejo por lo que estamos trabajando sobre $\mathbb{F} = \mathbb{C}$, el espacio vectorial cumple con ser un espacio vectorial complejo.
+\[
+(u_1 + u_2) + i(v_1 +v_2) = (u_2 + u_1) + i(v_2 + v_1) = (u_2 + iv_2) + (u_1 + iv_1)$.
+\]
+
+\item Asociatividad:
+
+\begin{align*}
+    (u_1 + iv_1) + ((u_2 +iv_2) + (u_3 + iv_3)) &= (u_1 + iv_1) + ((u_2 + u_3) + i(v_2 + v_3)) \\
+    &= (u_1 + u_2 + u_3) + i(v_1 + v_2 + v_3)
+\end{align*}
+
+  Ahora usamos que los vectores pertenecen a un espacio vectorial entonces cumplen con la asociatividad.
+
+\[
+(u_2 +iv_2) + ((u_1 + u_3) + i(v_1 + v_3)).
+\]
+
+\item neutro Aditivo:
+
+$\cdot$ Si definimos el vector $\vec{0}$ = (0, 0) podemos ver que para cualquier vector $w \in V_\mathbb{C}$, se cumple que:
+
+\[
+\cdot w + \vec{0} = (u + iv) + (0 + i0)= (u + 0) + i(v + 0) = (u + iv)
+\]
+
+\item Inverso Aditivo :
+
+Sea un vector $w = (u + iv)$, como $u$ y $v \in V$ poseen un inverso aditivo entonces el inverso aditivo de $w$ sería:
+
+\[
+-w := (-u -iv)
+\]
+Verificamos:
+
+\[
+ w + (-w) = (u +iv) + (-u -iv) = (u -u) + i(v -v) = \vec{0}.
+\]
+
+\item Neutro Multiplicativo :
+
+Notemos que si tomamos el escalar $1 = (1 + i0)$ , para cualquier $w \in V_\mathbb{C}$ se cumple que: 
+
+\[
+  1w = 1(u + iv)= (1u + 1iv) = (u + iv)
+\]
+
+Esto se cumple ya que $u$ y $v \in V$ espacio vectorial y para $V$ se cumple.
+
+\item Asociatividad de escalar: 
+
+Sean $\alpha = (a + ib)$ y $\beta = (c + id)$ queremos que se cumpla para cualquier $w \in V_\mathbb{C}$:
+
+\[
+\alpha(\beta w) = (\alpha\beta)w
+\]
+Entonces:
+
+\[
+  \begin{align*}
+    \alpha(\beta w) &= \alpha((c + id)(u + iv))= \alpha(cu + civ + idu - dv)=(a + ib)(cu + civ + idu - dv) 
+    \\
+    &= (acu +aciv + aidu -adv) + (ibcu - bcv - bdu - ibdv)
+  \end{align*}
+\]
+Por otra parte
+
+\[
+\begin{align*}
+  (\alpha\beta)w &= ((a + ib)(c + id))(u +iv)= (ac +aid + ibc + -bd)(u +iv) 
+  \\
+  &= acu + aidu +ibcu -bdu + aciv -adv - bcv - bdiv
+\end{align*}
+\]
+
+Ya con esto es facíl notar que las expresiones son iguales por lo tanto se cumplea asociatividad en los escalares.
+
+\item Distributividad de escalar:
+
+Sean $u$ y $w \in V_\mathbb{C}$ y $\alpha = (a + ib)$ un escalar, entonces:
+\[
+\begin{align*}
+  \alpha(u + w) &= \alpha((u_1 + u_2) + i(v_1 + v_2) = (a + ib)((u_1+u_2) + i(v_1+ v_2)) 
+  \\
+  &= (a +ib)(u_1 + u_2) + i(a + ib)(v_1 + v_2)
+  \\
+  &= (au_1 + au_2 + ibu_1 + ibu_2) + i(av_1 + av_2 + ibv_1 + ibv_2)
+  \\
+  &= au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 - bv_1 -bv_2.
+\end{align*}
+\]
+
+Por otro lado $\alpha u + \alpha w = $
+\[
+\begin{align*}
+  (a +ib)(u_1 + iv_1) + (a + ib)(u_2 + iv_2) &= (au_1 + iav_1 + ibu_1 -bv_1) + (au_2 + iav_2 + ibu_2 - bv_2)
+  \\
+  &= au_1 + iav_1 + ibu_1 -bv_1 + au_2 + iav_2 + ibu_2 - bv_2$.
+\end{align*}
+\]
+Reordenando (ya que conmutan):
+\[
+au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 -bv_1 -bv_2
+\]
+Nos quedan las mismas expresiones por lo que podemos concluir que se cumple la propiedad.
+
+\item Distributividad de la suma de escalares:
+
+Sean $\alpha$ y $\beta$ escalares y $w = u +iv$ un vector en $V_\mathbb{C}$ queremos demostrar.
+\[
+(\alpha + \beta)v = \alpha w + \beta w
+\]
+Desarrollamos la expresión $(\alpha + \beta)w$
+
+\[
+\begin{align*}
+  ((a + c) + i(b + d))(u + iv) &= (u+iv)(a+c) + i(u+ iv)(b+d)
+  \\
+  &= au + cu + aiv + civ + ibu + idu + - bv - dv$
+\end{align*}
+\]
+Ahora desarrollamos la expresión $\alpha w + \beta w$
+\[
+\begin{align*}
+  \alpha w+ \beta w &= (a + ib)(u +iv) + (c + id)(u + iv)
+  \\
+  &= au + aiv + ibu -bv + cu + civ + idu - dv
+\end{align*}
+\]
+Es fácil notar que como las expresiones son iguales término a término con esto podemos concluir que se cumple la propiedad.Entonces, ya demostradas las 8 propiedades podemos concluir que el espacio $V_\mathbb{C}$ es un espacio vectorial.Además, es fácil notar que, ya que, definimos la multiplicación de un escalar como $(a + ib)$, con $a$ y $b \in \mathbb{R}$, esta definición coincide con la representación algebraica de un número complejo por lo que estamos trabajando sobre $\mathbb{F} = \mathbb{C}$, el espacio vectorial cumple con ser un espacio vectorial complejo.
   
 \end{proof}
 
