@@ -12,7 +12,7 @@
 \def\reportTile{Tarea 1}			%Document's title
 \def\subject{Álgebra Lineal}			%Subject
 
-\def\writter{Alonso Muñoz}		%Author(s)
+\def\writter{Alonso Muñoz \\ Diego Urrutia \\ Mateo Sagrado}		%Author(s)
 
 
 \def\leftUpperHeader{\subject}		%\subject
@@ -212,8 +212,8 @@
 %\tableofcontents
 %\cleardoublepage
 
-\section{Problema 1}
-\label{Problema 1}
+\section*{Problema 1}
+\label{Tarea 1}
 
 Sea \(V\) un espacio vectorial real.
 
@@ -233,6 +233,259 @@ Sea \(V\) un espacio vectorial real.
 Demuestre que con las definiciones anteriores, \(V_{\mathbb C}\) es un espacio vectorial sobre complejo.
 
 \begin{proof}
+  Recordemos que un espacio vectorial complejo de trata de un espacio $V$ sobre $\mathbb{F}$ = $\mathbb{C}$, es decir, la multiplicación por un escalar es realizada por un número complejo.Por lo tanto, primero verificar que $V_{\mathbb{C}}$ sea un espacio vectorial, así que a continuación vamos a demostrar las 8 propiedades que cumplen los espacios vectoriales.
+
+\\
+
+Sean $u_1, u_2, u_3, v_1, v_2, v_3  \in V$ y $a, b, c ,d \in \mathbb{R}$ entonces: \\
+
+
+
+1) Conmutatividad :\\
+
+\\
+
+$(u_1 + iv_1) + (u_2 + iv_2) = (u_1 + u_2) + i(v_1 + v_2)$ \\
+
+\\
+
+Como $u_1, u_2, v_1, v_2 \in V$ y $V$ es un espacio vectorial estos vectores si conmutan. \\ 
+
+\\
+
+$\cdot (u_1 + u_2) + i(v_1 +v_2) = (u_2 + u_1) + i(v_2 + v_1)$ \\
+
+ \\
+
+$ = (u_2 + iv_2) + (u_1 + iv_1)$.
+
+\\
+
+\\
+
+2) Asociatividad :\\
+
+\\
+
+$\cdot (u_1 + iv_1) + ((u_2 +iv_2) + (u_3 + iv_3)) = (u_1 + iv_1) + ((u_2 + u_3) + i(v_2 + v_3))$ \\
+
+\\
+
+$= (u_1 + u_2 + u_3) + i(v_1 + v_2 + v_3)$\\
+
+\\
+
+Ahora usamos que los vectores pertenecen a un espacio vectorial entonces cumplen con la asociatividad.\\
+
+\\
+
+$= (u_2 +iv_2) + ((u_1 + u_3) + i(v_1 + v_3))$.\\
+
+\\
+
+3) Neutro Aditivo : \\
+
+\\
+
+$\cdot$ Si definimos el vector $\vec{0}$ = (0, 0) podemos ver que para cualquier vector $w \in V_\mathbb{C}$, se cumple que :\\
+
+\\
+
+$\cdot$ $w + \vec{0} = (u + iv) + (0 + i0)$\\
+
+\\
+
+$= (u + 0) + i(v + 0)$\\
+
+\\
+
+$= (u + iv)$\\
+
+\\
+
+\\
+
+4) Inverso Aditivo :\\
+
+\\
+
+Sea un vector $w = (u + iv)$, como $u$ y $v \in V$ poseen un inverso aditivo entonces el inverso aditivo de $w$ sería :\\
+
+\\
+
+$-w := (-u -iv)$\\
+
+\\
+
+Verificamos:\\
+
+\\
+
+$\cdot$ $w + (-w) = (u +iv) + (-u -iv)$\\
+
+\\
+
+$= (u -u) + i(v -v) = \vec{0}$.\\
+
+\\
+
+5) Neutro Multiplicativo :\\
+
+\\
+
+Notemos que si tomamos el escalar $1 = (1 + i0)$ , para cualquier $w \in V_\mathbb{C}$ se cumple que : 
+
+$\cdot$ $1w = 1(u + iv)$\\
+
+\\
+
+$= (1u + 1iv) = (u + iv)$\\
+
+\\
+
+Esto se cumple ya que $u$ y $v \in V$ espacio vectorial y para $V$ se cumple.\\
+
+\\
+
+6) Asociatividad de escalar : \\
+
+\\
+
+Sean $\alpha = (a + ib)$ y $\beta = (c + id)$ queremos que se cumpla para cualquier $w \in V_\mathbb{C}$:\\
+
+\\
+
+$\cdot$ $\alpha(\beta w) = (\alpha\beta)w$\\
+
+\\Entonces:\\
+
+\\
+
+$\cdot$ $\alpha(\beta w) = \alpha((c + id)(u + iv))$
+
+$= \alpha(cu + civ + idu - dv)$ \\
+
+\\
+
+$=(a + ib)(cu + civ + idu - dv) = (acu +aciv + aidu -adv) + (ibcu - bcv - bdu - ibdv)$\\
+
+\\Por otra parte :\\
+
+\\
+
+$(\alpha\beta)w = ((a + ib)(c + id))(u +iv)$\\
+
+\\
+
+$= (ac +aid + ibc + -bd)(u +iv) = acu + aidu +ibcu -bdu + aciv -adv - bcv - bdiv$\\
+
+\\
+
+Ya con esto es facíl notar que las expresiones son iguales por lo tanto se cumplea asociatividad en los escalares.\\
+
+\\
+
+\\
+
+\\
+
+7) Distributividad de escalar :\\
+
+\\
+
+Sean $u$ y $w \in V_\mathbb{C}$ y $\alpha = (a + ib)$ un escalar entonces :\\
+
+\\
+
+$\cdot$ $\alpha(u + w) = \alpha((u_1 + u_2) + i(v_1 + v_2)$\\
+
+\\
+
+$= (a + ib)((u_1+u_2) + i(v_1+ v_2)) = (a +ib)(u_1 + u_2) + i(a + ib)(v_1 + v_2)$\\
+
+\\
+
+$= (au_1 + au_2 + ibu_1 + ibu_2) + i(av_1 + av_2 + ibv_1 + ibv_2)$\\
+
+\\
+
+$= au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 - bv_1 -bv_2$.\\
+
+\\
+
+Por otro lado $\alpha u + \alpha w = $\\
+
+\\
+
+$\cdot$ $(a +ib)(u_1 + iv_1) + (a + ib)(u_2 + iv_2) = (au_1 + iav_1 + ibu_1 -bv_1) + (au_2 + iav_2 + ibu_2 - bv_2)$\\
+
+\\
+
+$= au_1 + iav_1 + ibu_1 -bv_1 + au_2 + iav_2 + ibu_2 - bv_2$.\\
+
+\\
+
+Reordenando (ya que conmutan):\\
+
+\\
+
+$= au_1 + au_2 + ibu_1 + ibu_2 + iav_1 + iav_2 -bv_1 -bv_2$\\
+
+\\
+
+Nos quedan las mismas expresiones por lo que podemos concluir que se cumple la propiedad.\\
+
+\\
+
+8) Distributividad de la suma de escalares : \\
+
+\\
+
+Sean $\alpha$ y $\beta$ escalares y $w = u +iv$ un vector en $V_\mathbb{C}$ queremos demostrar.\\
+
+\\
+
+$\cdot$ $(\alpha + \beta)v = \alpha w + \beta w$\\
+
+\\
+
+$\cdot$Desarrolamos la expresión $(\alpha + \beta)w$ \\
+
+\\
+
+$\cdot$ $((a + c) + i(b + d))(u + iv) = (u+iv)(a+c) + i(u+ iv)(b+d)$\\
+
+\\
+
+$= au + cu + aiv + civ + ibu + idu + - bv - dv$\\
+
+\\
+
+Ahora desarrollamos la expresión $\alpha w + \beta w$\\
+
+\\
+
+$\cdot$ $\alpha w+ \beta w = (a + ib)(u +iv) + (c + id)(u + iv)$\\
+
+\\
+
+$= au + aiv + ibu -bv + cu + civ + idu - dv$\\
+
+\\
+
+\\
+
+\\
+
+Es fácil notar que como las expresiones son iguales término a término con esto podemos concluir que se cumple la propiedad.\\
+
+\\
+
+Entonces ya demostradas las 8 propiedades podemos concluir que el espacio $V_\mathbb{C}$ es un espacio vectorial.\\
+
+\\
+
+Además es fácil notar que, ya que, definimos la multiplicación de un escalar como $(a + ib)$, con $a$ y $b \in \mathbb{R}$, esta definición coincide con la representación algebraica de un número complejo por lo que estamos trabajando sobre $\mathbb{F} = \mathbb{C}$, el espacio vectorial cumple con ser un espacio vectorial complejo.
   
 \end{proof}
 
@@ -246,7 +499,26 @@ Suponga que \(U\) es un subespacio vectorial de \(V\) con \(U\neq V\). Suponga a
   \end{cases}
 \]
 Determine si \(T\) es una transformación lineal.
+\begin{proof}
+  Para que $T$ sea transformación lineal debe cumplir que:
+\begin{enumerate}
+  \item $\cdot$ $T(u + v) = Tu + Tv$
+  \item $\cdot$ $\alpha T(v) = T(\alpha v)$
+\end{enumerate}
+Comprobamos la primera condición y notamos que existen 3 posibles casos, los cuales son:
+  \begin{enumerate}
+    \item $u \in U$ y $v \in V\setminus U$
+    \item $u \in U$ y $v \in U$
+    \item $u \in V\setminus U$ y $v \in V\setminus U$
+  \end{enumerate}
+Revisando el primer caso es fácil notar que si intentamos demostrar desde el lado derecho de la igualdad tenemos:
 
+\[
+  Tu + Tv = Su + 0 = Su
+\]
+Ahora por definición $Su \not= 0$, por lo tanto $T(u+v) \not= 0$ pero $(u+v) \in V$, por lo que $T(u +v ) = 0$. Por contradicción, decimos que $T$ no es una transformación lineal.
+
+\end{proof}
 \section*{Problema 3}
 Considere el espacio vectorial \(\mathbb{P}_3(\R)\) de los polinomios de grado menor o igual a \(3\), y la función \(T:\mathbb{P}_3(\R)\to \mathbb{P}_3(\R)\) definida por
 \[
@@ -516,6 +788,152 @@ Sea \(A\) una matriz cuadrada. Muestre que las matrices triangulares por bloque
   \begin{pmatrix} A & 0\\[2pt] \ast & I\end{pmatrix},
 \]
 tienen todas ellas determinante igual a \(\det A\). (En la notación anterior, el símbolo ``\(\ast\)'' significa ``lo que sea'').
+\begin{proof} Sea $A$ una matriz cuadrada de orden $m$, $I_n$ la matriz identidad de orden $n$ y sea $B_1$ la matriz $\begin{pmatrix}
+
+    I & \star \\
+
+    0 & A
+
+\end{pmatrix}$ . Probaremos por inducción sobre $n$, el orden de la matriz identidad. Para $n=1$,  la matriz $B_1$ es cuadrada de orden $(m+1)$ tal que
+\[
+  B_1 = \begin{pmatrix}
+
+      1 & \star & \star & \dots & \star \\
+
+      0 & A_{11} & A_{12} & \dots & A_{1m} \\
+
+      \vdots \\
+
+      0 & A_{m1} & A_{m2} & \dots & A_{mm}
+
+  \end{pmatrix}
+\]
+
+Para calcular $\det B_1$, utilizando cofactores, podemos tomar la primera columna, de modo que $\det B_1 = 1 \cdot \det M_1$, con $M_1$ la submatriz resultante al eliminar la primera fila y la primera columna de $B_1$, sin embargo, se tiene que las entradas de la matriz $M_1$ son las mismas que las entradas de $A$, es decir, $M_1=A$, por lo tanto
+
+\[
+\det B_1 = 1 \cdot \det A = \det A
+\]
+
+Supongamos que 
+
+\[
+\det \begin{pmatrix}
+
+    I_{k-1} & \star \\
+
+    0 & A
+
+\end{pmatrix} = \det A
+\]con $k \in \mathbb{N}$. Para probar para $k$, consideremos ahora $I_k$ la matriz identidad de orden $k$, de modo que
+
+
+
+\[
+B_1 = \begin{pmatrix}
+
+    1 & 0 & 0 & \dots & 0 & \star & \dots & \star \\
+
+    0 & 1 & 0 & \dots & 0 & \star & \dots & \star \\
+
+    0 & 0 & 1 & \dots & 0 & \star & \dots & \star \\
+
+    \vdots \\
+
+    0 & 0 & 0 & \dots & 1 & \star & \dots & \star \\
+
+    0 & 0 & 0 & \dots & 0 & A_{11} & \dots & A_{1m} \\
+
+    \vdots \\
+
+    0 & 0 & 0 & \dots & 0 & A_{m1} & \dots & A_{mm}
+
+\end{pmatrix}
+\]
+
+
+
+donde $B_1$ es una matriz cuadrada de orden $(m+k)$. Para calcular $\det B_1$, nuevamente utilizando cofactores, tomamos la primera columna, así
+
+
+
+\[
+\det B_1 = 1 \cdot \det M_2
+\]
+
+
+
+donde $M_2$ es una matriz cuadrada de orden $(m+k-1)$ tal que 
+
+
+
+\[
+M_2 = \begin{pmatrix}
+
+    I_{k-1} & \star \\
+
+    0 &A
+
+\end{pmatrix}
+\]
+
+
+
+pero, por nuestra hipótesis, esto es $\det A$, por lo tanto
+
+
+
+ \[
+ \det B_1 = 1 \cdot \det M_2 = 1 \cdot \det A = \det A
+ \]
+
+
+
+que es lo que queríamos probar. Llamemos a este resultado (1).
+
+
+El caso para
+
+
+
+\[
+B_2 = \begin{pmatrix}
+
+    A & \star \\
+
+    0 & I
+
+\end{pmatrix}
+\]
+
+
+
+se trata de forma análoga, también por inducción en el orden de la identidad. La única diferencia es que, al calcular el determinante por cofactores, se expande ahora por la última columna (o última fila), tomando el $1$ de la identidad como escalar y quedando nuevamente el determinante de $A$ como factor. En consecuencia, este caso también cumple que $\det B_2 = \det A$. Este resultado lo llamaremos (2).
+
+
+
+Ahora, para la matriz $C :=\begin{pmatrix}
+
+    I & 0 \\
+
+    \star & A
+
+\end{pmatrix}$, notemos que esta matriz es exactamente la traspuesta de la matriz abordada en el resultado (1), por lo tanto, basta utilizar la propiedad
+
+
+
+\[
+\det B^T = \det B \text{, para cualquier matriz $B$ cuadrada.}
+\]
+
+para concluir que el determinante de la matriz $C$ es igual que $\det A$. Análogamente, para la matriz $D:=\begin{pmatrix}
+
+    A & 0 \\
+
+    \star & I
+
+\end{pmatrix}$ podemos ver que esta matriz es la traspuesta de la matriz abordada en el resultado (2), así apoyándonos nuevamente en la propiedad mencionada, se tiene que $\det D = \det A$.
+\end{proof}
 
 \section*{Problema 7}
 El objetivo de este problema es demostrar el determinante de Vandermonde
@@ -532,16 +950,292 @@ El objetivo de este problema es demostrar el determinante de Vandermonde
 Para ello, procederemos por inducción:
 \begin{enumerate}
   \item[(a)] Muestre que la fórmula funciona para \(n=1,2\).
+  \begin{proof}
+    Para \(n=1\), definimos
+
+\[
+V_1 = \begin{bmatrix} 1 & c_0 \\ 1 & c_1 \end{bmatrix}, \quad
+\det(V_1) = 1 \cdot c_1 - 1 \cdot c_0 = c_1 - c_0.
+\]
+
+Coincide con la fórmula de Vandermonde, en efecto
+
+\[
+\prod_{0 \le j < k \le 1} (c_k - c_j) = c_1 - c_0.
+\]
+
+Para \(n=2\), definimos
+
+\[
+V_2 = \begin{bmatrix} 1 & c_0 & c_0^2 \\ 1 & c_1 & c_1^2 \\ 1 & c_2 & c_2^2 \end{bmatrix}.
+\]
+
+Se aplican operaciones elementales para triangularizar la matriz:
+
+\[
+F_2 \to F_2 - F_1, \quad F_3 \to F_3 - F_1 \quad \Rightarrow \quad
+\begin{bmatrix}
+
+1 & c_0 & c_0^2 \\
+
+0 & c_1 - c_0 & c_1^2 - c_0^2 \\
+
+0 & c_2 - c_0 & c_2^2 - c_0^2
+
+\end{bmatrix}.
+\]
+
+Factorizando la diferencia de cuadrados
+
+\[
+\begin{bmatrix}
+
+1 & c_0 & c_0^2 \\
+
+0 & c_1 - c_0 & (c_1 - c_0)(c_1 + c_0) \\
+
+0 & c_2 - c_0 & (c_2 - c_0)(c_2 + c_0)
+
+\end{bmatrix}.
+\]
+
+Sacando los factores \((c_1 - c_0)\) y \((c_2 - c_0)\) de las filas correspondientes:
+
+\[
+\det(V_2) = (c_1 - c_0)(c_2 - c_0)
+\det \begin{bmatrix}
+
+1 & c_0 & c_0^2 \\
+
+0 & 1 & c_1 + c_0 \\
+
+0 & 1 & c_2 + c_0
+
+\end{bmatrix}.
+\]
+
+Restando la segunda fila de la tercera para triangularizar completamente
+
+\[
+\det(V_2) = (c_1 - c_0)(c_2 - c_0) \det
+\begin{bmatrix}
+
+1 & c_0 & c_0^2 \\
+
+0 & 1 & c_1 + c_0 \\
+
+0 & 0 & c_2 - c_1
+
+\end{bmatrix} = (c_1 - c_0)(c_2 - c_0)(c_2 - c_1),
+\]
+
+lo que coincide con la fórmula original
+
+\[
+\prod_{0 \le j < k \le 2} (c_k - c_j) = (c_1 - c_0)(c_2 - c_0)(c_2 - c_1).
+\]
+
+  \end{proof}
   \item[(b)] Defina \(x:=c_n\) y muestre que el determinante es un polinomio de grado \(n\),
   \[
     A_0 + A_1 x + A_2 x^2 + \cdots + A_n x^n,
   \]
   donde los coeficientes dependen de \(c_0,c_1,\dots,c_{n-1}\).
+  \begin{proof}
+    Sea $V_n$ la matriz de Vandermonde, es decir
+
+\[
+V_n = \begin{bmatrix}
+
+    1 & c_0 & \dots & c_0^n \\
+
+    1 & c_1 & \dots & c_1^n \\
+
+    \vdots & \vdots \\
+
+    1 & x & \dots & x^n
+
+\end{bmatrix}
+\]
+
+con $x = c_n$, podemos calcular el determinante de esta matriz usando la fórmula de cofactores, para ello, tomando la última ($n+1$) fila se tiene que
+
+\[
+\det(V_n)= 1\cdot(-1)^{n+2} \begin{vmatrix}
+
+    c_0 & \dots & c_0^n \\
+
+    \vdots \\
+
+    c_{n-1} &\dots & c_{n-1}^n
+
+\end{vmatrix} + x\cdot(-1)^{n+3}\begin{vmatrix}
+
+    1 & c_0^2 & \dots & c_0^n \\
+
+    1 \\
+
+    \vdots \\
+
+    1 & c_{n-1}^2 & \dots & c_{n-1}^n
+
+\end{vmatrix} + \dots x^n\cdot(-1)^{2n+2}\begin{vmatrix}
+
+    1 & \dots & c_0^{n-1} \\
+
+    \vdots \\
+
+    1 & \dots & c_{n-1}^{n-1}
+
+\end{vmatrix}
+\]
+
+Como sumar 2 a un número natural no altera su paridad, podemos restar 2 al exponente de $(-1)$ en cada termino, de la suma. Esto nos permite reescribir el determinante como
+
+\[
+\det(V_n)=\sum_{k=0}^n A_kx^k = A_0 + A_1x+\dots + A_nx^n
+\]
+
+donde definimos $A_k$ como
+
+\[
+A_k := (-1)^{n+k} \cdot \det(M)
+\]
+
+con $M$ la submatriz de $V_n$ resultante al eliminar la $(n+1)$-ésima fila y $(k+1)$-ésima columna. Este es un polinomio de grado $n$ donde cada coeficiente $A_k$ depende de los valores de $c_0,\dots,c_n-1$.
+
+
+
+  \end{proof}
   \item[(c)] Muestre que las raíces del polinomio anterior son \(x=c_0,c_1,\dots,c_{n-1}\), de manera que el determinante toma la forma
   \[
     A_n (x-c_0)(x-c_1)\cdots(x-c_{n-1}).
   \]
+  \begin{proof}
+    Supongamos que $x = c_i$ para $i \in \{0,\dots,n-1\}$ arbitrario. Por b) tenemos que
+
+\[
+\det(V_n) = \sum_{k=0}^n A_kx^k = \begin{vmatrix}
+
+    1 & c_0 & \dots & c_0^n \\
+
+    \vdots \\
+
+    1 & c_i & \dots & c_i ^n \\
+
+    \vdots \\
+
+    1 & c_i & \dots & c_i^n
+
+\end{vmatrix}
+\]
+
+ (habiendo aplicado ya $x = c_i$. Como tenemos una fila idéntica a la otra, se tiene que $\det(V_n) = 0$, por lo tanto $c_i$ es raíz de $\sum_{k=0}^n A_kx^k$ y más aún, $(x-c_i)$ divide al polinomio, lo que nos permite reescribirlo como
+
+ \[
+\det(V_n)=P(x)(x-c_i)
+ \]
+
+con $P(x)$ un polinomio de grado $n-1$. Ahora, si aplicamos el mismo proceso, esta vez para $j \in \{1,\dots,i-1,i+1,\dots,n-1\}$, podemos seguir un razonamiento análogo a través del cual podemos determinar que $c_j$ también es una raíz de $\sum_{k=0}^n A_kx^k$, lo cual nuevamente nos permite reescribir este polinomio, esta vez como
+
+\[
+\det(V_n) = Q(x)(x-c_i)(x-c_j)
+\]
+
+con $deg(Q) = n-2$. Si repetimos este procedimiento un total de n veces, tenemos que $\{c_0,c_1,\dots,c_{n-1}\}$ son las $n$ raíces de $\sum_{k=0}^n A_kx^k$, lo cual nos permite reescribir finalmente este polinomio como
+
+\[
+\det(V_n)=A_n(x-c_0)(x-c_1)\cdots(x-c_{n-1}) = A_n(c_n-c_0)(c_n-c_1)\cdots(c_n-c_{n-1})
+\]
+
+
+
+recordando que 
+
+\[
+    A_n = \begin{vmatrix}
+
+    1 & c_0 &\dots & c_0^{n-1} \\
+
+    \vdots \\
+
+    1 & c_{n-1} & \dots & c_{n-1}^{n-1}
+
+  \end{vmatrix}$.
+\]
+
+
+  \end{proof}
   \item[(d)] Asumiendo que la fórmula es válida para \(n-1\), calcule \(A_n\) y demuestre la fórmula para \(n\).
+  \begin{proof}
+    Si formamos la matriz $V_{n-1}$, se tiene que
+
+\[
+\det(V_{n-1}) = \begin{vmatrix}
+
+    1 & c_0 & \dots & c_0^{n-1} \\
+
+    \vdots \\
+
+1 & c_{n-1} & \dots & c_{n-1}^{n-1}
+
+\end{vmatrix}
+\]
+
+este determinante, observando el polinomio obtenido en los incisos anteriores para calcular $\det(V_n)$, es exactamente $A_n$, lo que nos permite concluir que $A_n = \det(V_{n-1})$ y a su vez, por la fórmula válida para $n-1$,
+
+\[
+A_n = \det(V_{n-1}) = \prod_{0 \leq j <k \leq n-1}(c_k-c_j)
+\]
+
+Ahora, dada la matriz $V_n$ definida como
+
+\[ V_n =
+\begin{bmatrix}
+
+    1 & c_0 & \dots & c_0^n \\
+
+    1 & c_1 & \dots & c_1^n \\
+
+    \vdots & \vdots \\
+
+    1 & c_n & \dots & c_n^n
+
+\end{bmatrix}
+\]
+
+por el inciso $c)$ se tiene que
+
+\[
+\det(V_n) = A_n(c_n-c_0)(c_n-c_1)\cdots(c_n-c_{n-1})
+\]
+
+aplicando la hipótesis, esto es
+
+\[
+\det(V_n)= (c_n-c_0)\cdots(c_n-c_{n-1})\cdot\prod_{0 \leq j <k \leq n-1}(c_k-c_j) = \prod_{0\leq j \leq n-1} (c_n - c_j) \cdot \prod_{0 \leq j <k \leq n-1}(c_k-c_j)
+\]
+
+y por lo tanto
+
+\[
+\det(V_n)=  \begin{vmatrix}
+
+1 & c_0 & \dots & c_0^n \\
+
+    1 & c_1 & \dots & c_1^n \\
+
+    \vdots & \vdots \\
+
+    1 & c_n & \dots & c_n^n
+
+\end{vmatrix} = \prod_{0 \leq j <k \leq n}(c_k-c_j)
+\]
+
+que es lo que queríamos probar.
+
+\end{itemize}
+  \end{proof}
 \end{enumerate}
 
  
