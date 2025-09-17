@@ -990,4 +990,50 @@ Observar que si $\delta´< \delta $ entonces $H_s^{(\delta´)}(E) \geq H_s^{(\de
 \end{proof}
 
 
+
+
+\[
+  \textbf{POR COMPLETAR}
+\]
+
+
+\begin{remark}
+  ~ 
+  \vspace{0.05cm}
+  
+  \begin{itemize}
+  \item Si queremos definir una medida finita sobre $(\R,B(\R))$ por el comentario de la vez pasada, basta predefinirla por un $\pi$-sistema $P$ que genere $B(\R)$  (si queremos unicidad de la extensión a $B(\R)$).
+
+  \item Una eleción natural es tomar $P\coloneqq {(-\infty, x):x \in \R}(\sigma(P)=B(\R))$
+
+  \item Luego, si $\mu$ es una medida que se exiente a una premedida $\tau$ sobre $P$, entonces $\mu$ queda univocamente determinada sobre $\widetilde{\mathcal{I}}$
+    
+  \item $\mu(\R)= \mu \left( \cup_{n\in \N} (-\infty,n]\right)=lim_{n \to \infty}\mu((-\infty,n])=\lim_{n \to \infty}\tau((-\infty,n])$
+
+    \item $\mu(a,b]= \mu (-\infty,b]\ (-\infty,a]=\tau((-\infty,b])-\tau((-\infty,a])$
+
+    \item $\mu((a,\infty))=\mu \R-(\infty,a]=\lim_{x \to \infty}=\tau((-\infty,n])-\tau((-\infty,a])$
+
+ \end{itemize}
+  En conclusiión, $\widetilde{\mathcal{I}}$ es una semiálgebra natrual que aparece cuando buscamos extender una premedida definida sobre $P$ (y necesitamos definirla al menos sobre un $\pi$-sistema como $P$ si queremos unicidad). Luego, la idea será
+  \[
+    \tau \text{ sobre } P \Rightarrow \text{ extensión automática a } \widetilde{\mathcal{I}} \Rightarrow \text{ extensión a } B(\R) \text{ por Carathéodory }
+  \]
+
+  $\tau((-\infty,x))\coloneqq F_{\tau}(x)$
+\end{remark}
+
+\begin{theorem}
+  Sea $F:\R\rightarrow \R$ monótona creciente. Entonces, $\tau_{F}:\widetilde{\mathcal{I}}\rightarrow [0,\infty]$ dada por $\tau(I(a,b))=\F(b)-F(a)$ cumple que:
+  \begin{itemize}
+    \item[E1)] $\tau_{F}$ es finitamente aditiva 
+    \item[E2)] Si $F$ es continua a derecha, $\tau_{F} $ es $\sigma-$ subaditiva.
+  \end{itemize}
+  Es decir, si $F$ es de $L-S$ entonces $\tau_{F}$ es extendible  
+\end{theorem}
+\begin{proof}
+  \begin{enumerate}
+    \item[E1] Sea $$
+  \end{enumerate}
+\end{proof}
 \end{document}

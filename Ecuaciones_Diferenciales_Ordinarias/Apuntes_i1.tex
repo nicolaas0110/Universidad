@@ -65,6 +65,7 @@
 \usepackage{bm}				% Allows to use bold text in math mode with \bm
 \usepackage[makeroom]{cancel}		% Allows the use of \cancelto{}{} to cross out equations
 \usepackage{titlesec}
+\usepackage{mathtools}
 
 
 
@@ -231,7 +232,7 @@ donde $F: J \times \mathbb{R}^m \times \dots \times \mathbb{R}^m \rightarrow \ma
 Una **solución** de la EDO $(*)$ es una función $\phi \in C^k(I; \mathbb{R}^m)$ tal que $F(t, \phi(t), \phi'(t), \dots, \phi^{(k)}(t)) = 0$ para todo $t \in I$.
 \end{definition}
 
-Se asume que la EDO se puede "resolver" con respecto a la derivada de mayor orden $y^{(k)}$, resultando en la forma canónica:
+Se asume que la EDO se puede resolver con respecto a la derivada de mayor orden $y^{(k)}$, resultando en la forma canónica:
 $$y^{(k)}(t) = f(t, y(t), y'(t), \dots, y^{(k-1)}(t)), \quad \forall t \in I$$
 donde $f \in C(I \times \mathbb{R}^m \times \dots \times \mathbb{R}^m; \mathbb{R}^m)$. Esto es una hipótesis razonable por el Teorema de la Función Implícita, asumiendo que $\frac{\partial F}{\partial y^{(k)}} \ne 0$.
 
@@ -599,4 +600,186 @@ d\end{theorem}
   
 \end{proof}
 
+\[
+  \text{POR COMPLETAR (Clase 01-09)}
+\]
+
+\begin{example}
+
+	\[ (PC) \ \begin{cases}
+		y'(t) = \frac{t+2}{t^2+(y(t))^2} \quad \forall t \in I \subset \R, \\
+		y(0) = 1
+	\end{cases} \]
+	Sea $\Omega = \R \setminus \{(0,0)\}$ y $f(x,y) = \frac{x+2}{x^2 + y^2} \quad \forall (x,y) \in \Omega$. Como $f \in C^{\infty}(\Omega) \implies f \in \text{Lip}_{loc}(y;\Omega)$, y así, existe $\delta > 0$ tal que (PC) admite una única solución en $I_{\delta} = [-\delta,\delta]$, que denotamos por $\varphi \in C^{1}(I_{\delta};\R)$. De hecho, $\varphi \in C^{\infty}((\delta,\delta);\R)$ y podemos escribir un polinomio de MacLaurin de orden $2$ con resto de Peano:
+	\[ \varphi(t) = \varphi(0) + \varphi'(0)t + \frac{\varphi''(0)}{2}t^2 + o(t^2) \]
+	para $t \to 0$. Sabemos que $\varphi(0) = 1$ y $\varphi'(0) = \frac{0+2}{0+1}=2$. Además, derivando $(PC)_{(1)}$ se obtiene:
+	\[ \varphi''(t) = \frac{t^2 + (\varphi(t))^2 - (t+2)(2t+2\varphi(t)\varphi'(t))}{(t^2 + (\varphi(t))^2)^2} \quad \forall t \in \mathring{I}_{\delta}, \]
+	con lo que: $\varphi''(0) = -7$. Luego:
+	\[ \varphi(t) = 1 + 2t - \frac{7}{2}t^2 + o(t^2) \]
+	para $t \to 0$.
+\end{example}
+
+\subsection*{ Unicidad global y solución global del problema de Cauchy}
+
+\begin{lemma}[Grönwall]
+	Sean $x_0 < x_1$ números reales, $h \in \R$ y $u,k \in C([x_0,x_1];\R)$ funciones tales que $k(x) \geq 0 \quad \forall x \in [x_0,x_1]$. Entonces,
+	\begin{enumerate}
+		\item[(A)] Si $u(x) \leq h + \int_{x_{0}}^{x} k(s)u(s) ds \quad \forall x \in [x_0,x_1]$, entonces
+		\[ u(x) \leq h\cdot \exp\left( \int_{x_{0}}^{x} h(s)ds \right) \quad \forall x \in [x_{0},x_{1}] \]
+
+		\item [(B)] Si $u(x) \leq h + \int_{x}^{x_{1}}h(s)u(s)ds \quad \forall x \in [x_{0},x_{1}]$, entonces:
+		\[ u(x) \leq h \cdot \exp \left( \int_{x}^{x_{1}}h(s)ds \right) \quad \forall x \in [x_{0},x_{1}] \]
+	\end{enumerate}
+\end{lemma}
+\begin{proof}(sólo apartado (A))
+	Definamos la función 
+	\[ v(x) = \int_{x_{0}}^{x} k(s)u(s)ds \quad \forall x \in [x_{0},x_{1}], \]
+	y así, $v \in C^1([x_{0},x_{1}];\R),\ v(x_{0}) = 0$ y $v'(x) = k(x)u(x) \quad \forall x \in (x_{0},x_{1})$. Como $u(x) \leq h + v(x) \quad \forall x \in [x_{0},x_{1}]$, entonces
+	\begin{align*}
+		& h(x)u(x) \leq h\cdot k(x) + v(x)k(x) \quad \forall x \in [x_{0},x_{1}] \\
+		\iff \ & v'(x) \leq h\cdot k(x) + k(x)v(x) \quad \forall x \in [x_{0},x_{1}]
+	.\end{align*}
+	Luego:
+	\begin{align*}
+		& \exp \left( - \int_{x_{0}}^{x} h(s)ds \right) v'(x) - \exp \left(- \int_{x_{0}}^{x}h(s)ds \right)k(x)v(x) \\
+		& \leq h\cdot k(x) \exp \left( - \int_{x_{0}}^{x} k(s)ds \right) \\
+		\iff \ & \frac{d}{dx} \left[ \exp \left(-\int_{x_{0}}^{x}k(s)ds\right)v(x) \right] \leq -h \frac{d}{dx} \left[ \exp \left( - \int_{x_{0}}^{x} h(s)ds \right) \right]
+	.\end{align*}
+	Integrando en $[x_{0},x]$, con $x \in (x_{0},x_{1}]$, se obtiene:
+	\begin{align*}
+		& \exp \left( -\int_{x_{0}}^{x}k(s)ds \right) v(x) \leq h \left[ 1 - \exp \left( -\int_{x_{0}}^{x} k(s)ds \right) \right] \\
+		\implies \ & v(x) \leq h \cdot \exp \left( \int_{x_{0}}^{x} k(s)ds \right) -h \\
+		\iff \ & u(x) \leq h + v(x) \leq h \cdot \exp \left( \int_{x_{0}}^{x}k(s)ds \right) \quad \forall x \in [x_{0},x_{1}]
+	\end{align*}
+\end{proof}
+
+\begin{remark}~
+	\begin{enumerate}
+		\item Si $h=0$, el lema de Grönwall asefura que $u(x) \leq 0 \quad \forall x \in [x_{0},x_{1}]$;
+
+		\item Es posible utilizar una única formulación que agrupe las dos condiciones del lema:
+		\begin{align*}
+			& u(x) \leq h + \left| \int_{x_{0}}^{x}k(s)u(s)ds \right| \quad \forall x,x_{0}\in I \\
+			\implies \ & u(x) \leq h \cdot \exp \left( \left| \int_{x_{0}}^{x} k(s)ds \right| \right)
+		.\end{align*}
+	\end{enumerate}
+\end{remark}
+
+\begin{theorem}[unicidad global]
+	Sea $\Omega \subset \R^{n+1}$ un conjunto abierto, $(x_{0},y_{0}) \in \Omega$ y $f \in C(\Omega;\R^n) \cap \text{Lip}_{loc}(y;\Omega)$. Si $(I_1,\varphi_1)$ y $(I_2,\varphi_{2})$ son soluciones locales del problema de Cauchy
+	\[ (PC) \ \begin{cases}
+		y'(x) = f(x,y(x)) \quad \forall x \in I \subset \R, \\
+		y(x_{0}) = y_{0}
+	\end{cases} \]
+	entonces $\varphi_{1}(x) = \varphi_{2}(x)\quad \forall x \in I_1 \cap I_2$ (acá, $I_1,I_{2} \subset \R$ son intervalos que conienen a $x_{0}$).
+\end{theorem}
+\begin{proof}
+	Sabemos que $(I_1 \cap I_{2}) \setminus \{x_{0}\} \neq \varnothing$, y así, tomemos $x_{1} \in (I_{1} \cap I_{2}) \setminus \{x_{0}\}$, con $x_{1} > x_{0}$. Definamos el conjunto:
+	\[ K = \{ (s,\varphi_{1}(s)) \ \big| \ s \in [x_{0},x_{1}] \} \cup \{ (s,\varphi_{2}(s) \ \big| \ s \in [x_{0},x_{1}] \} \] 
+	Luego, $K \subset \Omega$ es compacto. Como $f$ es continua en $\Omega$, resulta que: $\sup_{(x,y) \in K} |f(x,y)| < \infty \implies f \in \text{Lip}(y;K)$, y sea $L_k > 0$ una constante de Lipschitz (global) para $f$, respecto a su segunda variable en $K$. Sabemos que $\varphi_{i}(x) = y_0 + \int_{x_{0}}^{x} f(s,\varphi(s))ds \quad \forall x \in [x_0,x_{1}],\ \forall i \in \{1,2\}$. Entonces,
+	\begin{align*}
+		|\varphi_{1}(x) - \varphi_{2}(x)| &= \left| \int_{x_{0}}^{x} [f(s,\varphi_{1}(s)) - f(s,\varphi_{2}(s))]ds \right| \\
+		& \leq \int_{x_{0}}^{x} \big|f(s,\varphi_{1}(s)) - f(s,\varphi(s))\big| ds \\
+		& \leq L_K \int_{x_{0}}^{x} \big| \varphi_{1}(s) - \varphi_{2}(s) \big| ds \quad \forall x \in [x_{0},x_{1}]
+	.\end{align*}
+	Así (gracias al lema de Grönwall), $\big| \varphi_{1}(x) - \varphi_{2}(x) \big| = 0 \quad \forall x \in [x_{0},x_{1}] \implies \varphi_{1}(x) = \varphi_{2}(x) \quad \forall x \in [x_{0},x_{1}]$.
+\end{proof}
+
+\subsection{Prolongación de soluciones para EDOs}
+
+Dada $(x_0, y_0) \in \Omega$, sabemos que existen $a_0, b_0 > 0$ tales que
+\[ R \coloneqq [x_0 - a_0, x_0 + a_0] \times \overline{B(y_0, b_0)} \subseteq \Omega \quad (\text{inclusión estricta}) \]
+Sea $M \coloneqq \max_{(x,y) \in R} |f(x,y)|$ y $L_{R} > 0$ una constante de Lipschitz (local) para $f^{(x,y)\in R}$ en $R$ respecto a $y$.
+
+En el Teorema de Picard-Lindelöf se escogía $\delta > 0$ tal que
+\[  0 < \delta \leq \min\{a_0, b_0/M, 1/L_{R}\} \]
+De hecho, se puede llegar a la misma conclusión seleccionando $\delta > 0$ tal que
+\[ 0 < \delta < \min\{a_0, b_0/M\} \quad (\text{Teorema de Peano - unicidad global}) \]
+En cualquier caso, el intervalo de existencia de la solución puede extenderse algo más allá de $[x_0 - \delta, x_0 + \delta]$. Notemos que
+\[ (x_0 + \delta, \varphi(x_0 + \delta)) \in \Omega \]
+Es admisible, entonces, plantear el siguiente problema de Cauchy:
+\[ (\tilde{PC}) \begin{cases} y'(x) = f(x, y(x)) \\ y(x_0 + \delta) = \varphi(x_0 + \delta) \end{cases} \]
+De igual forma, existirá $\delta_1 > 0$ tal que $(\tilde{PC})$ admite una única solución $\tilde{\varphi}$ en $[x_0 + \delta - \delta_1, x_0 + \delta + \delta_1]$. Gracias al Teorema de unicidad global, $\tilde{\varphi}$ se puede considerar como una prolongación de $\varphi$ hasta el punto $x_0 + \delta + \delta_1$.
+
+\begin{definition}
+  Dada $(I, \varphi) \in S(x_0, y_0)$, decimos que es:
+  \begin{enumerate}
+    \item Solución prolongable por la derecha si existe $(\tilde{I}, \tilde{\varphi}) \in S(x_0, y_0)$ tal que $I \subseteq \tilde{I}, I \neq \tilde{I}$ y $\sup(I) \in \text{int}(\tilde{I})$. En tal caso $\tilde{\varphi}|_{I} \equiv \tilde{\varphi}$.
+
+    \item Solución prolongable por la izquierda si existe $(\tilde{I}, \tilde{\varphi}) \in S(x_0, y_0)$ tal que $I \subseteq \tilde{I}, I \neq \tilde{I}$ y $\inf(I) \in \text{int}(\tilde{I})$.
+
+    \item Solución prolongable cuando es prolongable por la derecha, o por la izquierda, o por ambos extremos.
+
+    \item Solución maximal cuando no es prolongable.
+  \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+  Sea $\Omega \subseteq \mathbb{R}^{n+1}$ un conjunto abierto y $f \in C(\Omega, \mathbb{R}^n) \cap \text{Lip}_{\text{loc}}(y, \Omega)$. Para cada $(x_0, y_0) \in \Omega$ existe una única solución maximal del problema
+  \[ (PC) \begin{cases} y'(x) = f(x, y(x)) \\ y(x_0) = y_0 \end{cases} \]
+  y el intervalo $I \subseteq \mathbb{R}$ donde está definida la solución es abierto.
+\end{theorem}
+
+\begin{proof} (existencia, unicidad, estructura de una solución maximal)
+  \begin{enumerate}
+      \item[a)] En caso de existir una solución maximal, su dominio de definición es un intervalo abierto.
+
+      \item[b)] Existe, a lo más, una solución maximal. Supongamos que existen dos soluciones maximales $(I_1, \varphi_1)$ e $(I_2, \varphi_2)$, con $x_0 \in I_1 \cap I_2$. Podemos definir $I = I_1 \cup I_2$ (que es un intervalo que contiene a $x_0$) y la función
+      \[ \varphi(x) = \begin{cases} \varphi_1(x), & x \in I_1 \\ \varphi_2(x), & x \in I_2 \end{cases} \]
+      Notar que $\varphi$ está bien definida gracias al Teorema de Unicidad global. Dado que $(I_1, \varphi_1)$ e $(I_2, \varphi_2)$ son soluciones maximales, entonces necesariamente debe ocurrir que $I_1 = I_2$, y por ende, $\varphi_1 \equiv \varphi_2$.
+
+      \item[c)] Existencia de una solución maximal. Definamos
+      \[ I(x_0, y_0) \coloneqq \bigcup_{(I, \varphi) \in S(x_0, y_0), I \text{ abierto}} I. \]
+      Sabemos que $I(x_0, y_0) \neq \emptyset$ y que $I(x_0, y_0)$ es un intervalo, pues $x_0 \in I$ para cada $(I, \varphi) \in S(x_0, y_0)$. Denotemos por
+      \[ \alpha = \inf I(x_0, y_0), \quad \beta = \sup I(x_0, y_0). \]
+      Sabemos que $\alpha < x_0 < \beta$, pues al menos existe una solución en $([x_0 - \delta, x_0 + \delta], \varphi) \in S(x_0, y_0)$. Definimos ahora la función:
+      \[ \tilde{\varphi} : I(x_0, y_0) \rightarrow \mathbb{R}^n \]
+      del siguiente modo:
+    
+      Para cada $x \in I(x_0, y_0)$ existe, al menos, un intervalo abierto $I \subseteq \mathbb{R}$ $($con $x \in I)$ y una correspondiente solución local $\varphi \in C^1(I;\R^n)$ de $(PC)$ en $I$. Ponemos $\tilde{\varphi}(x) = \varphi(x)$. Por unicidad global sabemos que no hay ambigüedad en la definición de $\tilde{\varphi}$. Además
+      \begin{itemize}
+          \item $\tilde{\varphi}(x_0) = \varphi(x_0) = y_0;$
+          \item $\tilde{\varphi}$ es de clase $C^1$ en $x$;
+          \item $\tilde{\varphi}'(x) = \varphi(x) = f(x, \tilde{\varphi}(x))$.
+      \end{itemize}
+  \end{enumerate}
+\end{proof}
+
+\begin{note}
+  Se denotará por $\varphi(\hspace{1mm} \cdot\hspace{1mm}; x_0, y_0)$ a la solución maximal del (PC), y a $I(x_0, y_0) \subseteq \mathbb{R}$ su intervalo (abierto) de definición.
+\end{note}
+
+\begin{theorem} 
+  Sean $T_1 < T_2$ números reales y $\Omega \coloneqq (T_1, T_2) \times \mathbb{R}^n$. Supongamos que $f \in C(\bar{\Omega}, \mathbb{R}^n) \cap \text{Lip}_{\text{loc}}(y, \Omega)$ y que existen dos constantes $k_1, k_2 \in \mathbb{R}$ tales que
+  \[ |f(x,y)| \leq k_1 + k_2|y| \quad \forall (x,y) \in \bar{\Omega} \]
+  Entonces, dado cualquier $(x_0, y_0) \in \Omega$, existe una única solución del (PC) en $[T_1, T_2]$.
+\end{theorem}
+
+\begin{proof}
+  Dado $(x_0, y_0) \in \Omega$, existe $a_0 > 0$ tal que
+  \[ [x_0 - a_0, x_0 + a_0] \subseteq [T_1, T_2] \]
+  Sea $b_0 \coloneqq k_1 + k_2|y_0|$, en modo tal que
+  \[ R \coloneqq [x_0 - a_0, x_0 + a_0] \times \overline{B(y_0, b_0)} \subseteq \overline{\Omega} \]
+  Notemos, por ende, que
+  \[ \max_{(x,y) \in R} |f(x,y)| \leq \max_{y \in {B}(y_0, b_0)} (k_1 + k_2|y|) \leq k_1 + k_2b_0 + k_2|y_0| = b_0(1+k_2) \]
+  Es decir, $M \leq b_0(1+k_2)$ y así,
+  \[ \min\{a_0, b_0/M\} \geq \min\{a_0, 1/(1+k_2)\} > 0. \]
+  y esta cantidad no depende de $(x_0, y_0)$. Por ende, repitiendo la demostración del Teorema de Peano, se puede seleccionar $\delta > 0$ tal que
+  \[ 0 < \delta \leq \min\{a_0, 1/(1+k_2)\} \]
+  y garantizar existencia de la solución de (PC) en $[x_0 - \delta, x_0 + \delta]$.
+\end{proof}
+
+\begin{note}
+  La condición
+  \[ (\exists A, B > 0) \quad |f(x,y)| \leq A + B|y| \quad \forall (x,y) \in \bar{\Omega}, \]
+  expresa un crecimiento lineal de $f$ en $y$, uniformemente respecto a $x$. Tal comportamiento se puede garantizar en los siguientes casos:
+  \begin{enumerate}
+      \item[i)] $f \in L^\infty(\Omega)$ ($f$ acotada en $\Omega$).
+      \item[ii)] $f(\cdot,0)$ es acotada y $f \in \text{Lip}(y, \bar{\Omega})$. En efecto, sabemos que existe $L > 0$ tal que
+      \[ |f(x,y_1) - f(x,y_2)| \leq L|y_1 - y_2| \quad \forall (x,y_1), (x,y_2) \in \tilde{\Omega} \]
+      Luego, para $(x,y) \in \tilde{\Omega}$ se tiene que
+      \[ |f(x,y)| \leq |f(x,y) - f(x,0)| + |f(x,0)| \leq L|y| + \max_{x \in [T_1, T_2]} |f(x,0)| \]
+      \item[iii)] $f(\cdot, 0)$ es acotada, $f \in \text{Lip}_{\text{loc}}(y;\tilde{\Omega})$ y sus derivadas parciales $\frac{\partial f}{\partial y_i}$, $i = \{1, \dots, n\}$ existen, son continuas y acotadas en $\bar{\Omega}$.
+  \end{enumerate}
+\end{note}
 \end{document}
