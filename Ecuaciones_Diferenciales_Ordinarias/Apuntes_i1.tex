@@ -568,7 +568,7 @@ Recordamos que en cualquier espacio métrico, un sub-conjunto es compacto si y s
 
 \begin{theorem}[Punto fijo de Schauder]
   Sea $\mathcal{X}$ un espacio de Banach sobre $\R$, y $K\subset \mathcal{X}$ un conjunto conexo, cerrado, acotado y no vacío. Consideremos una aplicación $T:K\rightarrow K$  continua y tal que $T(K)$ es relativamente compacto, Entonces existe, al menos, un punto fijo de $T$ en $K$.
-d\end{theorem}
+\end{theorem}
 
 \begin{remark}
   $T(k)$ es relativamente compactio si y sólo si $\overline{T(K)}$ es compacto, si y sólo si cualquier sucesión $(X_n)_{n\in \N}\subset \mathcal{X}$ resulta que $(T(X_n))_{n\in \N}$ admite una sub-sucesión convergente (a un límite que no necesariamente pertenece a $T(K)$).
@@ -587,7 +587,7 @@ d\end{theorem}
   Como $\Omega$ es abierto, existen $a_0>0$ y $b_0>0$ tales que, si denotamos $R=[x_0-a_0,x_0+a_0]\times \overline{B(y_0,b_0)}$, entonces $R \subset \Omega$. Sea $M=\max_{(x,y)\in \R}|f(x,y)|$ y tomamos $\delta > 0$ tales que $0 < \delta < \min\left\{a_0, \frac{b_0}{M}\right\}$. Definamos 
   \[  K=\{\varphi \in C(I_{\delta};\R^n)| \varphi(x_0)=y_0;\quad |\varphi(x)-y_0|\leq b_o \quad \forall x \in I_{\delta}\}\]
   que es no vacío, conexo, conexo y acotado. Definamos ahroa la aplicación $T:K\rightarrow C(I_{\delta};\R^n)$ mediante la fórmula 
-  \[ T(\varphi)(x)=y_0 + \int_{x_0}^{x} f(s,\varphi(s))ds \quad \forall \varpgi \in K, \quad \forall x \in I_{\delta}\]
+  \[ T(\varphi)(x)=y_0 + \int_{x_0}^{x} f(s,\varphi(s))ds \quad \forall \varphi \in K, \quad \forall x \in I_{\delta}\]
   Notamos que $T(\varphi)\in C(I_{\delta};\R^n) \quad \forall \varphi \in K$. Además, si $\varphi \in K$, se tiene que $(x,\varphi(x)\in \R, \quaf \forall x \in I_{\delta}$ y así:
   \[ |T(\varphi)(x)-y_0|\leq \left| \int_{x_0}^{x}|f(s,\varphi(s))|ds \right| \leq M|x-x_0|\leq M\delta -b_0 \quad \forall x \in I_{\delta} \]
   y como $T(\varphi)(x_0)=y_0$, entonces $T(\varphi)\in K\quad \forall \varphi \in K.$. Ahora, afirmamos que $T:K\rightarrow K$ es continua, sea $\epsilon >0$. Como $f$ es uniformemente continua en $\R$, exite $\delta_0 >0$ tal que $:\forall(s,y_1),)(s,y_2)\in \R$, 
@@ -596,15 +596,67 @@ d\end{theorem}
   \[ |f(s,\varphi_1(s))-f(s,\varphi_2(s))|\leq \frac{\epsilon}{\delta}\quad \forall s \in I_{\delta} \]
   Luego,
   \[|t(\varphi_1)(x)-T(\varphi_2)(x)|\leq \left|\int_{x_0}^{x}|f(s,\varphi_1(s))-f(s,\varphi_2(s))|\right| \leq \frac{\epsilon}{\delta}|x-x_0|\leq \epsilon \quad \forall x \in I_{\delta}\]
-  Entonces $||T(\varphi_1)-T(\varphi_2)||_{\infty}\leq \epsilon \quad \forall \varphi_1,\varphi_2\in K$ tales que $||\varphi_1 -\varphi_2||_{\infty} \leq \delta_0$ aprovechamos para demostrar que la familia $T(K)\subset C(I_{\delta};\R^n)$ es equicontinua....  
-  
+  Entonces $||T(\varphi_1)-T(\varphi_2)||_{\infty}\leq \epsilon \quad \forall \varphi_1,\varphi_2\in K$ tales que $||\varphi_1 -\varphi_2||_{\infty} \leq \delta_0$ con esto, demostramos que la familia $T(K)\subset C(I_{\delta};\R^n)$ es equicontinua. Dados $x_1,x_2 \in I_{\delta}$ y $\varphi \in K$, notamos que \[|T(\varphi)(x_1) - T(\varphi)(x_2)| \leq \left|\int_{x_1}^{x_2}|f(s,\varphi(s))|ds \right|\leq M|x_1 - x_2|  \] Así, dado $\epsilon > 0$, escogemos $\delta_1 = \frac{\epsilon}{M}$, de modo que \[ (\forall x_1,x_2 \in I_{\delta}) \quad |x_1 - x_2| \leq \delta_1 \Rightarrow |T(\varphi)(x_1) - T(\varphi)(x_2)| \leq \epsilon \quad \forall \varphi \in K \] Entonces, demostramos que la fórmula $T(K)$ es acotada: \[ \sup_{\varphi \in K} ||T(K)||_{\infty} < \infty \] Dado $\varphi \in K$ y $x \in I_{\delta}$, se tiene 
+    \[
+      \begin{align*}
+        |T(\varphi)(x)| &\leq \left| y_0 + \int_{x_0}^{x} f(s,\varphi(s)) ds \right| \leq |y_0| + \left|  \int_{x_0}^{x} f(s,\varphi(s)) ds \right| \\
+        & \leq |y_0| + M|x - x_0| \leq  |y_0| + M\delta \leq |y_0| + b_0
+      \end{align*}
+    \] 
+  Por lo tanto \[ ||T(\varphi)||_{\indty} \leq |y_0| + b_0 \quad \forall \varphi \in K\] El teorema de Arzelà-Ascoli asegura entonces que $T(K)$ es relativamente compacto. Luego, se cumplen todas las hipótesis del teorema de punto fijo de Schauder, y así,  $(\exists \hat{\varphi} \in K) \quad T(\hat{\varphi}) = \hat{\varphi}$, entonces: \[ \hat{\varphi} \in C(I_{\delta};\R^n) \text{ es solución de } (PC) \]
 \end{proof}
-
+\begin{theorem}
+  Sea $\Omega \subseteq \mathbb{R}^{n+1}$ un conjunto abierto y $g \in C(\Omega, \mathbb{R})$.Para cualquier $(x_0, y_0, y_0', \dots, y_0^{(n-1)}) \in \Omega$, existe $\delta > 0$ tal que, si ponemos $I_\delta = [x_0 - \delta, x_0 + \delta]$, el problema de Cauchy
+  \[
+    (PC) \quad \begin{cases}
+    y^{(n)}(x) = g(x, y(x), y'(x), \dots, y^{(n-1)}(x)) & \forall x \in I_\delta, \\
+    y(x_0) = y_0, y'(x_0) = y_0', \dots, y^{(n-1)}(x_0) = y_0^{(n-1)}
+    \end{cases}
+  \]
+  admite, al menos, una solución.
+\end{theorem}
 \[
-  \text{POR COMPLETAR (Clase 01-09)}
+  \text{PIZARRA POR COMPLETAR}
+\]
+\begin{example}[Iteraciones de punto fijo.]
+  Consideramos el siguiente problema de Cauchy (PC):
+\[
+  (PC) \quad \begin{cases}
+  y'(t) = y(t) + t - 1 & \forall t \in \R, \\
+  y(0) = 1,
+  \end{cases}
+\]
+cuya (única) solución es $y(t) = e^t - t \quad \forall t \in \R$. La formulación integral de (PC) es:
+\[
+  Y(t) = 1 + \int_{0}^{t} [Y(s) + s - 1] \,ds \quad \forall t \in \R.
+\]
+Consideremos la sucesión de funciones $(\varphi_n)_{n \in \N} \subset C(\R; \R)$ dada por:
+\[
+  \varphi_0(t) = 1 \quad \forall t \in \R, \quad
+  \varphi_{n+1}(t) = 1 + \int_{0}^{t} [\varphi_n(s) + s - 1] \,ds \quad \forall n \in \N, \forall t \in \R. 
 \]
 
-\begin{example}
+Calculamos los primeros términos:
+\[
+  \begin{align*}
+    \varphi_1(t) &= 1 + \int_{0}^{t} (\varphi_0(s) + s - 1) \,ds = 1 + \int_{0}^{t} (1 + s - 1) \,ds = 1 + \int_{0}^{t} s \,ds \\
+    &= 1 + \frac{t^2}{2} = 1 + \frac{t^2}{2!} \quad \forall t \in \mathbb{R}. \\
+    \varphi_2(t) &= 1 + \int_{0}^{t} (\varphi_1(s) + s - 1) \,ds = 1 + \int_{0}^{t} \left(1 + \frac{s^2}{2!} + s - 1\right) \,ds \\
+    &= 1 + \int_{0}^{t} \left(\frac{s^2}{2} + s\right) \,ds = 1 + \frac{t^3}{6} + \frac{t^2}{2} = 1 + \frac{t^2}{2!} + \frac{t^3}{3!} \quad \forall t \in \R.
+  \end{align*}
+\]
+Por inducción, se puede demostrar que:
+\[ 
+  \varphi_n(t) = 1 + \frac{t^2}{2!} + \frac{t^3}{3!} + \cdots + \frac{t^{n+1}}{(n+1)!} = 1 + \sum_{k=2}^{n+1} \frac{t^k}{k!}.
+\]
+Tomando el límite cuando $n \to \infty$:
+\[ 
+  \lim_{n \to \infty} \varphi_n(t) = 1 + \sum_{k=2}^{\infty} \frac{t^k}{k!} = \left(\sum_{k=0}^{\infty} \frac{t^k}{k!}\right) - t = e^t - t \quad \forall t \in \R. 
+\]
+Con convergencia uniforme en cada intervalo compacto de $\R$.
+\end{example}
+
+\begin{example} Consideremos el siguiente problema de Cauchy (PC):
 
 	\[ (PC) \ \begin{cases}
 		y'(t) = \frac{t+2}{t^2+(y(t))^2} \quad \forall t \in I \subset \R, \\
